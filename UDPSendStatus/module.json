@@ -1,0 +1,55 @@
+{
+    "dependencies": [],
+    "singleton": true,
+    "category": "peripherals",
+    "author": "Pieter E. Zanstra",
+    "homepage": "",
+    "icon": "icon.png",
+    "moduleName": "UDPSendStatus",
+    "version": "0.0.1",
+    "maturity": "alfa",
+    "repository": {
+            "type": "git",
+            "source": "https://github.com/pz1/home-automation"
+    },
+    "defaults": {
+        "title": "UDPSendStatus",
+        "description": "__description__",
+		"IP_Address": "192.168.2.78",
+		"port": "9091"
+    },
+    "schema": {
+        "type": "object",
+        "properties": {
+            "IP_Address": {
+                "type": "string",
+                "required": true
+            },
+           "port": {
+                "type": "string",
+                "required": true
+            },
+           "devices": {
+                "type": "string",
+                "required": true
+            }
+        },
+        "required": true
+    },
+    "options": {
+        "fields": {
+            "IP_Address": {
+                "label": "__IPAddress-label__",
+				"helper": ""
+            },
+            "port": {
+                "label": "__port-label__",
+				"helper": "__port-helper__"
+            },
+            "devices": {
+                "label": "__devices-label__",
+				"helper": "__devices-helper__"
+            }
+        }
+    }
+}

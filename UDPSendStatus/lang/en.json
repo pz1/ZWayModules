@@ -1,0 +1,10 @@
+{
+  "title" : "UDPSendStatus",
+  "description" : "Solar Quality of Service Monitor",
+  "IPAddress-label" : "Destination IP address",
+  "port-label" : "Destination UDP port number",
+  "devices-label": "Included devices",
+  "IPAddress-helper": "Can be either IP number or IP name",
+  "port-helper": "Must be the 4 digit number used by the UDPListener at the receiving end",
+  "devices-helper" : "Enter Z-Wave numerical device ID's separated by commas"
+  }
