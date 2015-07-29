@@ -1,0 +1,13 @@
+{
+  "title" : "SolQoS",
+  "description" : "Solar Quality of Service Monitor",
+  "polling-label" : "Polling (minutes)",
+  "polling-helper" : "Change interval if needed",
+  "iconPathHelp" : "Icons from this package should be stored in folder htdocs/user", 
+  "PV1helper" : "Supply base name (e.g. PVLogger_24) for first logger as can be found under preferences/widgets",
+  "PV2helper" : "Supply base name (e.g. PVLogger_25) for second logger as can be found under preferences/widgets",
+  "PV1logger_label" : "First PV logger",
+  "PV2logger_label" : "Second PV Logger",
+  "capacity_label": "Total Capacity",
+  "capacity_helper" : "Enter the joint Electrical Capacity of your solar panels for production ratio calculation"
+}

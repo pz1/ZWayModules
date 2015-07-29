@@ -1,0 +1,11 @@
+{
+"description":"Weather Forecast & Reports by Wunderground",
+"key": "YOUR_PERSONAL_WUNDERGROUND_KEY",
+"source": "Source format",
+"country": "Country",
+"country_placeholder": "nl",
+"city": "City",
+"city_placeholder": "Schiphol",
+"err_parse":"Can not parse weather information",
+"err_fetch":"Can not fetch weather information"
+}

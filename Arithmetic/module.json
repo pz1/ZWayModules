@@ -1,0 +1,102 @@
+{
+	"dependencies" : [],
+	"singleton" : false,
+	"category" : "devices",
+	"author" : "Pieter E. Zanstra (click for Recipe)",
+	"homepage" : "http://forum.z-wave.me/viewtopic.php?f=3424&t=21381",
+	"icon" : "calculator.png",
+        "moduleName": "Arithmetic",
+	"version" : "1.0.0",
+	"maturity" : "stable",
+	"repository" : {
+		"type" : "",
+		"source" : ""
+	},
+	"defaults" : {
+		"title" : "__title__",
+		"description" : "__description__",
+		"formula" : "",
+                "metric1" : "level",
+                "metric2" : "level"
+
+	},
+	"schema" : {
+		"type" : "object",
+		"properties" : {
+			"formula" : {
+				"type" : "select",
+				"enum" : ["add", "sub", "mult", "div"],
+				"required" : true
+			},
+			"Title" : {
+				"type" : "string",
+				"required" : true
+			},
+			"scaleTitle" : {
+				"type" : "string",
+				"required" : true
+			},
+            "sensor1": {
+                    "field": "enum",
+                    "datasource": "namespaces",
+                    "enum": "namespaces:devices_sensorMultilevel:deviceId",
+                    "required": true
+            },
+			"metric1" : {
+				"type" : "string",
+				"required" : true
+			},
+            "sensor2": {
+                    "field": "enum",
+                    "datasource": "namespaces",
+                    "enum": "namespaces:devices_sensorMultilevel:deviceId",
+                    "required": true
+            },
+			"metric2" : {
+				"type" : "string",
+				"required" : true
+			}
+
+		},
+		"required" : true
+	},
+	"options" : {
+		"fields" : {
+			"formula" : {
+				"label" : "__formula__",
+				"optionLabels" : ["a+b", "a-b", "a*b", "a/b"],
+				"helper" : "__helper__"
+			},
+			"Title" : {
+				"label" : "__sensor-name__",
+				"placeholder" : "__sensor-name-placeholder__"
+			},
+			"scaleTitle" : {
+				"label" : "__sensor-units__",
+				"placeholder" : "__sensor-units-placeholder__"
+			},
+            "sensor1": {
+                    "label": "__sensor1__",
+                    "type": "select",
+                    "datasource": "namespaces",
+                    "field": "optionLabels",
+                    "optionLabels": "namespaces:devices_sensorMultilevel:deviceName"
+            },
+			"metric1" : {
+				"label" : "__metric1__",
+				"helper" : "__metric1-helper__"
+			},
+            "sensor2": {
+                    "label": "__sensor2__",
+                    "type": "select",
+                    "datasource": "namespaces",
+                    "field": "optionLabels",
+                    "optionLabels": "namespaces:devices_sensorMultilevel:deviceName"
+            },
+			"metric2" : {
+				"label" : "__metric2__",
+				"helper" : "__metric2-helper__"
+			}
+		}
+	}
+}

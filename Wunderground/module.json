@@ -1,0 +1,66 @@
+{
+	"dependencies": [],
+	"singleton": false,
+	"category": "environment",
+	"author": "Pieter E. Zanstra (click for Recipe)",
+	"homepage": "http://forum.z-wave.me/viewtopic.php?f=3424&t=21246",
+	"icon": "icon.png",
+    "moduleName": "Wunderground",
+	"version": "1.0.0",
+	"maturity": "stable",
+	"repository": {
+		"type": "git",
+		"source": "https://github.com/pz1/home-automation"
+	},
+	"defaults": {
+		"title": "Weather Forecast & Reports",
+		"description": "__description__",
+		"key": "",
+		"city": "",
+		"country": "",
+		"source": ""
+	},
+	"schema": {
+		"type": "object",
+		"properties": {
+			"key": {
+				"type": "string",
+				"required": true
+			},
+			"city": {
+				"type": "string",
+				"required": true
+			},
+			"country": {
+				"type": "string",
+				"required": true
+			},
+			"source": {
+				"type": "select",
+				"enum": ["JSON", "XML"],
+				"required": true
+			}
+		},
+		"required": true
+	},
+	"options": {
+		"fields": {
+			"key": {
+				"label": "Key",
+				"placeholder": "__key__"
+			},
+			"city": {
+				"label": "__city__",
+				"placeholder": "__city_placeholder__"
+			},
+			"country": {
+				"label": "__country__",
+				"placeholder": "__country_placeholder__"
+			},
+			"source": {
+				"label": "__source__",
+				"optionLabels": ["json", "xml"]
+			}
+		}
+	}
+}

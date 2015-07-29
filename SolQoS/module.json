@@ -1,0 +1,76 @@
+{
+	"dependencies" : [],
+	"singleton" : false,
+	"category" : "devices",
+	"author" : "Pieter E. Zanstra (click for Recipe)",
+	"homepage" : "http://forum.z-wave.me/viewtopic.php?f=3424&t=21398",
+	"icon" : "icon.png",
+    "moduleName": "SolQoS",
+	"version" : "0.0.4",
+	"maturity" : "beta",
+	"repository" : {
+		"type" : "git",
+		"source" : "https://github.com/pz1/home-automation"
+	},
+	"defaults" : {
+		"title" : "__title__",
+		"description" : "__description__",
+		"polling" : "5"
+	},
+	"schema" : {
+		"type" : "object",
+		"properties" : {
+			"polling" : {
+				"type" : "string",
+				"required" : true
+			},
+			"iconpath" : {
+				"type" : "string",
+				"required" : true
+			},
+			"pvlogger1" : {
+				"type" : "string",
+				"required" : true
+			},
+
+			"pvlogger2" : {
+				"type" : "string",
+				"required" : true
+			},
+
+			"capacity" : {
+				"type" : "string",
+				"required" : true
+			}
+		},
+		"required" : true
+	},
+	"options" : {
+		"fields" : {
+			"polling" : {
+				"label" : "__polling-label__",
+				"helper" : "__polling-helper__"
+			},
+			"iconpath" : {
+				"label" : "IconPath",
+				"placeholder" : "http://192.168.7.22:8083/user/",
+				"helper" : "__iconPathHelp__"
+			},
+			"pvlogger1" : {
+				"label" : "__PV1logger_label__",
+				"placeholder" : "PVLogger_1",
+				"helper" : "__PV1helper__"
+			},
+			"pvlogger2" : {
+				"label" : "__PV2logger_label__",
+				"placeholder" : "PVLogger_2",
+				"helper" : "__PV2helper__"
+			},
+			"capacity" : {
+				"label" : "__capacity_label__",
+				"placeholder" : "3000",
+				"helper" : "__capacity_helper__"
+			}
+		}
+	}
+}

@@ -1,0 +1,47 @@
+{
+	"dependencies" : [],
+	"singleton" : false,
+	"category" : "devices",
+	"author" : "Pieter E. Zanstra (click for Recipe)",
+	"homepage" : "http://forum.z-wave.me/viewtopic.php?f=3424&t=21398",
+	"icon" : "icon.png",
+    "moduleName": "PVLogger",
+	"version" : "0.0.6",
+	"maturity" : "beta",
+	"repository" : {
+		"type" : "git",
+		"source" : "https://github.com/pz1/home-automation"
+	},
+	"defaults" : {
+		"title" : "__title__",
+		"description" : "__description__",
+		"pvlogger" : "192.168.1.36",
+		"polling" : "5"
+	},
+	"schema" : {
+		"type" : "object",
+		"properties" : {
+			"polling" : {
+				"type" : "string",
+				"required" : false
+			},
+			"pvlogger" : {
+				"type" : "string",
+				"required" : true
+			}
+		},
+		"required" : true
+	},
+	"options" : {
+		"fields" : {
+			"polling" : {
+				"label" : "__polling-label__",
+				"helper" : "__polling-helper__"
+			},
+			"pvlogger" : {
+				"label" : "__address-label__",
+				"helper" : "__pvlogger-helper__"
+			}
+		}
+	}
+}

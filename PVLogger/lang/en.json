@@ -1,0 +1,8 @@
+{
+  "title" : "PVLogger",
+  "description" : "Solar production logger (fp4all.com)",
+  "polling-label" : "Polling",
+  "address-label" : "IP Address",
+  "pvlogger-helper" : "IP-number of FP4All.com PVlogger Device",
+  "polling-helper" : "Change polling interval (minutes) if needed"
+}

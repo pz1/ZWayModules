@@ -1,0 +1,109 @@
+{
+	"dependencies": [],
+	"singleton": false,
+	"category": "devices",
+	"author": "Pieter E. Zanstra (click for Recipe)",
+	"homepage": "http://forum.z-wave.me/viewtopic.php?f=3424&t=21446",
+	"icon": "xml.png",
+        "moduleName": "XMLDevice",
+	"version": "1.0.2",
+	"maturity": "stable",
+	"repository": {
+		"type": "git",
+		"source": "https://github.com/pz1/home-automation"
+	},
+	"defaults": {
+		"title": "XML vDev Creator",
+		"description": "__description__",
+		"isNumerical": "",
+		"url": "",
+		"xpath": "",
+		"polling": "",
+		"probeTitle": "",
+		"scaleTitle": "",
+		"deviceName": "",
+		"debug" : ""
+	},
+	"schema": {
+		"type": "object",
+		"properties": {
+			"isNumerical": {
+				"type": "boolean",
+				"required": true
+			},
+			"isFloat" : {
+			    "type" : "boolean",
+				"required" : true
+			},
+			"url": {
+				"type": "string",
+				"required": true
+			},
+			"xpath": {
+				"type": "string",
+				"required": true
+			},
+			"polling": {
+				"type": "string",
+				"required": true
+			},
+			"probeTitle": {
+				"type": "string",
+				"required": true
+			},
+			"scaleTitle": {
+				"type": "string",
+				"required": true
+			},
+			"deviceName": {
+				"type": "string",
+				"required": true
+			},
+			"debug": {
+				"type": "boolean",
+				"required": true
+			}
+		},
+		"required": true
+	},
+	"options": {
+		"fields": {
+			"isNumerical": {
+				"rightLabel": "__isNumerical_Select__",
+				"helper": "__isNumerical_helper__"
+			},
+			"isFloat": {
+				"rightLabel": "__isFloat_Select__",
+				"helper": "__isFloat_helper__"
+			},
+			"url": {
+				"label": "__url__",
+				"placeholder": "__url_placeholder__"
+			},
+			"xpath": {
+				"label": "__xpath__",
+				"placeholder": "__xpath_placeholder__"
+			},
+			"polling" : {
+				"label" : "__polling__",
+				"placeholder" : "5"
+			},
+			"probeTitle" : {
+				"label" : "__probeTitle__",
+				"placeholder" : "__probeTitle_placeholder__"
+			},
+			"scaleTitle" : {
+				"label" : "__scaleTitle__",
+				"placeholder" : "__scaleTitle_placeholder__"
+			},
+			"deviceName" : {
+				"label" : "__deviceName__",
+				"placeholder" : "__deviceName_placeholder__"
+			},
+			"debug" : {
+				"rightLabel" : "__debug__",
+				"helper" : "__debug_helper__"
+			}
+		}
+	}
+}
