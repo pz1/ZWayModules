@@ -117,13 +117,12 @@ SolQoS.prototype.fetchEquation = function (instance) {
 		QoS = 3;
 		status = "solardefect2";
 	}
-        kpower = power/1000;
-	icon = self.config.iconpath + status + "58px.png";
+
+	self.vDev.set("metrics:icon","http://" + self.config.host + "/ZAutomation/api/v1/load/modulemedia/SolQoS/" + status + "58px.png" );
 	self.vDev.set("metrics:level", power);
-        self.vDev.set("metrics:kW", kpower);
+	self.vDev.set("metrics:kW", power/1000);
 	self.vDev.set("metrics:outputRatio", outputRatio);
 	self.vDev.set("metrics:kWh", energy);
 	self.vDev.set("metrics:QoS", QoS);
-	self.vDev.set("metrics:icon", icon);
 	self.vDev.set("metrics:timeStamp", timestamp);
 };

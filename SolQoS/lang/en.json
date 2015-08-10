@@ -1,9 +1,10 @@
 {
   "title" : "SolQoS",
   "description" : "Solar Quality of Service Monitor",
+  "host-label" : "This Z-way server",
+  "host-helper" : "Provide IP and Port numbers separated with a comma",
   "polling-label" : "Polling (minutes)",
   "polling-helper" : "Change interval if needed",
-  "iconPathHelp" : "Icons from this package should be stored in folder htdocs/user", 
   "PV1helper" : "Supply base name (e.g. PVLogger_24) for first logger as can be found under preferences/widgets",
   "PV2helper" : "Supply base name (e.g. PVLogger_25) for second logger as can be found under preferences/widgets",
   "PV1logger_label" : "First PV logger",

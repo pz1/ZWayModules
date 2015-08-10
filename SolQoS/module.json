@@ -15,16 +15,17 @@
 	"defaults" : {
 		"title" : "__title__",
 		"description" : "__description__",
-		"polling" : "5"
+		"polling" : "5",
+		"host" : "192.168.1.34:8083"
 	},
 	"schema" : {
 		"type" : "object",
 		"properties" : {
-			"polling" : {
+			"host" : {
 				"type" : "string",
-				"required" : true
+				"required" : "true"
 			},
-			"iconpath" : {
+			"polling" : {
 				"type" : "string",
 				"required" : true
 			},
@@ -47,14 +48,13 @@
 	},
 	"options" : {
 		"fields" : {
+                        "host" : {
+                                "label" : "__host-label__",
+                                "helper" : "__host-helper__"
+                        },
 			"polling" : {
 				"label" : "__polling-label__",
 				"helper" : "__polling-helper__"
-			},
-			"iconpath" : {
-				"label" : "IconPath",
-				"placeholder" : "http://192.168.7.22:8083/user/",
-				"helper" : "__iconPathHelp__"
 			},
 			"pvlogger1" : {
 				"label" : "__PV1logger_label__",
