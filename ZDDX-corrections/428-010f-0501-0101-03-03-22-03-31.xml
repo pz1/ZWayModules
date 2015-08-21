@@ -32,9 +32,11 @@
             <inclusionNote>
             <lang xml:lang="en">Tripple Click (B) Button</lang>
           </inclusionNote>
-            <productName>FGBS</productName>
-            <brandName>FGBS</brandName>
-                                </deviceDescription>
+            <productName>Universal Binary Sensor FGBS (1.1)</productName>
+            <brandName>Fibaro</brandName>
+            <productCode>FGBS</productCode>
+            <productVersion>1.1</productVersion>
+  </deviceDescription>
 
     <commandClasses>
         <commandClass id="0060" version="2"/>

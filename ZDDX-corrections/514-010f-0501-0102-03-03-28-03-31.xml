@@ -33,11 +33,11 @@
             <inclusionNote>
             <lang xml:lang="en">Triple press B button</lang>
           </inclusionNote>
-            <productName>Univeral Binary Sensor FGBS-001</productName>
+            <productName>Universal Binary Sensor FGBS-001 (1.2 EU)</productName>
             <brandName>Fibaro</brandName>
                 <productCode>FGBS-001</productCode>
             <productVersion>1.2</productVersion>
-                    </deviceDescription>
+  </deviceDescription>
 
     <commandClasses>
         <commandClass id="0060" version="2"/>
