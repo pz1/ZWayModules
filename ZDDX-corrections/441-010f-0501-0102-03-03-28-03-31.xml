@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ZWaveDevice xmlns="http://www.pepper1.net/zwavedb/xml-schemata/z-wave" schemaVersion="2">
-
   <descriptorVersion>1</descriptorVersion>
 
   <deviceData>
@@ -19,7 +18,7 @@
     <listening value="true"/>
     <routing value="true"/>
         <beamSensor>0</beamSensor>
-            <rfFrequency>RU</rfFrequency>
+            <rfFrequency>Russia</rfFrequency>
                 
       </deviceData>
 
