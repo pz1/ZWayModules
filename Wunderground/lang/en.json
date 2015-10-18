@@ -5,7 +5,7 @@
 "scale": "Celsius or Fahrenheit",
 "country": "Country",
 "country_placeholder": "usa",
-"state": "state",
+"state": "State",
 "state_placeholder": "fl",
 "city": "City",
 "city_placeholder": "orlando",

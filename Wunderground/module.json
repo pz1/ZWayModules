@@ -30,7 +30,7 @@
 				"required": true
 			},
 			"scale": {
-				"type": "string",
+				"type": "select",
 				"enum": ["F", "C"],
 				"required": true
 			},
