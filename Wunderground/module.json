@@ -2,11 +2,11 @@
 	"dependencies": [],
 	"singleton": false,
 	"category": "environment",
-	"author": "Pieter E. Zanstra (click for Recipe)",
+	"author": "Pieter E. Zanstra, Cody P Christian",
 	"homepage": "http://forum.z-wave.me/viewtopic.php?f=3424&t=21246",
 	"icon": "icon.png",
     "moduleName": "Wunderground",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"maturity": "stable",
 	"repository": {
 		"type": "git",
@@ -16,7 +16,9 @@
 		"title": "Weather Forecast & Reports",
 		"description": "__description__",
 		"key": "",
+		"scale": "",
 		"city": "",
+		"state": "",
 		"country": "",
 		"source": ""
 	},
@@ -27,7 +29,16 @@
 				"type": "string",
 				"required": true
 			},
+			"scale": {
+				"type": "select",
+				"enum": ["F", "C"],
+				"required": true
+			},
 			"city": {
+				"type": "string",
+				"required": true
+			},
+			"state": {
 				"type": "string",
 				"required": true
 			},
@@ -49,9 +60,17 @@
 				"label": "Key",
 				"placeholder": "__key__"
 			},
+			"scale": {
+				"label": "__scale__",
+				"optionLabels": ["F", "C"]
+			},
 			"city": {
 				"label": "__city__",
 				"placeholder": "__city_placeholder__"
+			},
+			"state": {
+				"label": "__state__",
+				"placeholder": "__state_placeholder__"
 			},
 			"country": {
 				"label": "__country__",

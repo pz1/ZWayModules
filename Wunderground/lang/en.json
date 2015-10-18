@@ -2,10 +2,13 @@
 "description":"Weather Forecast & Reports by Wunderground",
 "key": "YOUR_PERSONAL_WUNDERGROUND_KEY",
 "source": "Source format",
+"scale": "Celsius or Fahrenheit",
 "country": "Country",
-"country_placeholder": "nl",
+"country_placeholder": "usa",
+"state": "State",
+"state_placeholder": "fl",
 "city": "City",
-"city_placeholder": "Schiphol",
+"city_placeholder": "orlando",
 "err_parse":"Can not parse weather information",
 "err_fetch":"Can not fetch weather information"
 }
