@@ -16,6 +16,7 @@
 		"title": "Weather Forecast & Reports",
 		"description": "__description__",
 		"key": "",
+		"scale": "",
 		"city": "",
 		"state": "",
 		"country": "",

@@ -2,6 +2,7 @@
 "description":"Weather Forecast & Reports by Wunderground",
 "key": "YOUR_PERSONAL_WUNDERGROUND_KEY",
 "source": "Source format",
+"scale": "Celsius or Fahrenheit",
 "country": "Country",
 "country_placeholder": "usa",
 "state": "state",
