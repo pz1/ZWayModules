@@ -1,12 +1,15 @@
 /*** Wunderground Z-Way HA module *******************************************
 
-Version: 1.0.1
-(c) Z-Wave.Me, 2014
+Version: 2.0.0
+(c) Z-Wave.Me, 2014, 2015
 -----------------------------------------------------------------------------
-Author: Pieter E. Zanstra adaptation for Wunderground Weather Services API
+Modified Author: Cody P Christian (cody@codypchristian.net)
+Original Author: Pieter E. Zanstra adaptation for Wunderground Weather Services API
 Derived from OpenWeather module by Serguei Poltorak <ps@z-wave.me>
 Description:
 This module creates temperature widget
+
+10/18/15 - Modified to support both C and F and to use a State.
 
  ******************************************************************************/
 
@@ -42,7 +45,7 @@ Wunderground.prototype.init = function (config) {
 			},
 			overlay : {
 				metrics : {
-					scaleTitle : '°C',
+					scaleTitle : '°'+this.config.scale,
 					title : this.config.city
 				}
 			},
@@ -76,17 +79,30 @@ Wunderground.prototype.fetchWeather = function (instance) {
 	moduleName = "Wunderground",
 	langFile = self.controller.loadModuleLang(moduleName);
 
+	var country = self.config.country;
+	if(country.toLowerCase() == 'us' || country.toLowerCase() == 'usa' || country.toLowerCase() == 'united states'){
+		var locality = self.config.state;
+	} else {
+		var locality = country;
+	}
+
 	http.request({
-		url : "http://api.wunderground.com/api/" + self.config.key + "/conditions/forecast/q/" + self.config.country + "/" + self.config.city + ".json",
+		url : "http://api.wunderground.com/api/" + self.config.key + "/conditions/forecast/q/" + locality + "/" + self.config.city + ".json",
 		async : true,
 		success : function (res) {
 			try {
-				var temp = res.data.current_observation.temp_c,
+				var scale = self.config.scale;
+				if(scale.toLowerCase() == 'f'){
+					var temp = res.data.current_observation.temp_f,
+					max_temp = parseInt(res.data.forecast.simpleforecast.forecastday[0].high.fahrenheit),
+				} else {
+					var temp = res.data.current_observation.temp_c,
+					max_temp = parseInt(res.data.forecast.simpleforecast.forecastday[0].high.celsius),
+				}
 				windgust = parseInt(res.data.current_observation.wind_gust_kph),
 				pressure = parseInt(res.data.current_observation.pressure_mb),
 				wind_degrees = parseInt(res.data.current_observation.wind_degrees),
 				observe_time = res.data.current_observation.local_time_rfc822,
-				max_temp = parseInt(res.data.forecast.simpleforecast.forecastday[0].high.celsius),
 				icon = res.data.current_observation.icon_url;
 
 				self.vDev.set("metrics:level", temp);
@@ -96,6 +112,7 @@ Wunderground.prototype.fetchWeather = function (instance) {
 				self.vDev.set("metrics:observe_time", observe_time);
 				self.vDev.set("metrics:max_temp", max_temp);
 				self.vDev.set("metrics:icon", icon);
+				self.vDev.set("metrics:scale", scale);
 			} catch (e) {
 				self.controller.addNotification("error", langFile.err_parse, "module", moduleName);
 			}
