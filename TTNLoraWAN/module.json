@@ -1,0 +1,45 @@
+{
+	"dependencies": [],
+	"singleton": false,
+	"category": "environment",
+	"author": "Pieter E. Zanstra (click for Recipe)",
+	"homepage": "http://forum.z-wave.me/viewtopic.php?f=3419&t=22272&p=58986&hilit=lorawan#p58865",
+	"icon": "icon.png",
+    "moduleName": "TTNLoraWAN",
+	"version": "0.0.1",
+	"maturity": "alpha",
+	"repository": {
+		"type": "git",
+		"source": "https://github.com/pz1/home-automation"
+	},
+	"defaults": {
+		"title": "The Things Network LoraWAN device",
+		"description": "__description__",
+		"url": "http://thethingsnetwork.org/api/v0/nodes/",
+		"node_eui": "02013101"
+	},
+	"schema": {
+		"type": "object",
+		"properties": {
+			"url": {
+				"type": "string",
+				"required": true
+			},
+			"node_eui": {
+				"type": "string",
+				"required": true
+			}		},
+		"required": true
+	},
+	"options": {
+		"fields": {
+			"url": {
+				"label": "url",
+				"placeholder": "__url__"
+			},
+			"node_eui": {
+				"label": "__node_eui__",
+				"placeholder": "__node_eui_placeholder__"
+			}		}
+	}
+}
