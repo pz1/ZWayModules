@@ -5,7 +5,7 @@
 	"author": "Pieter E. Zanstra (click for Recipe)",
 	"homepage": "http://forum.z-wave.me/viewtopic.php?f=3419&t=22272&p=58986&hilit=lorawan#p58865",
 	"icon": "icon.png",
-    "moduleName": "TTNLoraWAN",
+	"moduleName": "TTNLoraWAN",
 	"version": "0.0.1",
 	"maturity": "alpha",
 	"repository": {
@@ -16,7 +16,8 @@
 		"title": "The Things Network LoraWAN device",
 		"description": "__description__",
 		"url": "http://thethingsnetwork.org/api/v0/nodes/",
-		"node_eui": "02013101"
+		"node_eui": "02013101",
+		"sensor": "data_json/temperature"
 	},
 	"schema": {
 		"type": "object",
@@ -28,7 +29,12 @@
 			"node_eui": {
 				"type": "string",
 				"required": true
-			}		},
+			},
+			"sensor": {
+				"type": "string",
+				"required": true
+			}
+		},
 		"required": true
 	},
 	"options": {
@@ -40,6 +46,11 @@
 			"node_eui": {
 				"label": "__node_eui__",
 				"placeholder": "__node_eui_placeholder__"
-			}		}
+			},
+			"sensor": {
+				"label": "__sensor__",
+				"placeholder": "__sensor_placeholder__"
+			}
+		}
 	}
 }

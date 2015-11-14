@@ -3,6 +3,8 @@
 "url": "http://thethingsnetwork.org/api/v0/nodes/",
 "node_eui": "node_eui",
 "node_eui_placeholder": "02013101",
+"sensor": "Sensor path",
+"sensor_placeholder": "data_json/temperature",
 "err_parse":"Can not parse TTN node information",
 "err_fetch":"Can not fetch TTN node information"
 }

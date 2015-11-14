@@ -49,9 +49,9 @@ TTNLoraWAN.prototype.init = function (config) {
 			moduleId : this.id
 		});
 
-	this.timer = setInterval(function() {
-		self.fetchTTNSensor(self);
-	}, 900*1000);
+	this.timer = setInterval(function () {
+			self.fetchTTNSensor(self);
+		}, 900 * 1000);
 	self.fetchTTNSensor(self);
 };
 
@@ -77,25 +77,26 @@ TTNLoraWAN.prototype.fetchTTNSensor = function (instance) {
 	langFile = self.controller.loadModuleLang(moduleName);
 
 	http.request({
-		url : self.config.url + self.config.node_eui + "/?format=json" ,
+		url : self.config.url + self.config.node_eui + "/?format=json",
+		method : "GET",
 		async : true,
 		success : function (res) {
 			try {
-				var temp = res.data.data_json.temperature,
-				nodetitle = res.data.data_json.node,
-				observe_time = res.data.time;
+				var data = res.data;
+				if (data instanceof Array) {
+					var first_entry = data[0];
 
-				self.vDev.set("metrics:level", temp);
-				self.vDev.set("metrics:name", nodetitle);
-				self.vDev.set("metrics:observe_time", observe_time);
-				self.vDev.set("metrics:icon","http://192.168.1.28:8083/ZAutomation/api/v1/load/modulemedia/TTNLoraWAN/icon.png");
+					self.vDev.set("metrics:level", first_entry.data_json.temperature);
+					self.vDev.set("metrics:name", first_entry.node_eui);
+					self.vDev.set("metrics:observe_time", first_entry.time);
+					self.vDev.set("metrics:icon", "http://192.168.1.28:8083/ZAutomation/api/v1/load/modulemedia/TTNLoraWAN/icon.png");
+				}
 			} catch (e) {
 				self.controller.addNotification("error", langFile.err_parse, "module", moduleName);
 			}
 		},
 		error : function () {
 			self.controller.addNotification("error", langFile.err_fetch, "module", moduleName);
-			console.log ("TTNurl: ", url);
 		}
 	});
 };
