@@ -1,6 +1,6 @@
 /*** TTNLoraWAN Z-Way HA module *******************************************
 
-Version: 0.0.1
+Version: 0.0.2
 (c) Z-Wave.Me, 2014
 -----------------------------------------------------------------------------
 Author: Pieter E. Zanstra adaptation for TTN-LoraWAN
@@ -51,7 +51,7 @@ TTNLoraWAN.prototype.init = function (config) {
 
 	this.timer = setInterval(function () {
 			self.fetchTTNSensor(self);
-		}, 900 * 1000);
+		}, self.config.polling * 60 * 1000);
 	self.fetchTTNSensor(self);
 };
 
@@ -86,7 +86,7 @@ TTNLoraWAN.prototype.fetchTTNSensor = function (instance) {
 				if (data instanceof Array) {
 					var first_entry = data[0];
 
-					self.vDev.set("metrics:level", first_entry.data_json.temperature);
+					self.vDev.set("metrics:level", first_entry[self.config.sensor]);
 					self.vDev.set("metrics:name", first_entry.node_eui);
 					self.vDev.set("metrics:observe_time", first_entry.time);
 					self.vDev.set("metrics:icon", "http://192.168.1.28:8083/ZAutomation/api/v1/load/modulemedia/TTNLoraWAN/icon.png");

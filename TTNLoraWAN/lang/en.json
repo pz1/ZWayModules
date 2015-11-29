@@ -4,7 +4,10 @@
 "node_eui": "node_eui",
 "node_eui_placeholder": "02013101",
 "sensor": "Sensor path",
-"sensor_placeholder": "data_json/temperature",
+"sensor_placeholder": "data_json.temperature",
+"sensor_helper": "Specify the sensor path in jsonPath notatation",
+"polling": "Polling",
+"polling_helper": "Specify polling interval in minutes (minimum 6)",
 "err_parse":"Can not parse TTN node information",
 "err_fetch":"Can not fetch TTN node information"
 }

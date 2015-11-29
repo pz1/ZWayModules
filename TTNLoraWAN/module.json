@@ -6,8 +6,8 @@
 	"homepage": "http://forum.z-wave.me/viewtopic.php?f=3419&t=22272&p=58986&hilit=lorawan#p58865",
 	"icon": "icon.png",
 	"moduleName": "TTNLoraWAN",
-	"version": "0.0.1",
-	"maturity": "alpha",
+	"version": "0.0.2",
+	"maturity": "beta",
 	"repository": {
 		"type": "git",
 		"source": "https://github.com/pz1/home-automation"
@@ -16,8 +16,9 @@
 		"title": "The Things Network LoraWAN device",
 		"description": "__description__",
 		"url": "http://thethingsnetwork.org/api/v0/nodes/",
+		"polling" : "6",
 		"node_eui": "02013101",
-		"sensor": "data_json/temperature"
+		"sensor": "data_json.temperature"
 	},
 	"schema": {
 		"type": "object",
@@ -27,6 +28,10 @@
 				"required": true
 			},
 			"node_eui": {
+				"type": "string",
+				"required": true
+			},
+			"polling": {
 				"type": "string",
 				"required": true
 			},
@@ -47,9 +52,14 @@
 				"label": "__node_eui__",
 				"placeholder": "__node_eui_placeholder__"
 			},
+			"polling": {
+				"label": "__polling__",
+				"helper": "__polling_helper__"
+			},
 			"sensor": {
 				"label": "__sensor__",
-				"placeholder": "__sensor_placeholder__"
+				"placeholder": "__sensor_placeholder__",
+				"helper": "__sensor_helper__"
 			}
 		}
 	}
