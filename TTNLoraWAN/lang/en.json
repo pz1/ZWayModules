@@ -5,9 +5,11 @@
 "node_eui_placeholder": "02013101",
 "sensor": "Sensor path",
 "sensor_placeholder": "data_json.temperature",
-"sensor_helper": "Specify the sensor path in jsonPath notatation",
+"sensor_helper": "This module only deals with sensors under heading 'data_json'. Provide here the next heading; e.g. temperature",
 "polling": "Polling",
 "polling_helper": "Specify polling interval in minutes (minimum 6)",
+"scaleTitle": "Scale title(metric)",
+"scale_helper": "Enter the units in which this device is measured",
 "err_parse":"Can not parse TTN node information",
 "err_fetch":"Can not fetch TTN node information"
 }

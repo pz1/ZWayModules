@@ -6,7 +6,7 @@
 	"homepage": "http://forum.z-wave.me/viewtopic.php?f=3419&t=22272&p=58986&hilit=lorawan#p58865",
 	"icon": "icon.png",
 	"moduleName": "TTNLoraWAN",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"maturity": "beta",
 	"repository": {
 		"type": "git",
@@ -18,7 +18,8 @@
 		"url": "http://thethingsnetwork.org/api/v0/nodes/",
 		"polling" : "6",
 		"node_eui": "02013101",
-		"sensor": "data_json.temperature"
+		"scale": "°C",
+		"sensor": "temperature"
 	},
 	"schema": {
 		"type": "object",
@@ -32,6 +33,10 @@
 				"required": true
 			},
 			"polling": {
+				"type": "string",
+				"required": true
+			},
+			"scale": {
 				"type": "string",
 				"required": true
 			},
@@ -55,6 +60,10 @@
 			"polling": {
 				"label": "__polling__",
 				"helper": "__polling_helper__"
+			},
+			"scale": {
+				"label": "__scaleTitle__",
+				"helper": "__scale_helper__"
 			},
 			"sensor": {
 				"label": "__sensor__",
