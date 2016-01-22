@@ -1,5 +1,5 @@
 Format of data coming from PVLogger (http://fp4all.com)
-
+''' XML
 <?xml version="1.0" encoding="UTF-8"?>
 <response>
 <gauge_power>283</gauge_power>
@@ -11,3 +11,4 @@ Format of data coming from PVLogger (http://fp4all.com)
 <hours_total>10893</hours_total>
 <time_stamp>20150226 10:06</time_stamp>
 </response>
+'''
