@@ -1,6 +1,6 @@
 /*** OpenRemoteHelpers Z-Way HA module *******************************************
 
-##Description
+##History
     This module provides HTTP helpers for OpenRemote integration.
 
 Author: Pieter E. Zanstra
@@ -16,11 +16,11 @@ default level-attribute http://raspberryIP:8083/OpenRemote/metrics/ZWayVDev_zway
 Without the second argument the call returns all device attributes as json.
 Closed the Switch statement with keyword default: to cater for erroneous function calls 
 
-Version 1.01.01       2014-09-09 (Yurkin Vitaliy aivs@z-wave.me)
+Version 1.01.01       2014-09-09 Yurkin Vitaliy aivs(at)z-wave.me
 Added metrics command to get metrics http://raspberryIP/OpenRemote/metrics/ZWayVDev_zway_26-0-37
 
 Version 1.01.01	      2014-02-28
-Testing all functions and bugfixing Yurkin Vitaliy aivs@z-wave.me
+Testing all functions and bugfixing Yurkin Vitaliy aivs(at)z-wave.me
 
 Version 1.01.00       2013-12-11
 Converted into Z-Way HA module
@@ -64,7 +64,7 @@ Status functions that return the value "on" or "off" are to be used in OpenRemot
 sensors of the type:switch. Apply Regular expression: on|off in the http call. 		 
 
 OpenRemote usage: http://raspberryIP:8083/OpenRemote/<Command>/N/I/...
-'''
+```
 SwitchBinaryOn/N/I
 SwitchBinaryOff/N/I
 SwitchBinaryStatus/N/I
@@ -100,4 +100,4 @@ DoorUnlock/N
 metrics/N/I
    *the I parameter is optional, if omitted all metrics are returned*
 SetMetrics/N/I/S
-'''
+```
