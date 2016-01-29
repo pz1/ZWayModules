@@ -1,5 +1,7 @@
 #OpenRemoteHelpers Z-Way HA module
-This module provides HTTP helpers for OpenRemote integration.
+This module provides HTTP helpers for OpenRemote integration. Extensive user instructions are on:  
+http://www.openremote.org/display/docs/OpenRemote+2.0+How+To+-+Z-Wave+with+Razberry  
+http://forum.z-wave.me/viewtopic.php?f=3424&t=20819  
 
 Author: Pieter E. Zanstra  
 Converted into Z-Way HA module: Poltorak Serguei

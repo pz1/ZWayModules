@@ -1,4 +1,4 @@
 {
 	"m_title":"OpenRemoteHelpers",
-	"m_descr":"OpenRemote is a very nice generic User Interface System for Smart Homes. You find more information about this service on http://www.openremote.org/. This app provides the data of your smart home into a way to be included by OpenRemote. For more information how to use this module please refer to the OpenRemote site (http://www.openremote.org/x/nwFWAQ). <br><br>Settings: No further settings.<br>Usage: The OpenRemote UI will show the devices included."
+	"m_descr":"OpenRemote is a very nice generic User Interface System for Smart Homes. You find more information about this service in the README.md file included with this package. This app provides a simplified interface to ZWay using standard OpenRemote http calls. For more information how to use this module please refer to the OpenRemote site (http://www.openremote.org/x/nwFWAQ). <br><br>Settings: No further settings.<br>Usage: The OpenRemote UI will show the devices included."
 }
