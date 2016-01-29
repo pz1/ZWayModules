@@ -1,11 +1,9 @@
-/*** OpenRemoteHelpers Z-Way HA module *******************************************
-
-###History
-    This module provides HTTP helpers for OpenRemote integration.
+#OpenRemoteHelpers Z-Way HA module
+This module provides HTTP helpers for OpenRemote integration.
 
 Author: Pieter E. Zanstra
 Converted into Z-Way HA module: Poltorak Serguei
-
+###History
 Version 1.01.03	2016-01-29 (Pieter E. Zanstra)
 Added SetMetrics command which allows to set the value of a virtualDevce metric in the form of
 http://raspberryIP:8083/OpenRemote/SetMetrics/vDevName/metric/value
