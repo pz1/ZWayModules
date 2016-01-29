@@ -29,6 +29,10 @@ Description:
 Author: Pieter E. Zanstra
 Converted into Z-Way HA module: Poltorak Serguei
 
+Version 1.01.03       2015-02-12 (Pieter E. Zanstra)
+Added SetMetrics command which allows to set the value of a virtualDevce metric in the form of
+http://raspberryIP:8083/OpenRemote/SetMetrics/vDevName/metric/value
+
 Version 1.01.02       2015-02-12 (Pieter E. Zanstra)
 Added a second argument to metrics command, so the user can select other attributes than the
 default level-attribute (http://192.168.0.85:8083/OpenRemote/metrics/ZWayVDev_zway_26-0-37/icon)
@@ -73,6 +77,12 @@ ${param} This variable is an OpenRemote system parameter that is used e.g. for
          passing values from a slider.
 S		 Scale (e.g. Watt, kWh, etc.)
 
+NOTA BENE
+For the virtualDevices commands metrics, and SetMetrics the parameters N,I,S have a different meaning
+N       the name of the vDev
+I       the type of the metric
+S       the value for the metric
+
 Status functions that return the value "on" or "off" are to be used in OpenRemote with 
 sensors of the type:switch. Apply Regular expression: on|off in the http call. 		 
 
@@ -109,8 +119,10 @@ SensorMultilevel/N/I/S
 DoorLock/N
 DoorUnlock/N
 
-TODO:
-- Add helpers for vDevs
+Helpers for virtualDevices
+metrics/N/I
+   the I parameter is optional, if omitted all metrics are returned
+SetMetrics/N/I/S
 
 ******************************************************************************/
 
@@ -306,10 +318,17 @@ OpenRemoteHelpers.prototype.init = function (config) {
                   }
                return this.controller.devices.get(N).get(attrib);
 
+            case "SetMetrics":
+               // All three parameters (N,I,S) are compulsory
+               var S = params.shift();
+               attrib = "metrics:" + I;
+               this.controller.devices.get(N).set(attrib,S);
+               return S;
+
 // Your "case" statements may go after this line, but before keyword default:  !
 				
-			default:
-			     return "Error: Function " + cmd  + " is not defined in OpenRemoteHelpers";
+            default:
+               return "Error: Function " + cmd  + " is not defined in OpenRemoteHelpers";
         }
     };
     ws.allowExternalAccess("OpenRemote", this.controller.auth.ROLE.USER); // login required
