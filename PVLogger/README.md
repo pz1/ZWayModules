@@ -1,5 +1,8 @@
-Format of data coming from PVLogger (http://fp4all.com)
-
+###PVLogger
+This Module requires a [Chint PV-Logger](http://fp4all.com/documents/Chint-PV-logger-leaflet-EN.pdf) 
+At programmable intervals it reads some of the data coming from the logger. 
+The following xml structure is assumed. The code for this module (index.js) is not very complex, and can be easily adapted to accommodate other more or less similar structures
+```
     <?xml version="1.0" encoding="UTF-8"?>
     <response>
         <gauge_power>283</gauge_power>
@@ -11,3 +14,5 @@ Format of data coming from PVLogger (http://fp4all.com)
         <hours_total>10893</hours_total>
         <time_stamp>20150226 10:06</time_stamp>
     </response>
+```	
+If you happen to have two of these inverters the SolQoS module may be of interest to you
