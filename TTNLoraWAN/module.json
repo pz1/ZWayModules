@@ -3,7 +3,7 @@
 	"singleton": false,
 	"category": "environment",
 	"author": "Pieter E. Zanstra (click for Recipe)",
-	"homepage": "http://forum.z-wave.me/viewtopic.php?f=3419&t=22272&p=58986&hilit=lorawan#p58865",
+	"homepage": "http://forum.z-wave.me/viewtopic.php?f=3419&t=22272&p=58986",
 	"icon": "icon.png",
 	"moduleName": "TTNLoraWAN",
 	"version": "0.0.3",
