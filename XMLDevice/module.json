@@ -10,11 +10,11 @@
 	"maturity": "stable",
 	"repository": {
 		"type": "git",
-		"source": "https://github.com/pz1/home-automation"
+		"source": "https://github.com/pz1/ZWayModules"
 	},
 	"defaults": {
-		"title": "XML vDev Creator",
-		"description": "__description__",
+		"title": "__m_title__",
+		"description": "__m_descr__",
 		"isNumerical": "",
 		"url": "",
 		"xpath": "",

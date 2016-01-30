@@ -1,23 +1,22 @@
 {
-    "dependencies": [],
-    "singleton": true,
+    "author": "Pieter E. Zanstra",
     "category": "support_external_ui",
-    "author": "Z-Wave.Me",
-    "homepage": "http://razberry.z-wave.me",
-    "icon": "icon.png",
-    "moduleName":"OpenRemoteHelpers",
-    "version": "1.01.03",
-    "maturity": "stable",
-    "repository": {
-            "type": "git",
-            "source": "https://github.com/Z-Wave-Me/home-automation"
-    },
     "defaults": {
         "title": "__m_title__",
 	    "description": "__m_descr__"
     },
-    "schema": {
+	
+    "dependencies": [],
+    "homepage": "http://forum.z-wave.me/viewtopic.php?f=3424&t=20819",
+    "icon": "icon.png",
+    "maturity": "stable",
+    "moduleName":"OpenRemoteHelpers",
+    "options": {},
+    "repository": {
+            "source": "https://github.com/Z-Wave-Me/home-automation",
+            "type": "git"
     },
-    "options": {
-    }
+    "schema": {},
+    "singleton": true,
+    "version": "1.01.03"
 }

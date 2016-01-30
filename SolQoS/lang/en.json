@@ -1,6 +1,6 @@
 {
-  "title" : "SolQoS",
-  "description" : "Solar Quality of Service Monitor",
+  "m_title" : "SolQoS",
+  "m_descr" : "Solar Quality of Service Monitor",
   "host-label" : "This Z-way server",
   "host-helper" : "Provide IP and Port numbers separated with a comma",
   "polling-label" : "Polling (minutes)",

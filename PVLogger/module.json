@@ -10,11 +10,11 @@
 	"maturity" : "beta",
 	"repository" : {
 		"type" : "git",
-		"source" : "https://github.com/pz1/home-automation"
+		"source" : "https://github.com/pz1/ZWayModules"
 	},
 	"defaults" : {
-		"title" : "__title__",
-		"description" : "__description__",
+		"title" : "__m_title__",
+		"description" : "__m_descr__",
 		"pvlogger" : "192.168.1.36",
 		"polling" : "5"
 	},

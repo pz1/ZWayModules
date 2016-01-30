@@ -1,6 +1,6 @@
 {
-  "title" : "PVLogger",
-  "description" : "Solar production logger (fp4all.com)",
+  "m_title" : "PVLogger",
+  "m_descr" : "Solar production logger (specific for plugin device from fp4all.com)",
   "polling-label" : "Polling",
   "address-label" : "IP Address",
   "pvlogger-helper" : "IP-number of FP4All.com PVlogger Device",

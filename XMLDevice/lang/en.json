@@ -1,5 +1,6 @@
 {
-"description":"Create virtual device based on XML data.",
+"m_title":"XML vDev Creator",
+"m_descr":"Create virtual device based on XML data.",
 "isNumerical_Select": "Check if data is numerical",
 "isNumerical_helper": "If unchecked, data is interprested as text",
 "isFloat_Select": "Check if data is floating point.",

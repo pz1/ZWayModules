@@ -1,5 +1,6 @@
 {
-"description":"Reads sensor data from a TTN Demo handler service. See page http://thethingsnetwork.org/wiki/Architecture",
+"m_title":"The Things Network LoraWAN device",
+"m_descr":"Reads sensor data from a TTN Demo handler service. See page http://thethingsnetwork.org/wiki/Architecture",
 "url": "http://thethingsnetwork.org/api/v0/nodes/",
 "node_eui": "node_eui",
 "node_eui_placeholder": "02013101",

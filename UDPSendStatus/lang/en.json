@@ -1,6 +1,6 @@
 {
-  "title" : "UDPSendStatus",
-  "description" : "Solar Quality of Service Monitor",
+  "m_title" : "UDPSendStatus",
+  "m_descr" : "Solar Quality of Service Monitor",
   "IPAddress-label" : "Destination IP address",
   "port-label" : "Destination UDP port number",
   "devices-label": "Included devices",

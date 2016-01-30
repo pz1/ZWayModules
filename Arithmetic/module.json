@@ -9,12 +9,12 @@
 	"version" : "1.0.0",
 	"maturity" : "stable",
 	"repository" : {
-		"type" : "",
-		"source" : ""
+		"type" : "git",
+		"source" : "https://github.com/pz1/ZWayModules"
 	},
 	"defaults" : {
-		"title" : "__title__",
-		"description" : "__description__",
+		"title" : "__m_title__",
+		"description" : "__m_descr__",
 		"formula" : "",
                 "metric1" : "level",
                 "metric2" : "level"

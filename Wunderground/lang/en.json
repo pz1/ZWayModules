@@ -1,5 +1,6 @@
 {
-"description":"Weather Forecast & Reports by Wunderground",
+"m_title":"Weather Forecast & Reports",
+"m_descr":"Weather Forecast & Reports by Wunderground",
 "key": "YOUR_PERSONAL_WUNDERGROUND_KEY",
 "source": "Source format",
 "country": "Country",

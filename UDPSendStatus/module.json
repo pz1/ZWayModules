@@ -10,11 +10,11 @@
     "maturity": "alfa",
     "repository": {
             "type": "git",
-            "source": "https://github.com/pz1/home-automation"
+            "source": "https://github.com/pz1/ZWayModules"
     },
     "defaults": {
-        "title": "UDPSendStatus",
-        "description": "__description__",
+        "title": "__m_title__",
+        "description": "__m_descr__",
 		"IP_Address": "192.168.2.78",
 		"port": "9091"
     },
