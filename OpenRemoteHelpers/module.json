@@ -13,7 +13,7 @@
     "moduleName":"OpenRemoteHelpers",
     "options": {},
     "repository": {
-            "source": "https://github.com/Z-Wave-Me/home-automation",
+            "source": "https://github.com/pz1/ZWayModules",
             "type": "git"
     },
     "schema": {},
