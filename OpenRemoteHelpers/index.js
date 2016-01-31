@@ -19,9 +19,9 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ *
+ * See README.MD for instructions
  */
-
-See README.MD for instructions
 
 // ----------------------------------------------------------------------------
 // --- Class definition, inheritance and setup
