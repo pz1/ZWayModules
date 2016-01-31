@@ -16,3 +16,6 @@ The following xml structure is assumed. The code for this module (index.js) is n
     </response>
 ```	
 If you happen to have two of these inverters the SolQoS module may be of interest to you
+
+######Testing the module
+If you don not have a PVlogger, you can test this module by creating a XML file named status.xml with the above contents. Place it somewhere on a website. Use the website address in the PVLogger configuration
