@@ -16,7 +16,10 @@
 		"title" : "__m_title__",
 		"description" : "__m_descr__",
 		"polling" : "5",
-		"host" : "192.168.1.34:8083"
+		"host" : "192.168.1.34:8083",
+		"pvlogger1" : "PVLogger_1",
+		"pvlogger2" : "PVLogger_2",
+		"capacity" : "6200"
 	},
 	"schema" : {
 		"type" : "object",
@@ -58,17 +61,14 @@
 			},
 			"pvlogger1" : {
 				"label" : "__PV1logger_label__",
-				"placeholder" : "PVLogger_1",
 				"helper" : "__PV1helper__"
 			},
 			"pvlogger2" : {
 				"label" : "__PV2logger_label__",
-				"placeholder" : "PVLogger_2",
 				"helper" : "__PV2helper__"
 			},
 			"capacity" : {
 				"label" : "__capacity_label__",
-				"placeholder" : "3000",
 				"helper" : "__capacity_helper__"
 			}
 		}

@@ -10,5 +10,5 @@
   "PV1logger_label" : "First PV logger",
   "PV2logger_label" : "Second PV Logger",
   "capacity_label": "Total Capacity",
-  "capacity_helper" : "Enter the joint Electrical Capacity of your solar panels for production ratio calculation"
+  "capacity_helper" : "Enter the combined Electrical Capacity of your solar panels for production ratio calculation"
 }
