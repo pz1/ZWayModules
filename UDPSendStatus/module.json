@@ -2,7 +2,7 @@
     "dependencies": [],
     "singleton": true,
     "category": "peripherals",
-    "author": "Pieter E. Zanstra",
+    "author": "Pieter E. Zanstra (click for Recipe)",
     "homepage": "",
     "icon": "icon.png",
     "moduleName": "UDPSendStatus",
