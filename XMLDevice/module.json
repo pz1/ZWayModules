@@ -16,12 +16,12 @@
 		"title": "__m_title__",
 		"description": "__m_descr__",
 		"isNumerical": "",
-		"url": "",
-		"xpath": "",
-		"polling": "",
-		"probeTitle": "",
-		"scaleTitle": "",
-		"deviceName": "",
+		"url": "http://192.168.1.36/status.xml",
+		"xpath": "/response/energy_total/",
+		"polling": "5",
+		"probeTitle": "Energy",
+		"scaleTitle": "kWh",
+		"deviceName": "XMLtest",
 		"debug" : ""
 	},
 	"schema": {
@@ -77,28 +77,22 @@
 				"helper": "__isFloat_helper__"
 			},
 			"url": {
-				"label": "__url__",
-				"placeholder": "__url_placeholder__"
+				"label": "__url__"
 			},
 			"xpath": {
-				"label": "__xpath__",
-				"placeholder": "__xpath_placeholder__"
+				"label": "__xpath__"
 			},
 			"polling" : {
-				"label" : "__polling__",
-				"placeholder" : "5"
+				"label" : "__polling__"
 			},
 			"probeTitle" : {
-				"label" : "__probeTitle__",
-				"placeholder" : "__probeTitle_placeholder__"
+				"label" : "__probeTitle__"
 			},
 			"scaleTitle" : {
-				"label" : "__scaleTitle__",
-				"placeholder" : "__scaleTitle_placeholder__"
+				"label" : "__scaleTitle__"
 			},
 			"deviceName" : {
-				"label" : "__deviceName__",
-				"placeholder" : "__deviceName_placeholder__"
+				"label" : "__deviceName__"
 			},
 			"debug" : {
 				"rightLabel" : "__debug__",
