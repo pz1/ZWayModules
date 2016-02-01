@@ -4,7 +4,7 @@
 	"category" : "devices",
 	"author" : "Pieter E. Zanstra (click for Recipe)",
 	"homepage" : "http://forum.z-wave.me/viewtopic.php?f=3424&t=21381",
-	"icon" : "calculator.png",
+	"icon" : "icon.png",
         "moduleName": "Arithmetic",
 	"version" : "1.0.0",
 	"maturity" : "stable",
