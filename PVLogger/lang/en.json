@@ -1,6 +1,6 @@
 {
   "m_title" : "PVLogger",
-  "m_descr" : "Solar production logger (specific for plugin device from fp4all.com) <br>Click on <i>Author name</i> below for latest Github source, and here for: <i><a href=http://forum.z-wave.me/viewtopic.php?f=3424&t=21398&p=55728&hilit=PVLogger#p55728>detailed documentation and discussion.</a></i>",
+  "m_descr" : "Solar production logger (specific for plugin device from fp4all.com) <br>Click on <i>Author name</i> below for latest Github source, and here for: <i><a href=http://forum.z-wave.me/viewtopic.php?f=3424&t=21398&p=55728>detailed documentation and discussion.</a></i>",
   "polling-label" : "Polling",
   "address-label" : "IP Address",
   "pvlogger-helper" : "IP-number of FP4All.com PVlogger Device",
