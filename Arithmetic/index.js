@@ -1,7 +1,7 @@
 /*** Arithmetic Z-Way HA module *******************************************
 
-Version: 1.0.0
-(c) 2015
+Version: 1.0.1
+(c) 2015-2016
 -----------------------------------------------------------------------------
 Author: Pieter E. Zanstra
 Description:
@@ -76,8 +76,8 @@ Arithmetic.prototype.fetchEquation = function (instance) {
 	result = 0;
 
 	var calculation = self.config.formula;
-	var metric1 = "metrics:"+ self.config.metric1;
-	var metric2 = "metrics:"+ self.config.metric2;
+	var metric1 = "metrics:" + self.config.metric1;
+	var metric2 = "metrics:" + self.config.metric2;
 	var a = controller.devices.get(self.config.sensor1).get(metric1);
 	var b = controller.devices.get(self.config.sensor2).get(metric2);
 
