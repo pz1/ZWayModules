@@ -6,8 +6,8 @@
 	"homepage" : "http://forum.z-wave.me/viewtopic.php?f=3424&t=21398",
 	"icon" : "icon.png",
     "moduleName": "SolQoS",
-	"version" : "0.0.4",
-	"maturity" : "beta",
+	"version" : "1.0.0",
+	"maturity" : "stable",
 	"repository" : {
 		"type" : "git",
 		"source" : "https://github.com/pz1/ZWayModules"
