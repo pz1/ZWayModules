@@ -1,6 +1,6 @@
 /*** PVLogger Z-Way HA module *******************************************
 
-Version: 0.0.1
+Version: 1.0.0
 (c) 2015
 -----------------------------------------------------------------------------
 Author: Pieter E. Zanstra
@@ -116,6 +116,7 @@ PVLogger.prototype.fetchSolar = function (instance) {
 		},
 		error : function () {
 			self.vDev.set("metrics:level", 0);
+			self.vDev2.set("metrics:level", 0);
 			// The following line is commented, because the logger is not available at night. Uncomment for initial testing.
 			//			self.controller.addNotification("error", "Can not fetch Solar1 information", "module");
 		}
