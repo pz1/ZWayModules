@@ -1,5 +1,6 @@
 ## Introduction
-Home automation is not just a toy, but a [mission critical](https://en.wikipedia.org/wiki/Mission_critical) application. So proper backup and restore procedures are very important. You can create different levels of protection, ranging from just saving files, to keeping a working copy on an SD card or even a cloned complete working RaspberryPi installation. Be aware that it is best to do backup/restore with the same ZWay software versions.
+Home automation is not just a toy, but a [mission critical](https://en.wikipedia.org/wiki/Mission_critical) application. So proper backup and restore procedures are very important. You can create different levels of protection, ranging from just saving files, to keeping a working copy on an SD card or even a cloned complete working RaspberryPi installation. Be aware that it is best to do backup/restore with the same ZWay software versions.    
+Two tools are used in this procedure: _SmartHome_ (http://raspberrypi_IP:8083), and _Expert User Interface_ (http://raspberrypi_IP:8083/Expert). You can start Expert UI via SmartHome: click tool icon in top right corner and select **Devices**.    
 
 ## Backup
 Routinely backup the following:
@@ -20,7 +21,8 @@ The prerequisite for a restore is that your Z-Wave controller is undamaged and s
 The following steps describe how to rebuild from existing backup files a functional copy for a (dis)similar system. The procedure was tested on backup sources from a _RaspberryPi B with RaZberry_ add-on, to a target _RaspberryPi 2 with UZB1_ stick.    
 - Make sure that a Z-Wave controller is connected to the Pi.    
 - If you have not yet done so, [prepare a SD card](https://github.com/pz1/ZWayModules/wiki/Prepare-RaspberryPi), insert it and fire up the raspberry pi.
-- Copy your backed-up userModules to /opt/z-way-server/automation/userModules.    
+- Copy your backed-up userModules to /opt/z-way-server/automation/userModules.
+- (Optional) Copy other backed-up javascript files to /opt/z-way-server/automation/storage ??   
 - Login to SmartHome, and via the tools icon in the top right corner of the screen select Apps. Choose the Active TAB and select the Z-Wave module. If you do use the RaZberry add on, leave the port on the predefined */dev/ttyAMA0*, if you have UZB1 to set it to */dev/ttyACM0* 
 - Because in this procedure you have to copy your devices to a new controller, you **must** do a full restore with the Expert User Interface. So erform a **Network/Control/Restore** and **do tick both** checkboxes.    
 ![](https://github.com/pz1/ZWayModules/blob/master/RestoreFull.PNG)   
