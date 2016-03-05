@@ -20,7 +20,7 @@ The prerequisite for a restore is that your Z-Wave controller is undamaged and s
 ## Clone   
 The following steps describe how to rebuild from existing backup files a functional copy for a (dis)similar system. The procedure was tested on backup sources from a _RaspberryPi B with RaZberry_ add-on, to a target _RaspberryPi 2 with UZB1_ stick.    
 - Make sure that a Z-Wave controller is connected to the Pi.    
-- If you have not yet done so, [prepare a SD card](https://github.com/pz1/ZWayModules/wiki/Prepare-RaspberryPi), insert it and fire up the raspberry pi.
+- If you have not yet done so, [prepare a SD card](https://github.com/pz1/ZWayModules/blob/master/Documentation/PrepareRaspberryPiSDcard.MD), insert it and fire up the raspberry pi.
 - Copy your backed-up userModules to /opt/z-way-server/automation/userModules.
 - (Optional) Copy other backed-up javascript files to /opt/z-way-server/automation/storage ??   
 - Login to SmartHome, and via the tools icon in the top right corner of the screen select Apps. Choose the Active TAB and select the Z-Wave module. If you do use the RaZberry add on, leave the port on the predefined */dev/ttyAMA0*, if you have UZB1 to set it to */dev/ttyACM0* 
