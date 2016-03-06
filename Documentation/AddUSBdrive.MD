@@ -1,14 +1,14 @@
 ##Add USB drive storage (optional)
 This recipe assumes the USB stick will be permanently attached to RaspberryPi as the *only* memory stick. If you want to do it differently, have a look into the links to my sources provided below.    
-#####Format USB drive [Ref:](http://thepihut.com/blogs/raspberry-pi-tutorials/17699796-formatting-and-mounting-a-usb-drive-from-a-terminal-window)    
+#####Format USB drive [(Reference)](http://thepihut.com/blogs/raspberry-pi-tutorials/17699796-formatting-and-mounting-a-usb-drive-from-a-terminal-window)    
 First determine the id of your device by (removing and re)-connecting the USB drive. Inspect the last part of your message queue:    
 **cat /var/log/messages | tail -n 50    
 It is named something like sda, sdb, etc. for the further description I assume sda
-[Ref:][(http://elinux.org/RPi_Adding_USB_Drives)
+[(Reference)](http://elinux.org/RPi_Adding_USB_Drives)
 
 If you have not yet done so **partition** this USB stick
 
-**sudo fdisk /dev/sda    
+**sudo fdisk /dev/sda**    
 
 When prompted for a command do the following    
 
@@ -18,19 +18,19 @@ When prompted for a command do the following
 
 Now, **create a filesystem** using:
 
-**sudo mkfs -t vfat -I /dev/sda1    
+**sudo mkfs -t vfat -I /dev/sda1**    
 
 - create a mounting point for your USB drive    
 
-**sudo mkdir /mnt/usbstick    
+**sudo mkdir /mnt/usbstick**    
 
 You can now manually mount the the USB drive
 
-**sudo mount /dev/sda1 /mnt/usbstick -o umask=000
+**sudo mount /dev/sda1 /mnt/usbstick -o umask=000**
 
 To assure that the drive is automatically available after every reboot, add the last line to /etc/fstab
 
-**sudo nano /etc/fstab    
+**sudo nano /etc/fstab**    
 ```
 proc            /proc           proc    defaults          0       0
 /dev/mmcblk0p1  /boot           vfat    defaults          0       2
