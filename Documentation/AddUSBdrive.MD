@@ -1,11 +1,9 @@
-##Add USB drive storage (optional)
+##Add USB drive storage
 This recipe assumes the USB stick will be permanently attached to RaspberryPi as the *only* memory stick. If you want to do it differently, have a look into the links to my sources provided below.    
 #####Format USB drive [(Reference)](http://thepihut.com/blogs/raspberry-pi-tutorials/17699796-formatting-and-mounting-a-usb-drive-from-a-terminal-window)    
-First determine the id of your device by (removing and re)-connecting the USB drive. Inspect the last part of your message queue:    
-**cat /var/log/messages | tail -n 50    
-It is named something like sda, sdb, etc. for the further description I assume sda
-[(Reference)](http://elinux.org/RPi_Adding_USB_Drives)
-
+First determine the *id* of your device by (removing and re)-connecting the USB drive. Inspect the last part of your message queue:    
+**cat /var/log/messages | tail -n 50**    
+It is named something like *sda, sdb*, etc. For the further description I use **sda**    
 If you have not yet done so **partition** this USB stick
 
 **sudo fdisk /dev/sda**    
@@ -20,7 +18,9 @@ Now, **create a filesystem** using:
 
 **sudo mkfs -t vfat -I /dev/sda1**    
 
-- create a mounting point for your USB drive    
+#####Add the USB drive [(Reference)](http://elinux.org/RPi_Adding_USB_Drives)
+
+create a mounting point for your USB drive    
 
 **sudo mkdir /mnt/usbstick**    
 
