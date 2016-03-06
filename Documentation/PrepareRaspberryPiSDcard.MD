@@ -5,7 +5,8 @@ If you do not intend to use keyboard and screen with your raspberryPi, download 
 Write image to SD card with [Win32diskimager](https://sourceforge.net/projects/win32diskimager/) or similar
 Insert SDcard in Raspberry (and if not yet done so Zwave>me RaZberry or UZB1) while disconnected. 
 Apply power, and wait two minutes or so to let the system start.    
-*note: The lite version does not have a GUI, and hence has a considerable smaller image. It does boot in command line mode*
+*note: The lite version does not have a GUI, and hence has a considerable smaller image. It does boot in command line mode.    
+Apart from the GUI it also lacks at least *node.js, and node-red*
 
 Login to your RaspberryPi with [Putty](http://www.putty.org/) or similar secure client. Give the following two commands:   
 
