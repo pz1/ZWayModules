@@ -1,6 +1,6 @@
 ##Add USB drive storage
 This recipe assumes the USB stick will be permanently attached to RaspberryPi as the *only* memory stick. If you want to do it differently, have a look into the links to my sources provided below.    
-#####Format USB drive [(Reference)](http://thepihut.com/blogs/raspberry-pi-tutorials/17699796-formatting-and-mounting-a-usb-drive-from-a-terminal-window)    
+####Format USB drive [(Reference)](http://thepihut.com/blogs/raspberry-pi-tutorials/17699796-formatting-and-mounting-a-usb-drive-from-a-terminal-window)    
 First determine the *id* of your device by (removing and re)-connecting the USB drive. Inspect the last part of your message queue:    
 **cat /var/log/messages | tail -n 50**    
 It is named something like *sda, sdb*, etc. For the further description I use **sda**    
@@ -20,7 +20,7 @@ Now, **create a filesystem** using:
 
 *The vfat format makes it possible to also read this USB Drive on a windows PC*
 
-#####Test added the USB drive [(Reference)](http://elinux.org/RPi_Adding_USB_Drives)
+####Test added the USB drive [(Reference)](http://elinux.org/RPi_Adding_USB_Drives)
 
 create a mounting point for your USB drive    
 
@@ -30,7 +30,7 @@ You can now manually mount the the USB drive
 
 **sudo mount /dev/sda1 /mnt/usbstick -o umask=000**
 
-#####Let log files be written to USB
+####Let log files be written to USB
 To assure that the drive is automatically available after every reboot, add the last line to /etc/fstab
 
 **sudo nano /etc/fstab**    
@@ -42,7 +42,7 @@ proc            /proc           proc    defaults          0       0
 #   use  dphys-swapfile swap[on|off]  for that
 /dev/sda1	/var/log	vfat	rw,defaults       0       0
 ```
-#####Remove USB drive
+####Remove USB drive
 To remove the USB drive you first stop the Raspberry Pi. 
 (I don't what the consequences for the log files are, if you stop the USB drive with  
 **sudo umount /dev/sda1**
