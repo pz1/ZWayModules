@@ -18,7 +18,9 @@ Now, **create a filesystem** using:
 
 **sudo mkfs -t vfat -I /dev/sda1**    
 
-#####Add the USB drive [(Reference)](http://elinux.org/RPi_Adding_USB_Drives)
+*The vfat format makes it possible to also read this USB Drive on a windows PC*
+
+#####Test added the USB drive [(Reference)](http://elinux.org/RPi_Adding_USB_Drives)
 
 create a mounting point for your USB drive    
 
@@ -28,6 +30,7 @@ You can now manually mount the the USB drive
 
 **sudo mount /dev/sda1 /mnt/usbstick -o umask=000**
 
+#####Let log files be written to USB
 To assure that the drive is automatically available after every reboot, add the last line to /etc/fstab
 
 **sudo nano /etc/fstab**    
@@ -37,5 +40,9 @@ proc            /proc           proc    defaults          0       0
 /dev/mmcblk0p2  /               ext4    defaults,noatime  0       1
 # a swapfile is not a swap partition, no line here
 #   use  dphys-swapfile swap[on|off]  for that
-/dev/sda1	/mnt/usbdisk	vfat	rw,defaults       0       0
+/dev/sda1	/var/log	vfat	rw,defaults       0       0
 ```
+#####Remove USB drive
+To remove the USB drive you first stop the Raspberry Pi. 
+(I don't what the consequences for the log files are, if you stop the USB drive with  
+**sudo umount /dev/sda1**
