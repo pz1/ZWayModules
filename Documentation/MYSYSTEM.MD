@@ -6,6 +6,6 @@ There are: 1 [ZME WALLC S controller](http://forum.z-wave.me/viewtopic.php?f=342
 _Note: The hyperlinks on my devices refer to the description of an application/recipe involving that device._
 ****
 
-[Preparation of my SD-Card](https://github.com/pz1/ZWayModules/blob/master/Documentation/PrepareRaspberryPiSDcard.MD)
+[Preparation of my SD-Card](https://github.com/pz1/ZWayModules/blob/master/Documentation/PrepareRaspberryPiSDcard.MD)    
 [Howto Backup and Restore ZWay installation](https://github.com/pz1/ZWayModules/blob/master/Documentation/BackupRestoreClone.MD)    
 \- to be completed \-
