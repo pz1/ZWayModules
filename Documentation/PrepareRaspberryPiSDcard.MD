@@ -28,12 +28,12 @@ Optional if you have more than one Raspberrypi do a rename:
 **Finish** this configurator, and do NOT YET **reboot**.
 
 ####Reduce unnecesary write actions on SDCard (Optional)
-######Disable swapping (Optional)   
+######Disable swapping   
    
 **sudo dphys-swapfile swapoff**    
 **sudo dphys-swapfile uninstall**    
 **sudo update-rc.d dphys-swapfile remove**    
-[link](http://www.ideaheap.com/2013/07/stopping-sd-card-corruption-on-a-raspberry-pi/)
+[from this article](http://www.ideaheap.com/2013/07/stopping-sd-card-corruption-on-a-raspberry-pi/)
 
 ######Write log files to USB-stick (NEVER REMOVE THIS STICK WHILE RASPBERRY PI IS RUNNING)
 Because I want logs after crashes, I decided against writing to 'ramdisk'. There also seems no need to map \var\run to ramdisk in fstab. If you do a **df -h** on a bare rasbian-jessie install there seems to be a symbolic link to memory already for it en some other spaces.    
@@ -41,8 +41,8 @@ This recipe assumes the USB stick will be permanently attached to RaspberryPi as
   
 First determine the *id* of your device by (removing and re)-connecting the USB drive. Next give command     
 **ls -l /dev/sd***    
-It is named something like *sda, sdb*, etc. For the further description I use **sda**    
-If you have not yet done so **partition** this USB stick
+You may find something like *sda, sdb*, etc. For the further description I do use **sda**    
+It seems best to **re-format** the USB-stick
 
 **sudo fdisk /dev/sda**    
 
@@ -60,7 +60,7 @@ Now, **create a filesystem** using:
 
  **sudo nano /etc/fstab**    
 
- Add the last line to this file, so the USB-stick is automatically mounted at start-up. Make the **/boot** partition read_only, and add the noatime flag to it 
+ Add the last line to this file, so the USB-stick is automatically mounted at start-up. Make the **/boot** partition *read_only*, and add the noatime flag to it 
 ```
 proc            /proc           proc    defaults          0       0
 /dev/mmcblk0p1  /boot           vfat    ro,noatime        0       2
@@ -82,7 +82,7 @@ This installation is probably only usefull to do on a RaspberryPi 2
 \<to be completed\>    
 *** 
 #### Finalise installation   
-Next install a stable Zway version followed by a restart of the raspberrypi.  
+Install a stable Zway version, followed by a restart of the raspberrypi.  
 **wget -q -O - razberry.z-wave.me/install/v2.2.1 | sudo bash**   
 **sudo reboot**
 
