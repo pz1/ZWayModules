@@ -25,24 +25,49 @@ Optional if you have more than one Raspberrypi do a rename:
 - Advanced
      - Hostname   
    
-**Finish** this configurator, and let it **reboot**. 
+**Finish** this configurator, and do NOT YET **reboot**.
 
-Next install a stable Zway version followed by a restart of the raspberrypi.  
-**wget -q -O - razberry.z-wave.me/install/v2.2.1 | sudo bash**   
-**sudo reboot**   
-***   
-#### Use ramdisk for log files (Optional)    
-To reduce SD card wear, create a ramdisk for some heavily used directories. Alternatively you [store var/log files on USB-stick](https://github.com/pz1/ZWayModules/blob/master/Documentation/AddUSBdrive.MD)    
-**Nota bene:** after power off the contents of these files are lost.     
+####Reduce unnecesary write actions on SDCard (Optional)
+######Disable swapping (Optional)   
+   
+**sudo dphys-swapfile swapoff**    
+**sudo dphys-swapfile uninstall**    
+**sudo update-rc.d dphys-swapfile remove**    
+[link](http://www.ideaheap.com/2013/07/stopping-sd-card-corruption-on-a-raspberry-pi/)
 
-**sudo nano /etc/fstab**   
-Append following two lines at the bottom of file _fstab_:
+######Write log files to USB-stick (NEVER REMOVE THIS STICK WHILE RASPBERRY PI IS RUNNING)
+Because I want logs after crashes, I decided against writing to 'ramdisk'. There also seems no need to map \var\run to ramdisk in fstab. If you do a **df -h** on a bare rasbian-jessie install there seems to be a symbolic link to memory already for it en some other spaces.    
+This recipe assumes the USB stick will be permanently attached to RaspberryPi as the *only* memory stick.
+  
+First determine the *id* of your device by (removing and re)-connecting the USB drive. Next give command     
+**ls -l /dev/sd***    
+It is named something like *sda, sdb*, etc. For the further description I use **sda**    
+If you have not yet done so **partition** this USB stick
+
+**sudo fdisk /dev/sda**    
+
+When prompted for a command do the following    
+
+**d** (= delete existing partion)    
+**n** (= create new partition. On all questions choose the default, so just ENTER)    
+**w** (= write new partiton and exit)
+
+Now, **create a filesystem** using:
+
+**sudo mkfs -t vfat -I /dev/sda1**    
+
+*The vfat format makes it possible to also read this USB Drive on a windows PC*    
+
+ **sudo nano /etc/fstab**    
+
+ Add the last line to this file, so the USB-stick is automatically mounted at start-up. Make the **/boot** partition read_only, and add the noatime flag to it 
 ```
-tmpfs /var/log tmpfs defaults,noatime,nosuid,mode=0755,size=128m 0 0
-tmpfs /var/run tmpfs defaults,noatime,nosuid,mode=0755,size=8m 0 0
-```
-Save with [CTRL]-O, and is successful exit with [CTRL]-X    
-*Remark* I don't think the specification for \var\run is necessary here. If you do a **df -h** on a bare rasbian-jessie install it seems to have been installed already.
+proc            /proc           proc    defaults          0       0
+/dev/mmcblk0p1  /boot           vfat    ro,noatime        0       2
+/dev/mmcblk0p2  /               ext4    defaults,noatime  0       1
+/dev/sda1	    /var/log	    vfat	rw,defaults       0       0
+``` 
+  
 #### Install drivers for UPS Pico (Optional)      
 UPS Pico is a power backup system that dependent on the used battery can cope with power outages of a few minutes to a couple of hours.    
 [UPS Pico site](http://www.pimodules.com/). The [Simple installation guide](http://www.pimodules.com/_pdf/Simple_Setting_Guide_for_the_UPS_PIco.pdf) is the least confusing, and is sufficiant in most cases.    
@@ -57,7 +82,8 @@ This installation is probably only usefull to do on a RaspberryPi 2
 \<to be completed\>    
 *** 
 #### Finalise installation   
-Restart your Raspberrypi:   
+Next install a stable Zway version followed by a restart of the raspberrypi.  
+**wget -q -O - razberry.z-wave.me/install/v2.2.1 | sudo bash**   
 **sudo reboot**
 
 Recommendation: Now make a copy of your SDcard to serve as a base image for future rebuilds. Issue commands:    

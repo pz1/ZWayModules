@@ -32,12 +32,12 @@ You can now manually mount the the USB drive
 **sudo mount /dev/sda1 /mnt/usbstick -o umask=000**
 
 ####Let log files be written to USB
-To assure that the drive is automatically available after every reboot, add the last line to /etc/fstab
+To assure that the drive is automatically available after every reboot, add the last line to /etc/fstab. !!I also made the boot partition read_only, and added the noatime flag!!.    
 
 **sudo nano /etc/fstab**    
 ```
 proc            /proc           proc    defaults          0       0
-/dev/mmcblk0p1  /boot           vfat    defaults          0       2
+/dev/mmcblk0p1  /boot           vfat    ro,noatime          0       2
 /dev/mmcblk0p2  /               ext4    defaults,noatime  0       1
 # a swapfile is not a swap partition, no line here
 #   use  dphys-swapfile swap[on|off]  for that
