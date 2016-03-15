@@ -32,7 +32,7 @@ Next install a stable Zway version followed by a restart of the raspberrypi.
 **sudo reboot**   
 ***   
 #### Use ramdisk for log files (Optional)    
-To reduce SD card wear, create a ramdisk for some heavily used directories.    
+To reduce SD card wear, create a ramdisk for some heavily used directories. Alternatively you [store var/log files on USB-stick](https://github.com/pz1/ZWayModules/blob/master/Documentation/AddUSBdrive.MD)    
 **Nota bene:** after power off the contents of these files are lost.     
 
 **sudo nano /etc/fstab**   
@@ -42,6 +42,7 @@ tmpfs /var/log tmpfs defaults,noatime,nosuid,mode=0755,size=128m 0 0
 tmpfs /var/run tmpfs defaults,noatime,nosuid,mode=0755,size=8m 0 0
 ```
 Save with [CTRL]-O, and is successful exit with [CTRL]-X    
+*Remark* I don't think the specification for \var\run is necessary here. If you do a **df -h** on a bare rasbian-jessie install it seems to have been installed already.
 #### Install drivers for UPS Pico (Optional)      
 UPS Pico is a power backup system that dependent on the used battery can cope with power outages of a few minutes to a couple of hours.    
 [UPS Pico site](http://www.pimodules.com/). The [Simple installation guide](http://www.pimodules.com/_pdf/Simple_Setting_Guide_for_the_UPS_PIco.pdf) is the least confusing, and is sufficiant in most cases.    
