@@ -33,13 +33,13 @@ Optional if you have more than one Raspberrypi do a rename:
 **sudo dphys-swapfile swapoff**    
 **sudo dphys-swapfile uninstall**    
 **sudo update-rc.d dphys-swapfile remove**    
-[from this article](http://www.ideaheap.com/2013/07/stopping-sd-card-corruption-on-a-raspberry-pi/)
+[See background info](http://www.ideaheap.com/2013/07/stopping-sd-card-corruption-on-a-raspberry-pi/)
 
 ######Write log files to USB-stick (NEVER REMOVE THIS STICK WHILE RASPBERRY PI IS RUNNING)
-Because I want logs after crashes, I decided against writing to 'ramdisk'. There also seems no need to map \var\run to ramdisk in fstab. If you do a **df -h** on a bare rasbian-jessie install there seems to be a symbolic link to memory already for it en some other spaces.    
+Because I want logs after crashes, I decided against writing to 'ramdisk'. There also seems no need to map \var\run to ramdisk in fstab. If you do a **df -h** on a bare rasbian-jessie install there seems to be a symbolic link to ramdisk already for \var\run and some other spaces.    
 This recipe assumes the USB stick will be permanently attached to RaspberryPi as the *only* memory stick.
   
-First determine the *id* of your device by (removing and re)-connecting the USB drive. Next give command     
+First determine the *id* of your device by (removing and re)-connecting the USB drive, and give command:     
 **ls -l /dev/sd***    
 You may find something like *sda, sdb*, etc. For the further description I do use **sda**    
 It seems best to **re-format** the USB-stick
