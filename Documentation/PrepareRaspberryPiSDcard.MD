@@ -82,10 +82,11 @@ tmpfs           463M     0  463M   0% /sys/fs/cgroup
 ```
  All tmpfs settings were already done in the rasbian-jessie-lite distro! Note: In the above listing, swap file has not yet been disabled.    
 ***
- #### Install drivers for UPS Pico (Optional)      
+#### Install drivers for UPS Pico (Optional)      
 UPS Pico is a power backup system that dependent on the used battery can cope with power outages of a few minutes to a couple of hours.    
 [UPS Pico site](http://www.pimodules.com/). The [Simple installation guide](http://www.pimodules.com/_pdf/Simple_Setting_Guide_for_the_UPS_PIco.pdf) is the least confusing, and is sufficient in most cases.    
 \<to be completed\>     
+***
 #### Install WiringPi (Optional)
 For controlling devices via the GPIO, the wiringPi modules has proven to be useful (at least for me).    
 Via a web browser find the link to the [latest build of wiringPi](http://wiringpi.com/download-and-install/) (scroll down to: Plan B). Download it to your PC, and copy from there to the Raspberry Pi. (A direct wget seemed more logical, but I could not get it to work, like many other users)
