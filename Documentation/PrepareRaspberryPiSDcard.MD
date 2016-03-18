@@ -67,9 +67,9 @@ proc            /proc           proc    defaults          0       0
 /dev/mmcblk0p2  /               ext4    defaults,noatime  0       1
 /dev/sda1	    /var/log	    vfat	rw,defaults       0       0
 ``` 
-After completion of this installation the file system looked like this. All tmpfs settings were already done in the rasbian-jessie-lite distro!    
+After completion of this installation the file system looked like this.    
 ```
-pi@rasppi2:~ $ df -h
+pi@raspi:~ $ df -h
 Filesystem      Size  Used Avail Use% Mounted on
 /dev/root       7.3G  970M  6.0G  14% /
 devtmpfs        459M     0  459M   0% /dev
@@ -80,15 +80,27 @@ tmpfs           463M     0  463M   0% /sys/fs/cgroup
 /dev/mmcblk0p1   60M   20M   41M  34% /boot
 /dev/sda1        15G  9.5M   15G   1% /var/log
 ```
-note: In the above listing, swapfile has not yet been diabled.    
+ All tmpfs settings were already done in the rasbian-jessie-lite distro! Note: In the above listing, swap file has not yet been disabled.    
 #### Install drivers for UPS Pico (Optional)      
 UPS Pico is a power backup system that dependent on the used battery can cope with power outages of a few minutes to a couple of hours.    
-[UPS Pico site](http://www.pimodules.com/). The [Simple installation guide](http://www.pimodules.com/_pdf/Simple_Setting_Guide_for_the_UPS_PIco.pdf) is the least confusing, and is sufficiant in most cases.    
+[UPS Pico site](http://www.pimodules.com/). The [Simple installation guide](http://www.pimodules.com/_pdf/Simple_Setting_Guide_for_the_UPS_PIco.pdf) is the least confusing, and is sufficient in most cases.    
 \<to be completed\>     
 #### Install WiringPi (Optional)
-I do use this module for controlling some device via the GPIO    
-[WiringPi site](http://wiringpi.com/)       
-\<to be completed\>     
+I do use this module for controlling some devices via the GPIO
+Via a webbrowser find the link to the [latest build of wiringPi](http://wiringpi.com/download-and-install/) (see under Plan B). Download it to your PC, and copy from there to the Raspberry Pi. (A direct wget seemed more logical, but I could not get it to work, like many other users)
+   
+Next extract and install wiringPi. (The identifier b0a60c3 is part of the downloaded file name)     
+```
+tar xfz wiringPi-b0a60c3.tar.gz
+cd wiringPi-b0a60c3
+./build
+```       
+
+To check the installation, try the following two commands:    
+```
+gpio -v
+gpio readall
+```
 #### Install OpenRemote (Optional)    
 I do use [OpenRemote](http://www.openremote.org/x/nwFWAQ) as visualisation and integration platform for two ZWay satellites. At present it runs on a NAS    
 This installation is probably only usefull to do on a RaspberryPi 2    
