@@ -26,7 +26,7 @@ Optional if you have more than one Raspberrypi do a rename:
      - Hostname   
    
 **Finish** this configurator, and do NOT YET **reboot**.
-
+***
 ####Reduce unnecesary write actions on SDCard (Optional)
 ######Disable swapping   
    
@@ -34,7 +34,7 @@ Optional if you have more than one Raspberrypi do a rename:
 **sudo dphys-swapfile uninstall**    
 **sudo update-rc.d dphys-swapfile remove**    
 [See background info](http://www.ideaheap.com/2013/07/stopping-sd-card-corruption-on-a-raspberry-pi/)
-
+***
 ######Write log files to USB-stick (NEVER REMOVE THIS STICK WHILE RASPBERRY PI IS RUNNING)
 Because I want logs after crashes, I decided against writing to 'ramdisk'. There also seems no need to map \var\run to ramdisk in fstab. If you do a **df -h** on a bare rasbian-jessie install there seems to be a symbolic link to ramdisk already for \var\run and some other spaces.    
 This recipe assumes the USB stick will be permanently attached to RaspberryPi as the *only* memory stick.
@@ -81,26 +81,27 @@ tmpfs           463M     0  463M   0% /sys/fs/cgroup
 /dev/sda1        15G  9.5M   15G   1% /var/log
 ```
  All tmpfs settings were already done in the rasbian-jessie-lite distro! Note: In the above listing, swap file has not yet been disabled.    
-#### Install drivers for UPS Pico (Optional)      
+***
+ #### Install drivers for UPS Pico (Optional)      
 UPS Pico is a power backup system that dependent on the used battery can cope with power outages of a few minutes to a couple of hours.    
 [UPS Pico site](http://www.pimodules.com/). The [Simple installation guide](http://www.pimodules.com/_pdf/Simple_Setting_Guide_for_the_UPS_PIco.pdf) is the least confusing, and is sufficient in most cases.    
 \<to be completed\>     
 #### Install WiringPi (Optional)
-I do use this module for controlling some devices via the GPIO
-Via a webbrowser find the link to the [latest build of wiringPi](http://wiringpi.com/download-and-install/) (see under Plan B). Download it to your PC, and copy from there to the Raspberry Pi. (A direct wget seemed more logical, but I could not get it to work, like many other users)
+For controlling devices via the GPIO, the wiringPi modules has proven to be useful (at least for me).    
+Via a web browser find the link to the [latest build of wiringPi](http://wiringpi.com/download-and-install/) (scroll down to: Plan B). Download it to your PC, and copy from there to the Raspberry Pi. (A direct wget seemed more logical, but I could not get it to work, like many other users)
    
-Next extract and install wiringPi. (The identifier b0a60c3 is part of the downloaded file name)     
+On your Raspberry Pi extract and install wiringPi. (The identifier b0a60c3 is part of the downloaded file name)     
 ```
 tar xfz wiringPi-b0a60c3.tar.gz
 cd wiringPi-b0a60c3
 ./build
 ```       
-
 To check the installation, try the following two commands:    
 ```
 gpio -v
 gpio readall
 ```
+***
 #### Install OpenRemote (Optional)    
 I do use [OpenRemote](http://www.openremote.org/x/nwFWAQ) as visualisation and integration platform for two ZWay satellites. At present it runs on a NAS    
 This installation is probably only usefull to do on a RaspberryPi 2    
