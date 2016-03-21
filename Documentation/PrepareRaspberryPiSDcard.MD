@@ -25,7 +25,7 @@ Optional if you have more than one Raspberrypi do a rename:
 - Advanced
      - Hostname   
    
-**Finish** this configurator, and do NOT YET **reboot**.
+**Finish** this configurator, but do NOT YET **reboot**. First install any of the options enumerated below. Then continue at **Finalise Installation**
 ***
 ####Reduce unnecesary write actions on SDCard (Optional)
 ######Disable swapping   
