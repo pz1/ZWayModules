@@ -69,16 +69,16 @@ proc            /proc           proc    defaults          0       0
 ``` 
 After completion of this installation the file system looked like this.    
 ```
-pi@raspi:~ $ df -h
-Filesystem      Size  Used Avail Use% Mounted on
-/dev/root       7.3G  970M  6.0G  14% /
-devtmpfs        459M     0  459M   0% /dev
-tmpfs           463M     0  463M   0% /dev/shm
-tmpfs           463M  6.2M  457M   2% /run
-tmpfs           5.0M  4.0K  5.0M   1% /run/lock
-tmpfs           463M     0  463M   0% /sys/fs/cgroup
-/dev/mmcblk0p1   60M   20M   41M  34% /boot
-/dev/sda1        15G  9.5M   15G   1% /var/log
+pi@rasppi2:~ $ df -hT
+Filesystem     Type      Size  Used Avail Use% Mounted on
+/dev/root      ext4      7.3G  970M  6.0G  14% /
+devtmpfs       devtmpfs  459M     0  459M   0% /dev
+tmpfs          tmpfs     463M     0  463M   0% /dev/shm
+tmpfs          tmpfs     463M  6.2M  457M   2% /run
+tmpfs          tmpfs     5.0M  4.0K  5.0M   1% /run/lock
+tmpfs          tmpfs     463M     0  463M   0% /sys/fs/cgroup
+/dev/mmcblk0p1 vfat       60M   20M   41M  34% /boot
+/dev/sda1      vfat       15G   12M   15G   1% /var/log
 ```
  All tmpfs settings were already done in the rasbian-jessie-lite distro! Note: In the above listing, swap file has not yet been disabled.    
 ***
