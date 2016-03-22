@@ -1,8 +1,15 @@
-##XMLDevice
-This module has been derived from the OpenWeather module. It is meant to turn a single XML element into a virtual device. In the configuration screen the user has to specify a number of parameters that defines the virtual device. It is important to adhere as close as possible to standard terminology as defined in the opt/z-way-server/translations/scales.xml file on your RaspberryPi.
+##JSONDevice
+This module has been derived from the XMLDevice module.
 
-For test purposes create status.xml with the following content (compare with PVLogger module)
+It is meant to turn a single JSON element into a virtual device.
+
+In the configuration screen the user has to specify a number of parameters that defines the virtual device.
+
+It is important to adhere as close as possible to standard terminology as defined in the opt/z-way-server/translations/scales.xml file on your RaspberryPi.
+
+For test purposes create status.json with the following content (compare with PVLogger module)
 ```
+    TODO: JSONify this
     <?xml version="1.0" encoding="UTF-8"?>
     <response>
         <gauge_power>283</gauge_power>

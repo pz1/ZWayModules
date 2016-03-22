@@ -1,103 +1,103 @@
 {
-	"dependencies": [],
-	"singleton": false,
-	"category": "developers_stuff",
-	"author": "Pieter E. Zanstra (click for Recipe)",
-	"homepage": "http://forum.z-wave.me/viewtopic.php?f=3424&t=21446",
-	"icon": "icon.png",
-    "moduleName": "XMLDevice",
-	"version": "1.0.2",
-	"maturity": "stable",
-	"repository": {
-		"type": "git",
-		"source": "https://github.com/pz1/ZWayModules"
-	},
-	"defaults": {
-		"title": "__m_title__",
-		"description": "__m_descr__",
-		"isNumerical": "",
-		"url": "http://192.168.1.36/status.xml",
-		"xpath": "/response/energy_total/",
-		"polling": "5",
-		"probeTitle": "Energy",
-		"scaleTitle": "kWh",
-		"deviceName": "XMLtest",
-		"debug" : ""
-	},
-	"schema": {
-		"type": "object",
-		"properties": {
-			"isNumerical": {
-				"type": "boolean",
-				"required": true
-			},
-			"isFloat" : {
-			    "type" : "boolean",
-				"required" : true
-			},
-			"url": {
-				"type": "string",
-				"required": true
-			},
-			"xpath": {
-				"type": "string",
-				"required": true
-			},
-			"polling": {
-				"type": "string",
-				"required": true
-			},
-			"probeTitle": {
-				"type": "string",
-				"required": true
-			},
-			"scaleTitle": {
-				"type": "string",
-				"required": true
-			},
-			"deviceName": {
-				"type": "string",
-				"required": true
-			},
-			"debug": {
-				"type": "boolean",
-				"required": true
-			}
-		},
-		"required": true
-	},
-	"options": {
-		"fields": {
-			"isNumerical": {
-				"rightLabel": "__isNumerical_Select__",
-				"helper": "__isNumerical_helper__"
-			},
-			"isFloat": {
-				"rightLabel": "__isFloat_Select__",
-				"helper": "__isFloat_helper__"
-			},
-			"url": {
-				"label": "__url__"
-			},
-			"xpath": {
-				"label": "__xpath__"
-			},
-			"polling" : {
-				"label" : "__polling__"
-			},
-			"probeTitle" : {
-				"label" : "__probeTitle__"
-			},
-			"scaleTitle" : {
-				"label" : "__scaleTitle__"
-			},
-			"deviceName" : {
-				"label" : "__deviceName__"
-			},
-			"debug" : {
-				"rightLabel" : "__debug__",
-				"helper" : "__debug_helper__"
-			}
-		}
-	}
+    "dependencies": [],
+    "singleton": false,
+    "category": "developers_stuff",
+    "author": "Christian Ashby (click for Recipe)",
+    "homepage": "TODO (http://forum.z-wave.me/viewtopic.php?f=3424&t=21446)",
+    "icon": "icon.png",
+    "moduleName": "JSONDevice",
+    "version": "0.0.1",
+    "maturity": "development",
+    "repository": {
+        "type": "git",
+        "source": "https://github.com/cscashby/ZWayModules"
+    },
+    "defaults": {
+        "title": "__m_title__",
+        "description": "__m_descr__",
+        "isNumerical": "",
+        "url": "http://MACHINE/status.xml",
+        "xpath": "/response/energy_total/",
+        "polling": "5",
+        "probeTitle": "Energy",
+        "scaleTitle": "kWh",
+        "deviceName": "XMLtest",
+        "debug": ""
+    },
+    "schema": {
+        "type": "object",
+        "properties": {
+            "isNumerical": {
+                "type": "boolean",
+                "required": true
+            },
+            "isFloat": {
+                "type": "boolean",
+                "required": true
+            },
+            "url": {
+                "type": "string",
+                "required": true
+            },
+            "jsonPath": {
+                "type": "string",
+                "required": true
+            },
+            "polling": {
+                "type": "string",
+                "required": true
+            },
+            "probeTitle": {
+                "type": "string",
+                "required": true
+            },
+            "scaleTitle": {
+                "type": "string",
+                "required": true
+            },
+            "deviceName": {
+                "type": "string",
+                "required": true
+            },
+            "debug": {
+                "type": "boolean",
+                "required": true
+            }
+        },
+        "required": true
+    },
+    "options": {
+        "fields": {
+            "isNumerical": {
+                "rightLabel": "__isNumerical_Select__",
+                "helper": "__isNumerical_helper__"
+            },
+            "isFloat": {
+                "rightLabel": "__isFloat_Select__",
+                "helper": "__isFloat_helper__"
+            },
+            "url": {
+                "label": "__url__"
+            },
+            "jsonPath": {
+                "label": "__jsonPath__"
+            },
+            "polling": {
+                "label": "__polling__"
+            },
+            "probeTitle": {
+                "label": "__probeTitle__"
+            },
+            "scaleTitle": {
+                "label": "__scaleTitle__"
+            },
+            "deviceName": {
+                "label": "__deviceName__"
+            },
+            "debug": {
+                "rightLabel": "__debug__",
+                "helper": "__debug_helper__"
+            }
+        }
+    }
 }

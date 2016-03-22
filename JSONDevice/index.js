@@ -1,10 +1,10 @@
-/*** XMLDevice Z-Way HA module *******************************************
+/*** JSONDevice Z-Way HA module *******************************************
 
-Version: 1.0.2
-(c) Z-Wave.Me, 2014
+Version: 0.0.1
+(c) Christian Ashby, 2016
 -----------------------------------------------------------------------------
-Author: Pieter E. Zanstra adaptation for XMLDevice Weather Services API
-Derived from OpenWeather module by Serguei Poltorak <ps@z-wave.me>
+Author: Christian Ashby's adaptation for JSONDevice API
+Derived from XMLDevice module by Serguei Poltorak <ps@z-wave.me>
 Description:
 This module creates a sensorMultilevel or a sensorBinary widget
 
