@@ -35,7 +35,7 @@ Optional if you have more than one Raspberrypi do a rename:
 **sudo update-rc.d dphys-swapfile remove**    
 [See background info](http://www.ideaheap.com/2013/07/stopping-sd-card-corruption-on-a-raspberry-pi/)
 ***
-######<a name="logToUSB></a>Write log files to USB-stick (NEVER REMOVE THIS STICK WHILE RASPBERRY PI IS RUNNING)
+######Write log files to USB-stick (NEVER REMOVE THIS STICK WHILE RASPBERRY PI IS RUNNING)
 Because I want logs after crashes, I decided against writing to 'ramdisk'. There also seems no need to map \var\run to ramdisk in fstab. If you do a **df -h** on a bare rasbian-jessie install there seems to be a symbolic link to ramdisk already for \var\run and some other spaces.    
 This recipe assumes the USB stick will be permanently attached to RaspberryPi as the *only* memory stick.
   
