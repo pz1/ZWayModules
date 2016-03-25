@@ -14,108 +14,112 @@ This module creates a sensorMultilevel or a sensorBinary widget
 // --- Class definition, inheritance and setup
 // ----------------------------------------------------------------------------
 
-function XMLDevice(id, controller) {
-	// Call superconstructor first (AutomationModule)
-	XMLDevice.super_.call(this, id, controller);
+function JSONDevice(id, controller) {
+    "use strict";
+    // Call superconstructor first (AutomationModule)
+    JSONDevice.super_.call(this, id, controller);
 }
 
-inherits(XMLDevice, AutomationModule);
+inherits(JSONDevice, AutomationModule);
 
-_module = XMLDevice;
+_module = JSONDevice;
 
 // ----------------------------------------------------------------------------
 // --- Module instance initialized
 // ----------------------------------------------------------------------------
 
-XMLDevice.prototype.init = function (config) {
-	XMLDevice.super_.prototype.init.call(this, config);
+JSONDevice.prototype.init = function (config) {
+    JSONDevice.super_.prototype.init.call(this, config);
 
-	var self = this;
+    var self = this;
 
-	this.vDev = self.controller.devices.create({
-			deviceId : "XMLDevice_" + this.id,
-			defaults : {
-				deviceType : "sensorMultilevel",
-				metrics : {
-					probeTitle : this.config.probeTitle
-				}
-			},
-			overlay : {
-				metrics : {
-					scaleTitle : this.config.scaleTitle,
-					title : this.config.deviceName
-				}
-			},
-			moduleId : this.id
-		});
+    this.vDev = self.controller.devices.create({
+        deviceId: "JSONDevice_" + this.id,
+        defaults: {
+            deviceType: "sensorMultilevel",
+            metrics: {
+                probeTitle: this.config.probeTitle
+            }
+        },
+        overlay: {
+            metrics: {
+                scaleTitle: this.config.scaleTitle,
+                title: this.config.deviceName
+            }
+        },
+        moduleId: this.id
+    });
 
-	this.timer = setInterval(function () {
-			self.fetchXMLElement(self);
-		}, self.config.polling * 60 * 1000);
-	self.fetchXMLElement(self);
+    this.timer = setInterval(function () {
+        self.fetchJSONElement(self);
+    }, self.config.polling * 60 * 1000);
+    self.fetchJSONElement(self);
 };
 
-XMLDevice.prototype.stop = function () {
-	XMLDevice.super_.prototype.stop.call(this);
+JSONDevice.prototype.stop = function () {
+    JSONDevice.super_.prototype.stop.call(this);
 
-	if (this.timer)
-		clearInterval(this.timer);
+    if (this.timer)
+        clearInterval(this.timer);
 
-	if (this.vDev) {
-		this.controller.devices.remove(this.vDev.id);
-		this.vDev = null;
-	}
+    if (this.vDev) {
+        this.controller.devices.remove(this.vDev.id);
+        this.vDev = null;
+    }
 };
 
 // ----------------------------------------------------------------------------
 // --- Module methods
 // ----------------------------------------------------------------------------
 
-XMLDevice.prototype.fetchXMLElement = function (instance) {
-	var self = instance,
-	moduleName = "XMLDevice",
-	langFile = self.controller.loadModuleLang(moduleName),
-	isNumerical = self.config.isNumerical,
-	isFloat = self.config.isFloat,
-	XPath = self.config.xpath + "text()";
-	if (self.config.debug){
-		console.log("Xpath: ", self.config.xpath);
-		console.log("Url: ", self.config.url);
-		console.log("Float: ", isFloat);
-		console.log("Numerical: ", isNumerical);
-		console.log("Debug: ", self.config.debug);
-	}
+JSONDevice.prototype.fetchJSONElement = function (instance) {
+    var self = instance,
+        moduleName = "JSONDevice",
+        langFile = self.controller.loadModuleLang(moduleName),
+        isNumerical = self.config.isNumerical,
+        isFloat = self.config.isFloat,
+        jsonPath = self.config.jsonPath + "text()";
+    if (self.config.debug) {
+        console.log("jsonPath: ", self.config.jsonPath);
+        console.log("Url: ", self.config.url);
+        console.log("Float: ", isFloat);
+        console.log("Numerical: ", isNumerical);
+        console.log("Debug: ", self.config.debug);
+    }
 
-	http.request({
-		url : self.config.url,
-		async : true,
-		success : function (res) {
-			try {
-				var doc1 = res.data;
-				if (isNumerical) {
-					deviceType = "sensorMultilevel";
-					if (isFloat) {
-						level = parseFloat(doc1.findOne(XPath));
-					} else {
-						level = parseInt(doc1.findOne(XPath));
-					}
-				} else {
-					deviceType = "text";
-					level = doc1.findOne(XPath);
-				}
-				self.vDev.set("metrics:level", level);
-			} catch (e) {
-				if (self.config.debug) {
-					self.controller.addNotification("error", langFile.err_parse, "module", moduleName);
-					console.log ("Xpath: ", self.config.xpath);
-				}
-			}
-		},
-		error : function () {
-			if (self.config.debug) {
-				self.controller.addNotification("error", langFile.err_fetch, "module", moduleName);
-				console.log ("URL: ", self.config.url);
-			}
-		}
-	});
+    http.request({
+        url: self.config.url,
+        async: true,
+        success: function (res) {
+            try {
+                if (self.config.debug) {
+                    console.log("data: ", res.data);
+                }
+                var json = JSON.parse(res.data);
+                if (isNumerical) {
+                    deviceType = "sensorMultilevel";
+                    if (isFloat) {
+                        level = parseFloat(eval("json." + self.config.jsonPath));
+                    } else {
+                        level = parseInt(eval("json." + self.config.jsonPath));
+                    }
+                } else {
+                    deviceType = "text";
+                    level = eval("json." + self.config.jsonPath);
+                }
+                self.vDev.set("metrics:level", level);
+            } catch (e) {
+                if (self.config.debug) {
+                    self.controller.addNotification("error", langFile.err_parse, "module", moduleName);
+                    console.log("jsonPath: ", self.config.jsonPath);
+                }
+            }
+        },
+        error: function () {
+            if (self.config.debug) {
+                self.controller.addNotification("error", langFile.err_fetch, "module", moduleName);
+                console.log("URL: ", self.config.url);
+            }
+        }
+    });
 };

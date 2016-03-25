@@ -15,13 +15,14 @@
     "defaults": {
         "title": "__m_title__",
         "description": "__m_descr__",
-        "isNumerical": "",
-        "url": "http://MACHINE/status.xml",
-        "xpath": "/response/energy_total/",
+        "isNumerical": "true",
+        "isFloat": "true",
+        "url": "https://my.tado.com/mobile/1.4/getCurrentState?username=xxx&password=xxx",
+        "jsonPath": "insideTemp",
         "polling": "5",
-        "probeTitle": "Energy",
-        "scaleTitle": "kWh",
-        "deviceName": "XMLtest",
+        "probeTitle": "InsideTemp",
+        "scaleTitle": "C",
+        "deviceName": "JSONtest",
         "debug": ""
     },
     "schema": {
