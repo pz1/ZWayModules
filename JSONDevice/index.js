@@ -93,12 +93,11 @@ JSONDevice.prototype.fetchJSONElement = function (instance) {
         contentType: "text/json",
         success: function (res) {
             try {
+                var json = JSON.parse(res.data);
                 if (self.config.debug) {
-                    console.log("data: ", JSON.stringify(res.data));
-                }
-                var json = res.data;
-                if (self.config.debug) {
-                    console.log("element: ", eval("json." + self.config.jsonPath));
+                    for (i in json) {
+                        console.log("key: ", i);
+                    }
                 }
                 if (isNumerical) {
                     deviceType = "sensorMultilevel";
