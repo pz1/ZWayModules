@@ -28,6 +28,8 @@ Optional if you have more than one Raspberrypi do a rename:
 **Finish** this configurator, but do NOT YET **reboot**. First install any of the options enumerated below. Then continue at **Finalise Installation**
 ***
 ####Reduce unnecesary write actions on SDCard (Optional)
+<a name="disableSwap"/>    
+
 ######Disable swapping   
    
 **sudo dphys-swapfile swapoff**    
@@ -89,6 +91,7 @@ UPS Pico is a power backup system that dependent on the used battery can cope wi
 [UPS Pico site](http://www.pimodules.com/). The [Simple installation guide](http://www.pimodules.com/_pdf/Simple_Setting_Guide_for_the_UPS_PIco.pdf) is the least confusing, and is sufficient in most cases.    
 \<to be completed\>     
 ***
+<a name="wiringPi"/>    
 #### Install WiringPi (Optional)
 For controlling devices via the GPIO, the wiringPi modules has proven to be useful (at least for me).    
 Via a web browser find the link to the [latest build of wiringPi](http://wiringpi.com/download-and-install/) (scroll down to: Plan B). Download it to your PC, and copy from there to the Raspberry Pi. (A direct wget seemed more logical, but I could not get it to work, like many other users)
@@ -110,6 +113,7 @@ I do use [OpenRemote](http://www.openremote.org/x/nwFWAQ) as visualisation and i
 This installation is probably only usefull to do on a RaspberryPi 2    
 \<to be completed\>    
 *** 
+<a name="Finalise"/>    
 #### Finalise installation   
 Install a stable Zway version, followed by a restart of the raspberrypi.  
 **wget -q -O - razberry.z-wave.me/install/v2.2.1 | sudo bash**   
