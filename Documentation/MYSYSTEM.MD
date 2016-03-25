@@ -12,6 +12,6 @@ _Note: The hyper links on my devices refer to the description of an application/
 [Preparation of my SD-Card](https://github.com/pz1/ZWayModules/blob/master/Documentation/PrepareRaspberryPiSDcard.MD)    
 [Howto Backup and Restore ZWay installation](https://github.com/pz1/ZWayModules/blob/master/Documentation/BackupRestoreClone.MD)    
 
-Forum Links
-[Problematic Z-Wave devices](http://forum.z-wave.me/viewtopic.php?f=3423&t=21476)
+Forum Links    
+[Problematic Z-Wave devices](http://forum.z-wave.me/viewtopic.php?f=3423&t=21476)    
 \- to be completed \-
