@@ -1,10 +1,11 @@
-/*** JSONDevice Z-Way HA module *******************************************
+/*** Tado Z-Way HA module *******************************************
 
 Version: 0.0.1
 (c) Christian Ashby, 2016
 -----------------------------------------------------------------------------
-Author: Christian Ashby's adaptation for JSONDevice API
-Derived from XMLDevice module by Serguei Poltorak <ps@z-wave.me>
+Author: Christian Ashby's device mapping for Tado heating controllers
+Derived from JSONDevice which was created from the
+XMLDevice module by Serguei Poltorak <ps@z-wave.me>
 Description:
 This module creates a sensorMultilevel or a sensorBinary widget
 
@@ -14,27 +15,27 @@ This module creates a sensorMultilevel or a sensorBinary widget
 // --- Class definition, inheritance and setup
 // ----------------------------------------------------------------------------
 
-function JSONDevice(id, controller) {
+function TadoDevice(id, controller) {
     "use strict";
     // Call superconstructor first (AutomationModule)
-    JSONDevice.super_.call(this, id, controller);
+    TadoDevice.super_.call(this, id, controller);
 }
 
-inherits(JSONDevice, AutomationModule);
+inherits(TadoDevice, AutomationModule);
 
-_module = JSONDevice;
+_module = TadoDevice;
 
 // ----------------------------------------------------------------------------
 // --- Module instance initialized
 // ----------------------------------------------------------------------------
 
-JSONDevice.prototype.init = function (config) {
-    JSONDevice.super_.prototype.init.call(this, config);
+TadoDevice.prototype.init = function (config) {
+    TadoDevice.super_.prototype.init.call(this, config);
 
     var self = this;
 
     this.vDev = self.controller.devices.create({
-        deviceId: "JSONDevice_" + this.id,
+        deviceId: "TadoDevice_" + this.id,
         defaults: {
             deviceType: "sensorMultilevel",
             metrics: {
@@ -56,8 +57,8 @@ JSONDevice.prototype.init = function (config) {
     self.fetchJSONElement(self);
 };
 
-JSONDevice.prototype.stop = function () {
-    JSONDevice.super_.prototype.stop.call(this);
+TadoDevice.prototype.stop = function () {
+    TadoDevice.super_.prototype.stop.call(this);
 
     if (this.timer)
         clearInterval(this.timer);
@@ -72,9 +73,9 @@ JSONDevice.prototype.stop = function () {
 // --- Module methods
 // ----------------------------------------------------------------------------
 
-JSONDevice.prototype.fetchJSONElement = function (instance) {
+TadoDevice.prototype.fetchJSONElement = function (instance) {
     var self = instance,
-        moduleName = "JSONDevice",
+        moduleName = "TadoDevice",
         langFile = self.controller.loadModuleLang(moduleName),
         isNumerical = self.config.isNumerical,
         isFloat = self.config.isFloat,

@@ -5,7 +5,7 @@
     "author": "Christian Ashby (click for Recipe)",
     "homepage": "TODO (http://forum.z-wave.me/viewtopic.php?f=3424&t=21446)",
     "icon": "icon.png",
-    "moduleName": "JSONDevice",
+    "moduleName": "TadoDevice",
     "version": "0.0.1",
     "maturity": "development",
     "repository": {
