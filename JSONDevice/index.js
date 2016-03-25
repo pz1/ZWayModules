@@ -97,6 +97,9 @@ JSONDevice.prototype.fetchJSONElement = function (instance) {
                     console.log("data: ", JSON.stringify(res.data));
                 }
                 var json = res.data;
+                if (self.config.debug) {
+                    console.log("element: ", eval("json." + self.config.jsonPath));
+                }
                 if (isNumerical) {
                     deviceType = "sensorMultilevel";
                     if (isFloat) {
