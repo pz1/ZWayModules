@@ -25,9 +25,9 @@ Optional if you have more than one Raspberrypi do a rename:
 - Advanced
      - Hostname   
    
-**Finish** this configurator, but do NOT YET **reboot**. First install any of the options:
-<a href="#logToUsb>Write log files to USB-stick</a>    
-<a href="#UpsPico">Install UPS Pico</a>    
+**Finish** this configurator, but do NOT YET **reboot**. First install any of the options:    
+<a href="#logToUsb>Write log files to USB-stick</a>.    
+<a href="#UpsPico">Install UPS Pico</a>.    
 ***
 ####Reduce unnecesary write actions on SDCard (Optional)
 <a name="disableSwap"/>    
