@@ -25,7 +25,9 @@ Optional if you have more than one Raspberrypi do a rename:
 - Advanced
      - Hostname   
    
-**Finish** this configurator, but do NOT YET **reboot**. First install any of the options enumerated below. Then continue at **Finalise Installation**
+**Finish** this configurator, but do NOT YET **reboot**. First install any of the options:
+<a href="#logToUsb>Write log files to USB-stick</a>    
+<a href="#UpsPico">Install UPS Pico</a>    
 ***
 ####Reduce unnecesary write actions on SDCard (Optional)
 <a name="disableSwap"/>    
@@ -92,7 +94,7 @@ tmpfs          tmpfs     463M     0  463M   0% /sys/fs/cgroup
 *Prerequisite* Make sure you have a stable 3A power supply for your Raspberry Pi. At start-up with Pico UPS installed, more than 2A are drawn! Also make sure no other applications (e.g. via wiringPi) use GPIO_22 and GPIO_27.        
 UPS Pico is a power backup system that dependent on the used battery can cope with power outages of a few minutes to a couple of hours.    
 [UPS Pico site](http://www.pimodules.com/). The [Simple installation guide](http://www.pimodules.com/_pdf/Simple_Setting_Guide_for_the_UPS_PIco.pdf) is the least confusing, and is sufficient in most cases.    
-Follow the simple manual from page 7. The commands are written down below, because at the moment you can't copy them from the manual:
+Follow the simple manual from page 7. The commands are written down below, because at the moment you can't copy them from the manual:    
 **sudo raspi-config**    
 **sudo apt-get install python-rpi.gpio**    
 **sudo apt-get install python-smbus**    
