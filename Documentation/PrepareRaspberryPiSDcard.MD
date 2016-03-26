@@ -26,8 +26,8 @@ Optional if you have more than one Raspberrypi do a rename:
      - Hostname   
    
 **Finish** this configurator, but do NOT YET **reboot**. First install any of the options:    
-<a href="#logToUsb">Write log files to USB-stick</a>.    
-<a href="#UpsPico">Install UPS Pico</a>.    
+A <a href="#logToUsb">Write log files to USB-stick</a>.    
+B <a href="#UpsPico">Install UPS Pico</a>.    
 ***
 ####Reduce unnecesary write actions on SDCard (Optional)
 <a name="disableSwap"/>    
@@ -89,7 +89,7 @@ tmpfs          tmpfs     463M     0  463M   0% /sys/fs/cgroup
  All tmpfs settings were already done in the rasbian-jessie-lite distro! Note: In the above listing, swap file has not yet been disabled.    
 ***
 <a name="UpsPico"/>    
-#### Install drivers for UPS Pico HV1.1(Optional)  
+#### Install drivers for UPS Pico HV1.1 on Raspberry Pi 2(Optional)  
 \<work in progress, to be completed\>     
 *Prerequisite* Make sure you have a stable 3A power supply for your Raspberry Pi. At start-up with Pico UPS installed, more than 2A are drawn! Also make sure no other applications (e.g. via wiringPi) use GPIO_22 and GPIO_27.        
 UPS Pico is a power backup system that dependent on the used battery can cope with power outages of a few minutes to a couple of hours.    
@@ -101,7 +101,7 @@ Follow the simple manual from page 7. The commands are written down below, becau
 **sudo apt-get install i2c-tools**    
 **sudo nano /etc/modules**    
 **sudo reboot**    
-**sudo 12cdetect -y 1**  (12cdetect: command not found)    
+**sudo i2cdetect -y 1**  (Error: Could not open file `/dev/i2c-1' or `/dev/i2c/1': No such file or directory)      
 **sudo wget http://www.pimodules.com/_zip/UPS_Pico_Supporting_Files.zip**  (Manual still has wrong URL)    
 **unzip UPS_Pico_Supporting_Files.zip**    
 **sudo python /home/pi/picofssd.py** (no LEDS flashing yet. Did not yet get past this because of GPIO conflict with wiringPi ?)    
