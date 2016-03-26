@@ -86,10 +86,32 @@ tmpfs          tmpfs     463M     0  463M   0% /sys/fs/cgroup
 ```
  All tmpfs settings were already done in the rasbian-jessie-lite distro! Note: In the above listing, swap file has not yet been disabled.    
 ***
-#### Install drivers for UPS Pico (Optional)      
+<a name="UpsPico"/>    
+#### Install drivers for UPS Pico HV1.1(Optional)  
+\<work in progress, to be completed\>     
+*Prerequisite* Make sure you have a stable 3A power supply for your Raspberry Pi. At start-up with Pico UPS installed, more than 2A are drawn! Also make sure no other applications (e.g. via wiringPi) use GPIO_22 and GPIO_27.        
 UPS Pico is a power backup system that dependent on the used battery can cope with power outages of a few minutes to a couple of hours.    
 [UPS Pico site](http://www.pimodules.com/). The [Simple installation guide](http://www.pimodules.com/_pdf/Simple_Setting_Guide_for_the_UPS_PIco.pdf) is the least confusing, and is sufficient in most cases.    
-\<to be completed\>     
+Follow the simple manual from page 7. The commands are written down below, because at the moment you can't copy them from the manual:
+
+**sudo raspi-config**
+**sudo apt-get install python-rpi.gpio**
+**sudo apt-get install python-smbus**
+**sudo apt-get install i2c-tools**
+**sudo nano /etc/modules**
+**sudo reboot**
+**sudo 12cdetect -y 1**  (12cdetect: command not found)
+**sudo wget http://www.pimodules.com/_zip/UPS_Pico_Supporting_Files.zip**  (Manual still has wrong URL))
+**unzip UPS_Pico_Supporting_Files.zip**
+**sudo python /home/pi/picofssd.py** (no LEDS flashing yet. Did not yet get past this because of GPIO conflict with wiringPi ?)
+
+
+
+If you want to remove the UPS Pico from your Raspberry Pi, shut it down properly    
+**sudo shutdown -h now**    
+remove the external power source from it. Next    
+**push the **UPSR** button for about 1 second**
+Carefully pull the device from the Raspberry Pi       
 ***
 <a name="wiringPi"/>    
 #### Install WiringPi (Optional)
