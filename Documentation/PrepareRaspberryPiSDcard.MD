@@ -93,17 +93,16 @@ tmpfs          tmpfs     463M     0  463M   0% /sys/fs/cgroup
 UPS Pico is a power backup system that dependent on the used battery can cope with power outages of a few minutes to a couple of hours.    
 [UPS Pico site](http://www.pimodules.com/). The [Simple installation guide](http://www.pimodules.com/_pdf/Simple_Setting_Guide_for_the_UPS_PIco.pdf) is the least confusing, and is sufficient in most cases.    
 Follow the simple manual from page 7. The commands are written down below, because at the moment you can't copy them from the manual:
-
-**sudo raspi-config**
-**sudo apt-get install python-rpi.gpio**
-**sudo apt-get install python-smbus**
-**sudo apt-get install i2c-tools**
-**sudo nano /etc/modules**
-**sudo reboot**
-**sudo 12cdetect -y 1**  (12cdetect: command not found)
-**sudo wget http://www.pimodules.com/_zip/UPS_Pico_Supporting_Files.zip**  (Manual still has wrong URL))
-**unzip UPS_Pico_Supporting_Files.zip**
-**sudo python /home/pi/picofssd.py** (no LEDS flashing yet. Did not yet get past this because of GPIO conflict with wiringPi ?)
+**sudo raspi-config**    
+**sudo apt-get install python-rpi.gpio**    
+**sudo apt-get install python-smbus**    
+**sudo apt-get install i2c-tools**    
+**sudo nano /etc/modules**    
+**sudo reboot**    
+**sudo 12cdetect -y 1**  (12cdetect: command not found)    
+**sudo wget http://www.pimodules.com/_zip/UPS_Pico_Supporting_Files.zip**  (Manual still has wrong URL)    
+**unzip UPS_Pico_Supporting_Files.zip**    
+**sudo python /home/pi/picofssd.py** (no LEDS flashing yet. Did not yet get past this because of GPIO conflict with wiringPi ?)    
 
 
 
