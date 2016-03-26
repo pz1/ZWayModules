@@ -26,8 +26,12 @@ Optional if you have more than one Raspberrypi do a rename:
      - Hostname   
    
 **Finish** this configurator, but do NOT YET **reboot**. First install any of the options:    
-A <a href="#logToUsb">Write log files to USB-stick</a>.    
-B <a href="#UpsPico">Install UPS Pico</a>.    
+A <a href="#disableSwap">Remove Swapfile</a>.    
+B <a href="#logToUsb">Write log files to USB-stick</a>.    
+C <a href="#UpsPico">Install UPS Pico</a>.    
+D <a href="#wiringPi">WiringPi</a>.    
+E <a href="#OpenRemote">OpenRemote</a>.    
+<a href="#Finalise">Finalise</a>.    
 ***
 ####Reduce unnecesary write actions on SDCard (Optional)
 <a name="disableSwap"/>    
@@ -131,12 +135,13 @@ gpio -v
 gpio readall
 ```
 ***
+<a name="#OpenRemote"/>    
 #### Install OpenRemote (Optional)    
 I do use [OpenRemote](http://www.openremote.org/x/nwFWAQ) as visualisation and integration platform for two ZWay satellites. At present it runs on a NAS    
 This installation is probably only usefull to do on a RaspberryPi 2    
 \<to be completed\>    
 *** 
-<a name="Finalise"/>    
+<a name="#Finalise"/>    
 #### Finalise installation   
 Install a stable Zway version, followed by a restart of the raspberrypi.  
 **wget -q -O - razberry.z-wave.me/install/v2.2.1 | sudo bash**   
