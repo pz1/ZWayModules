@@ -135,13 +135,13 @@ gpio -v
 gpio readall
 ```
 ***
-<a name="#OpenRemote"/>    
+<a name="OpenRemote"/>    
 #### Install OpenRemote (Optional)    
 I do use [OpenRemote](http://www.openremote.org/x/nwFWAQ) as visualisation and integration platform for two ZWay satellites. At present it runs on a NAS    
 This installation is probably only usefull to do on a RaspberryPi 2    
 \<to be completed\>    
 *** 
-<a name="#Finalise"/>    
+<a name="Finalise"/>    
 #### Finalise installation   
 Install a stable Zway version, followed by a restart of the raspberrypi.  
 **wget -q -O - razberry.z-wave.me/install/v2.2.1 | sudo bash**   
