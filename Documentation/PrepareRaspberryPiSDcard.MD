@@ -72,7 +72,8 @@ Now, **create a filesystem** using:
 
  **sudo nano /etc/fstab**    
 
- Add the last line to this file, so the USB-stick is automatically mounted at start-up. Make the **/boot** partition *read_only*, and add the noatime flag to it. **WARNING** Once you have rebooted, you may not be able to change some settings with raspi/config. For example in UPS Pico setup! 
+ Add the last line to this file, so the USB-stick is automatically mounted at start-up. Make the **/boot** partition *read_only*, and add the noatime flag to it.    
+  **WARNING** Once you have rebooted, you may not be able to change some settings with *raspi-config*. For example in UPS Pico setup! 
 ```
 proc            /proc           proc    defaults          0       0
 /dev/mmcblk0p1  /boot           vfat    ro,noatime        0       2
