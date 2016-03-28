@@ -110,7 +110,7 @@ Follow the simple manual from page 7. The commands are written down below, becau
 **sudo apt-get install python-smbus**    
 **sudo apt-get install i2c-tools**    
 **sudo nano /etc/modules**    
-*If not yet specified add:*    
+*If not yet specified add the following line(s):*    
 ```
 i2c-bcm2708
 i2c-dev
@@ -129,7 +129,7 @@ sudo python /home/pi/picofssd.py &
 
 echo ds1307 0x68 > /sys/class/i2c-adapter/i2c-1/new_device
 ( sleep 4; hwclock -s ) &
-```
+```    
 
 \<work in progress, to be completed\> 
 
