@@ -110,9 +110,11 @@ Follow the simple manual from page 7. The commands are written down below, becau
 **sudo apt-get install python-smbus**    
 **sudo apt-get install i2c-tools**    
 **sudo nano /etc/modules**    
-*If not yet specufied add:*    
-    *i2c-bcm2708*
-	*i2c-dev*    
+*If not yet specified add:*    
+```
+i2c-bcm2708
+i2c-dev
+```
 **sudo reboot**    
 **sudo i2cdetect -y 1**        
 **sudo wget http://www.pimodules.com/_zip/UPS_Pico_Supporting_Files.zip**  (Manual still has wrong URL)    
