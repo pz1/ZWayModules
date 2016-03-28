@@ -122,7 +122,7 @@ i2c-dev
 **sudo python /home/pi/picofssd.py** (no LEDS flashing yet. Did not yet get past this because of GPIO conflict with wiringPi ?)    
 **sudo python /home/pi/picofssd.py &**
 **sudo nano /etc/rc.local**    
-*Copy following text just before **exit 0***
+*Copy following text just before* ***exit 0***
 ```
 # Run UPS Pico FSSD script and load the included emulated RTC
 sudo python /home/pi/picofssd.py &
