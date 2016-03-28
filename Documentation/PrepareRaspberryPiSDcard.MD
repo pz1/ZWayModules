@@ -120,7 +120,7 @@ Follow the simple manual from page 7. The commands are written down below, becau
 **sudo python /home/pi/picofssd.py** (no LEDS flashing yet. Did not yet get past this because of GPIO conflict with wiringPi ?)    
 **sudo python /home/pi/picofssd.py &**
 **sudo nano /etc/rc.local**    
-*Copy following text just before exit 0*
+*Copy following text just before **exit 0***
 ```
 # Run UPS Pico FSSD script and load the included emulated RTC
 sudo python /home/pi/picofssd.py &
@@ -129,6 +129,7 @@ echo ds1307 0x68 > /sys/class/i2c-adapter/i2c-1/new_device
 ( sleep 4; hwclock -s ) &
 ```
 
+\<work in progress, to be completed\> 
 
 
 If you want to remove the UPS Pico from your Raspberry Pi, shut it down properly    
