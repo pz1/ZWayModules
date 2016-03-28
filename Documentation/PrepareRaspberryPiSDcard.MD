@@ -72,7 +72,7 @@ Now, **create a filesystem** using:
 
  **sudo nano /etc/fstab**    
 
- Add the last line to this file, so the USB-stick is automatically mounted at start-up. Make the **/boot** partition *read_only*, and add the noatime flag to it 
+ Add the last line to this file, so the USB-stick is automatically mounted at start-up. Make the **/boot** partition *read_only*, and add the noatime flag to it. **WARNING** Once you have rebooted, you may not be able to change some settings with raspi/config. For example in UPS Pico setup! 
 ```
 proc            /proc           proc    defaults          0       0
 /dev/mmcblk0p1  /boot           vfat    ro,noatime        0       2
@@ -97,7 +97,7 @@ tmpfs          tmpfs     463M     0  463M   0% /sys/fs/cgroup
 <a name="UpsPico"/>    
 #### Install drivers for UPS Pico HV1.1 on Raspberry Pi 2(Optional)  
 \<work in progress, to be completed\>     
-*Prerequisite* Make sure you have a stable 3A power supply for your Raspberry Pi. At start-up with Pico UPS installed, more than 2A are drawn! Also make sure no other applications (e.g. via wiringPi) use GPIO_22 and GPIO_27.        
+*Prerequisite* Make sure you have a stable 3A power supply for your Raspberry Pi. At start-up with Pico UPS installed, current may exceed 2A ! Also make sure no other applications (e.g. via wiringPi) use GPIO_22 and GPIO_27.        
 UPS Pico is a power backup system that dependent on the used battery can cope with power outages of a few minutes to a couple of hours.    
 [UPS Pico site](http://www.pimodules.com/). The [Simple installation guide](http://www.pimodules.com/_pdf/Simple_Setting_Guide_for_the_UPS_PIco.pdf) is the least confusing, and is sufficient in most cases.    
 Follow the simple manual from page 7. The commands are written down below, because at the moment you can't copy them from the manual:    
