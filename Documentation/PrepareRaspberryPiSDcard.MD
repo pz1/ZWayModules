@@ -103,11 +103,11 @@ UPS Pico is a power backup system that dependent on the used battery can cope wi
 [UPS Pico site](http://www.pimodules.com/). The [Simple installation guide](http://www.pimodules.com/_pdf/Simple_Setting_Guide_for_the_UPS_PIco.pdf) is the least confusing, and is sufficient in most cases.    
 Follow the simple manual from page 7. The commands are written down below, because at the moment you can't copy them from the manual:    
 **sudo raspi-config**    
-  Advanced Options    
 ```
+Advanced Options    
   A7 ARM I2C interface enable    
       I2C interface kernel module loaded by default    
-    A8 Serial enable    
+  A8 Serial enable    
 ```	
 **sudo apt-get install python-rpi.gpio**    
 **sudo apt-get install python-smbus**    
@@ -140,7 +140,7 @@ echo ds1307 0x68 > /sys/class/i2c-adapter/i2c-1/new_device
 If you want to remove the UPS Pico from your Raspberry Pi, shut it down properly    
 **sudo shutdown -h now**    
 remove the external power source from it. Next    
-**push the **UPSR** button for about 1 second**
+**push the **UPSR** button (second button from the left) for about 1 second**
 Carefully pull the device from the Raspberry Pi       
 ***
 <a name="wiringPi"/>    
