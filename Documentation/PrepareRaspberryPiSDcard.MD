@@ -103,10 +103,10 @@ UPS Pico is a power backup system that dependent on the used battery can cope wi
 [UPS Pico site](http://www.pimodules.com/). The [Simple installation guide](http://www.pimodules.com/_pdf/Simple_Setting_Guide_for_the_UPS_PIco.pdf) is the least confusing, and is sufficient in most cases.    
 Follow the simple manual from page 7. The commands are written down below, because at the moment you can't copy them from the manual:    
 **sudo raspi-config**    
-*Advanced Options*    
-  *A7 ARM I2C interface enable*    
-    *I2C interface kernel module loaded by default*     
-  *A8 Serial enable*	
+- Advanced Options
+ - A7 ARM I2C interface enable
+  - I2C interface kernel module loaded by default
+ - A8 Serial enable    
 **sudo apt-get install python-rpi.gpio**    
 **sudo apt-get install python-smbus**    
 **sudo apt-get install i2c-tools**    
