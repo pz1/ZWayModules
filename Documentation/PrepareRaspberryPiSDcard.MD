@@ -106,8 +106,8 @@ Follow the simple manual from page 7. The commands are written down below, becau
 - Advanced Options
  - A7 ARM I2C interface enable
   - I2C interface kernel module loaded by default
- - A8 Serial enable    
-**sudo apt-get install python-rpi.gpio**    
+ - A8 Serial enable
+ **sudo apt-get install python-rpi.gpio**    
 **sudo apt-get install python-smbus**    
 **sudo apt-get install i2c-tools**    
 **sudo nano /etc/modules**    
