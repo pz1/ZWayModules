@@ -69,21 +69,15 @@ Now, **create a filesystem** using:
 
 *The vfat format makes it possible to also read this USB Drive on a windows PC*    
 
- **sudo nano /etc/fstab**    
-
  Add the last line to this file, so the USB-stick is automatically mounted at start-up. Make the **/boot** partition *read_only*, and add the noatime flag to it.    
   **WARNING** Once you have rebooted, you may no longer be able to change some settings with *raspi-config*. For example in UPS Pico setup! 
-```
-proc            /proc           proc    defaults          0       0
-/dev/mmcblk0p1  /boot           vfat    ro,noatime        0       2
-/dev/mmcblk0p2  /               ext4    defaults,noatime  0       1
-/dev/sda1       /var/log        vfat    rw,defaults       0       0
-``` 
+
 We should make this usage of the USB stick a little more robust by not referring to it's path (/dev/sda1), but by using it's unique ID. Then it no longer matters in which USB socket you plug that device. Get the ID as follows:    
 
 **ls -laF /dev/disk/by-uuid/**    
-
 You will find something like this **4AF7-9955 -> ../../sda1**  on the screen. Do use that as follows in the last line of fstab
+
+ **sudo nano /etc/fstab**    
 ```
 proc            /proc           proc    defaults          0       0
 /dev/mmcblk0p1  /boot           vfat    ro,noatime        0       2
