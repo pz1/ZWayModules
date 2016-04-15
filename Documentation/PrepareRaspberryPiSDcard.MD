@@ -80,7 +80,9 @@ proc            /proc           proc    defaults          0       0
 /dev/sda1       /var/log        vfat    rw,defaults       0       0
 ``` 
 We should make this usage of the USB stick a little more robust by not referring to it's path (/dev/sda1), but by using it's unique ID. Then it no longer matters in which USB socket you plug that device. Get the ID as follows:    
+
 **ls -laF /dev/disk/by-uuid/**    
+
 You will find something like this **4AF7-9955 -> ../../sda1**  on the screen. Do use that as follows in the last line of fstab
 ```
 proc            /proc           proc    defaults          0       0
@@ -153,7 +155,7 @@ remove the external power source from it. Next
 Carefully pull the device from the Raspberry Pi       
 ***
 <a name="wiringPi"></a>    
-#### Install WiringPi (Optional)
+#### Install WiringPi (Optional; Jessie full version has it by default)
 For controlling devices via the GPIO, the wiringPi modules has proven to be useful (at least for me).    
 Via a web browser find the link to the [latest build of wiringPi](http://wiringpi.com/download-and-install/) (scroll down to: Plan B). Download it to your PC, and copy from there to the Raspberry Pi. (A direct wget seemed more logical, but I could not get it to work, like many other users)
    
@@ -173,7 +175,7 @@ gpio readall
 #### Install OpenRemote (Optional)    
 I do use [OpenRemote](http://www.openremote.org/x/nwFWAQ) as visualisation and integration platform for two ZWay satellites. At present it runs on a NAS    
 This installation is probably only usefull to do on a RaspberryPi 2    
-\<to be completed\>    
+ToDo    
 *** 
 <a name="Finalise"></a>    
 #### Finalise installation   
