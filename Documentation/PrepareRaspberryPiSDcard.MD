@@ -72,7 +72,7 @@ Now, **create a filesystem** using:
  Add the last line to this file, so the USB-stick is automatically mounted at start-up. Make the **/boot** partition *read_only*, and add the noatime flag to it.    
   **WARNING** Once you have rebooted, you may no longer be able to change some settings with *raspi-config*. For example in UPS Pico setup! 
 
-We should make this usage of the USB stick a little more robust by not referring to it's path (/dev/sda1), but by using it's unique ID. Then it no longer matters in which USB socket you plug that device. Get the ID as follows:    
+We should make this usage of the USB stick a little more robust by not referring to it's path (/dev/sda1), but by using it's unique ID. Then it no longer matters in which USB socket you plug that device. Get the **UUID** as follows:    
 
 **ls -laF /dev/disk/by-uuid/**    
 You will find something like this **4AF7-9955 -> ../../sda1**  on the screen. Do use that UUID in the last line of fstab
@@ -84,7 +84,7 @@ proc            /proc           proc    defaults          0       0
 /dev/mmcblk0p2  /               ext4    defaults,noatime  0       1
 UUID=4AF7-9955  /var/log	    vfat	rw,defaults       0       0
 ``` 
-**sudo reboot**
+**sudo reboot**    
 After the restart, the file system should look like this.    
 ```
 pi@rasppi2:~ $ df -hT
