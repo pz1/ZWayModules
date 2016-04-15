@@ -124,13 +124,12 @@ i2c-bcm2708
 i2c-dev
 ```
 **sudo reboot**    
-**sudo i2cdetect -y 1**        
-**sudo wget http://www.pimodules.com/_zip/UPS_Pico_Supporting_Files.zip**  (Manual still has wrong URL)    
+**sudo i2cdetect -y 1** (In my setup with jessie March 2016 it did not work initially. It did after the reboot following on the chmode further down)      
+**sudo wget http://www.pimodules.com/_zip/UPS_Pico_Supporting_Files.zip**     
 **unzip UPS_Pico_Supporting_Files.zip**    
 **sudo python /home/pi/picofssd.py** (no LEDS flashing yet. Did not yet get past this because of GPIO conflict with wiringPi ?)    
-**sudo python /home/pi/picofssd.py &**
 **sudo nano /etc/rc.local**    
-*Copy following text just before* ***exit 0***
+*Copy following text just before* **exit 0**
 ```
 #Run UPS Pico FSSD script and load the included emulated RTC
 sudo python /home/pi/picofssd.py &
@@ -138,6 +137,9 @@ sudo python /home/pi/picofssd.py &
 echo ds1307 0x68 > /sys/class/i2c-adapter/i2c-1/new_device
 ( sleep 4; hwclock -s ) &
 ```    
+**sudo chmod +x /etc/rc.local**
+**sudo reboot**
+
 
 *work in progress, to be completed* 
 
