@@ -10,7 +10,7 @@ Z-Way **2.2.2** on RaspiB/[RaZberry](http://razberry.zwave.me/index.php?id=9) (o
 Z-Way **2.2.2** on Raspi2/[UZB1](http://www.z-wave.me/index.php?id=28) - OS: Rasbian-Jessie-Lite March 2016     
 UPS Pico stability tests    
 
-These systems are satellites to my OpenRemote Pro 1.4.0 on DS212+ DSM 4.3-3827 See [OpenRemote UI](http://www.openremote.org/x/nwFWAQ)    
+These systems are satellites to my OpenRemote Pro 1.4.0 on Synology DS212+ DSM 4.3-3827 Diskstation See [OpenRemote UI](http://www.openremote.org/x/nwFWAQ)    
 
 _Note: The hyper links on my devices refer to the description of an application/recipe involving that device._
 ****
