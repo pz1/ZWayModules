@@ -48,10 +48,16 @@ Arithmetic.prototype.init = function (config) {
 			moduleId : this.id
 		});
 
-	this.timer = setInterval(function () {
-			self.fetchEquation(self);
-		}, 60 * 1000); //every minute
-	self.fetchEquation(self);
+	this.controller.devices.on(self.config.sensor1, 'change:metrics:level', function() {
+        self.fetchEquation(self);
+		});
+	this.controller.devices.on(self.config.sensor2, 'change:metrics:level', function() {
+        self.fetchEquation(self);
+		});
+//	this.timer = setInterval(function () {
+//			self.fetchEquation(self);
+//		}, 60 * 1000); //every minute
+//	self.fetchEquation(self);
 };
 
 Arithmetic.prototype.stop = function () {
