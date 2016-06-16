@@ -1,6 +1,6 @@
 /*** Arithmetic Z-Way HA module *******************************************
 
-Version: 1.0.1
+Version: 1.0.3
 (c) 2015-2016
 -----------------------------------------------------------------------------
 Author: Pieter E. Zanstra
@@ -82,6 +82,12 @@ Arithmetic.prototype.fetchEquation = function (instance) {
 	result = 0;
 
 	var calculation = self.config.formula;
+	var param = self.config.cParams;
+	if (param.length >0) {
+		var cArray = param.split(",",2);
+        	var c1 = parseFloat(cArray[0]);
+        	var c2 = parseFloat(cArray[1]);
+	}
 	var metric1 = "metrics:" + self.config.metric1;
 	var metric2 = "metrics:" + self.config.metric2;
 	var a = controller.devices.get(self.config.sensor1).get(metric1);
@@ -103,6 +109,9 @@ Arithmetic.prototype.fetchEquation = function (instance) {
 		} else {
 			result = 0;
 		}
+		break;
+	case "calibrate":
+		result = a * c1 + c2;
 		break;
 	default:
 		return "Error: function " + calculation + " is not defined in module Arithmetic";
