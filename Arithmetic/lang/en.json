@@ -4,12 +4,13 @@
 	"formula" : "Operation",
 	"helper" : "Select one of the implemented operations",
 	"sensor-name" : "Sensor Name",
-	"sensor-name-placeholder" : "Energy",
 	"sensor-units" : "Units",
 	"sensor1" : "Sensor a",
 	"metric1" : "Metric a",
 	"metric1-helper" : "Only change if your metric is other than the default setting: level",
 	"sensor2" : "Sensor b",
 	"metric2" : "Metric b",
-	"metric2-helper" : "Only change if your metric is other than the default setting: level"
+	"metric2-helper" : "Only change if your metric is other than the default setting: level",
+	"constant" : "Constants c1, c2, etc",
+	"constant-helper" : "Enter constants (signed reals separated by a semi-colon (;)"
 }

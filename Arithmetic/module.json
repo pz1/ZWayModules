@@ -6,7 +6,7 @@
 	"homepage" : "http://forum.z-wave.me/viewtopic.php?f=3424&t=21381",
 	"icon" : "icon.png",
 	"moduleName" : "Arithmetic",
-	"version" : "1.0.1",
+	"version" : "1.0.3",
 	"maturity" : "stable",
 	"repository" : {
 		"type" : "git",
@@ -16,16 +16,18 @@
 		"title" : "__m_title__",
 		"description" : "__m_descr__",
 		"formula" : "",
+		"Title" : "Energy",
 		"scaleTitle" : "kWh",
 		"metric1" : "level",
-		"metric2" : "level"
+		"metric2" : "level",
+		"cParams" : "0,0"
 	},
 	"schema" : {
 		"type" : "object",
 		"properties" : {
 			"formula" : {
 				"type" : "select",
-				"enum" : ["add", "sub", "mult", "div"],
+				"enum" : ["add", "sub", "mult", "div", "calibrate"],
 				"required" : true
 			},
 			"Title" : {
@@ -50,11 +52,15 @@
 				"field" : "enum",
 				"datasource" : "namespaces",
 				"enum" : "namespaces:devices_sensorMultilevel:deviceId",
-				"required" : true
+				"required" : false
 			},
 			"metric2" : {
 				"type" : "string",
 				"required" : true
+			},
+			"cParams" : {
+				"type" : "string",
+				"required" : "false"
 			}
 
 		},
@@ -64,16 +70,14 @@
 		"fields" : {
 			"formula" : {
 				"label" : "__formula__",
-				"optionLabels" : ["a+b", "a-b", "a*b", "a/b"],
+				"optionLabels" : ["a+b", "a-b", "a*b", "a/b", "a*c1+c2"],
 				"helper" : "__helper__"
 			},
 			"Title" : {
-				"label" : "__sensor-name__",
-				"placeholder" : "__sensor-name-placeholder__"
+				"label" : "__sensor-name__"
 			},
 			"scaleTitle" : {
-				"label" : "__sensor-units__",
-				"placeholder" : "__sensor-units-placeholder__"
+				"label" : "__sensor-units__"
 			},
 			"sensor1" : {
 				"label" : "__sensor1__",
@@ -96,6 +100,10 @@
 			"metric2" : {
 				"label" : "__metric2__",
 				"helper" : "__metric2-helper__"
+			},
+			"cParams" : {
+				"label" : "__constant__",
+				"helper" : "__constant-helper__"
 			}
 		}
 	}
