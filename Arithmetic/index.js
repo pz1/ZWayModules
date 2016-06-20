@@ -48,12 +48,16 @@ Arithmetic.prototype.init = function (config) {
 			moduleId : this.id
 		});
 
-	this.controller.devices.on(self.config.sensor1, 'change:metrics:level', function() {
-        self.fetchEquation(self);
-		});
+//  Following code is a replacement for the 'timed' call to fetch equation. It should fix
+//  the problem of not initialised variables at start up.
+
+	this.controller.devices.on(self.config.sensor1, 'change:metrics:level', function() { 
+		self.fetchEquation(self);
+	});
 	this.controller.devices.on(self.config.sensor2, 'change:metrics:level', function() {
-        self.fetchEquation(self);
-		});
+		self.fetchEquation(self);
+	});
+
 //	this.timer = setInterval(function () {
 //			self.fetchEquation(self);
 //		}, 60 * 1000); //every minute
