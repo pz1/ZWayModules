@@ -1,7 +1,7 @@
 /*** PVLogger Z-Way HA module *******************************************
 
-Version: 1.0.0
-(c) 2015
+Version: 1.0.1
+(c) 2015-2016
 -----------------------------------------------------------------------------
 Author: Pieter E. Zanstra
 Description:
@@ -94,7 +94,12 @@ PVLogger.prototype.stop = function () {
 // ----------------------------------------------------------------------------
 
 PVLogger.prototype.fetchSolar = function (instance) {
-	var self = instance;
+	var self = instance,
+	    moduleName = "PVLogger",
+            langFile = self.controller.loadModuleLang(moduleName),
+            lang = self.controller.defaultLang;
+
+
 
 	http.request({
 		url : "http://" + self.config.pvlogger + "/status.xml",
@@ -104,6 +109,7 @@ PVLogger.prototype.fetchSolar = function (instance) {
 			try {
 				var doc1 = response.data; // it is already ZXmlDocument
 				power = parseFloat(doc1.findOne("/response/gauge_power/text()"));
+console.log("PVLogger: ",power);
 				eToday = parseFloat(doc1.findOne("/response/energy_today/text()"));
 				timeStamp = doc1.findOne("/response/time_stamp/text()");
 				self.vDev.set("metrics:level", power);
@@ -111,14 +117,14 @@ PVLogger.prototype.fetchSolar = function (instance) {
 				self.vDev2.set("metrics:level", eToday);
 				self.vDev2.set("metrics:timeStamp", timeStamp);
 			} catch (e) {
-				self.controller.addNotification("error", "Can not parse Solar1 information", "module");
+				self.controller.addNotification("error", langFile.err_parse, "module", moduleName);
 			}
 		},
 		error : function () {
-			self.vDev.set("metrics:level", 0);
-			self.vDev2.set("metrics:level", 0);
-			// The following line is commented, because the logger is not available at night. Uncomment for initial testing.
-			//			self.controller.addNotification("error", "Can not fetch Solar1 information", "module");
+			//self.vDev.set("metrics:level", 0);
+			//self.vDev2.set("metrics:level", 0);
+			//The following line is commented, because the logger is not available at night. Uncomment for initial testing.
+			//self.controller.addNotification("error" , langFile.err_fetch, "module", moduleName);
 		}
 	});
 };
