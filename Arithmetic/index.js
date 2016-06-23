@@ -1,6 +1,6 @@
 /*** Arithmetic Z-Way HA module *******************************************
 
-Version: 1.0.3
+Version: 1.0.4
 (c) 2015-2016
 -----------------------------------------------------------------------------
 Author: Pieter E. Zanstra
@@ -88,7 +88,7 @@ Arithmetic.prototype.fetchEquation = function (instance) {
 	var calculation = self.config.formula;
 	var param = self.config.cParams;
 	if (param.length >0) {
-		var cArray = param.split(",",2);
+		var cArray = param.split(";",2);
         	var c1 = parseFloat(cArray[0]);
         	var c2 = parseFloat(cArray[1]);
 	}

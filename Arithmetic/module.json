@@ -6,7 +6,7 @@
 	"homepage" : "http://forum.z-wave.me/viewtopic.php?f=3424&t=21381",
 	"icon" : "icon.png",
 	"moduleName" : "Arithmetic",
-	"version" : "1.0.3",
+	"version" : "1.0.4",
 	"maturity" : "stable",
 	"repository" : {
 		"type" : "git",
@@ -20,7 +20,7 @@
 		"scaleTitle" : "kWh",
 		"metric1" : "level",
 		"metric2" : "level",
-		"cParams" : "0,0"
+		"cParams" : "0;0"
 	},
 	"schema" : {
 		"type" : "object",
