@@ -1,8 +1,8 @@
 {
 	"m_title" : "Arithmetic",
-	"m_descr" : "Combine two sensor values into one new variable",
+	"m_descr" : "Combine two sensor values into one new variable. Version 1.02+ supports calibration function: sensora*constant1+constant2.",
 	"formula" : "Operation",
-	"helper" : "Select one of the implemented operations",
+	"helper" : "Select one of the pre-defined operations",
 	"sensor-name" : "Sensor Name",
 	"sensor-units" : "Units",
 	"sensor1" : "Sensor a",
