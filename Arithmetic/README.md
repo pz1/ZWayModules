@@ -7,6 +7,6 @@ This is a very simple module, which supports *addition*, *subtraction*, *multipl
 The module creates a virtualDevice which hold the result of the operation. As inputs two existing multilevel sensors can be selected from drop-down lists. If sensors have multiple metrics these can be defined. The default is the type:level metric. The update frequency is user defined, with a minimum interval of 1 minute.
 
 Version 1.0.2 Added a calibration function that acts on the first sensor. Its value can be muliplied by one constant, and offset by another:      
-'''
+'''    
 result = sensor_1 * constant_1 + constant_2
-'''
+'''    
