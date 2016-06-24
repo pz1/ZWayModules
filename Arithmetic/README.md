@@ -8,5 +8,7 @@ The module creates a virtualDevice which hold the result of the operation. As in
 
 Version 1.0.2:  Added a calibration function that acts on the first sensor. Its value can be muliplied by one constant, and offset by another:
 ```
-result = sensor1 * constant1 + constant2
+result = sensor_a * constant_1 + constant_2
 ```
+For example you can now simply convert a Celsius sensor to Fahrenheit by choosing the values 1.8 and 32 respectively for constant_1 and const_2.
+
