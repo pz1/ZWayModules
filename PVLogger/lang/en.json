@@ -1,8 +1,10 @@
 {
   "m_title" : "PVLogger",
-  "m_descr" : "Solar production logger (specific for plugin device from fp4all.com) <br>Click on <i>Author name</i> for latest Github source, and here for: <i><a href=http://forum.z-wave.me/viewtopic.php?f=3424&t=21398&p=55728>detailed documentation and discussion.</a></i>",
+  "m_descr" : "Solar production logger (specific for plugin device from fp4all.com) <br>Click on <i>Author name</i> for latest Github source, and here for: <i><a href=http://forum.z-wave.me/viewtopic.php?f=3424&t=21398&p=55728>detailed documentation and discussion.</a></i><p> This module creates two virtual Devices; <b>PVLogger_X-1</b> (Powerlevel, <i>Watt</i>) and <b>PVLogger_X-2</b> (Energy produced this day, <i>kWh</i>). Both have <b>timeStamp</b> as attribute",
   "polling-label" : "Polling",
   "address-label" : "IP Address",
   "pvlogger-helper" : "IP-number of FP4All.com PVlogger Device",
-  "polling-helper" : "Change polling interval (minutes) if needed"
+  "polling-helper" : "Change polling interval (minutes) if needed",
+  "err_parse":"Can not parse weather information",
+  "err_fetch":"Can not fetch weather information"
 }

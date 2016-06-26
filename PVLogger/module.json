@@ -6,7 +6,7 @@
 	"homepage" : "https://github.com/pz1/ZWayModules/tree/master/PVLogger",
 	"icon" : "icon.png",
     "moduleName": "PVLogger",
-	"version" : "1.0.0",
+	"version" : "1.0.1",
 	"maturity" : "stable",
 	"repository" : {
 		"type" : "git",

@@ -1,7 +1,7 @@
 /*** SolQoS Z-Way HA module *******************************************
 
-Version: 0.0.1
-(c) 2015
+Version: 1.1.0 beta
+(c) 2015-2016
 -----------------------------------------------------------------------------
 Author: Pieter E. Zanstra
 Description:
@@ -52,10 +52,17 @@ SolQoS.prototype.init = function (config) {
 			moduleId : this.id
 		});
 
-	this.timer = setInterval(function () {
-			self.fetchEquation(self);
-		}, self.config.polling * 60 * 1000); //every minute
-	self.fetchEquation(self);
+	this.controller.devices.on((self.config.pvlogger1 + "-1"), 'change:metrics:level', function() { 
+		self.fetchEquation(self);
+	});
+	this.controller.devices.on((self.config.pvlogger2 + "-1"), 'change:metrics:level', function() {
+		self.fetchEquation(self);
+	});
+
+//	this.timer = setInterval(function () {
+//			self.fetchEquation(self);
+//		}, self.config.polling * 60 * 1000); //every minute
+//	self.fetchEquation(self);
 };
 
 SolQoS.prototype.stop = function () {
