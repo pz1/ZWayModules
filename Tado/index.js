@@ -15,27 +15,27 @@ This module creates a sensorMultilevel or a sensorBinary widget
 // --- Class definition, inheritance and setup
 // ----------------------------------------------------------------------------
 
-function TadoDevice(id, controller) {
+function Tado(id, controller) {
     "use strict";
     // Call superconstructor first (AutomationModule)
-    TadoDevice.super_.call(this, id, controller);
+    Tado.super_.call(this, id, controller);
 }
 
-inherits(TadoDevice, AutomationModule);
+inherits(Tado, AutomationModule);
 
-_module = TadoDevice;
+_module = Tado;
 
 // ----------------------------------------------------------------------------
 // --- Module instance initialized
 // ----------------------------------------------------------------------------
 
-TadoDevice.prototype.init = function (config) {
-    TadoDevice.super_.prototype.init.call(this, config);
+Tado.prototype.init = function (config) {
+    Tado.super_.prototype.init.call(this, config);
 
     var self = this;
 
     this.vDev = self.controller.devices.create({
-        deviceId: "TadoDevice_" + this.id,
+        deviceId: "Tado_" + this.id,
         defaults: {
             deviceType: "sensorMultilevel",
             metrics: {
@@ -57,8 +57,8 @@ TadoDevice.prototype.init = function (config) {
     self.fetchJSONElement(self);
 };
 
-TadoDevice.prototype.stop = function () {
-    TadoDevice.super_.prototype.stop.call(this);
+Tado.prototype.stop = function () {
+    Tado.super_.prototype.stop.call(this);
 
     if (this.timer)
         clearInterval(this.timer);
@@ -73,9 +73,9 @@ TadoDevice.prototype.stop = function () {
 // --- Module methods
 // ----------------------------------------------------------------------------
 
-TadoDevice.prototype.fetchJSONElement = function (instance) {
+Tado.prototype.fetchJSONElement = function (instance) {
     var self = instance,
-        moduleName = "TadoDevice",
+        moduleName = "Tado",
         langFile = self.controller.loadModuleLang(moduleName),
         isNumerical = self.config.isNumerical,
         isFloat = self.config.isFloat,

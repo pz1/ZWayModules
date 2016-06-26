@@ -5,7 +5,7 @@
     "author": "Christian Ashby (click for Recipe)",
     "homepage": "TODO (http://forum.z-wave.me/viewtopic.php?f=3424&t=21446)",
     "icon": "icon.png",
-    "moduleName": "TadoDevice",
+    "moduleName": "Tado",
     "version": "0.0.1",
     "maturity": "development",
     "repository": {
@@ -22,7 +22,7 @@
         "polling": "5",
         "probeTitle": "InsideTemp",
         "scaleTitle": "C",
-        "deviceName": "JSONtest",
+        "deviceName": "TadoTemp",
         "debug": ""
     },
     "schema": {
