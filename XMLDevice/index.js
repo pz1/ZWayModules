@@ -104,6 +104,7 @@ XMLDevice.prototype.fetchXMLElement = function (instance) {
 					level = doc1.findOne(XPath);
 				}
 				self.vDev.set("metrics:level", level);
+			        self.vDev.set("metrics:icon", "/ZAutomation/api/v1/load/modulemedia/XMLDevice/icon.png");
 			} catch (e) {
 				if (self.config.debug) {
 					self.controller.addNotification("error", langFile.err_parse, "module", moduleName);
