@@ -114,7 +114,7 @@ console.log("PVLogger: ",power);
 				timeStamp = doc1.findOne("/response/time_stamp/text()");
 				self.vDev.set("metrics:level", power);
 				self.vDev.set("metrics:timeStamp", timeStamp);
-			        self.vDev.set("metrics:icon", "/ZAutomation/api/v1/load/modulemedia/PVLogger/solarpanle.png");
+			        self.vDev.set("metrics:icon", "/ZAutomation/api/v1/load/modulemedia/PVLogger/solarpanel.png");
 				self.vDev2.set("metrics:level", eToday);
 				self.vDev2.set("metrics:timeStamp", timeStamp);
 			        self.vDev2.set("metrics:icon", "/ZAutomation/api/v1/load/modulemedia/PVLogger/solarpanel.png");
