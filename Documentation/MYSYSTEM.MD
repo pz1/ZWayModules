@@ -4,11 +4,11 @@ Z-Way **2.2.1** on Raspi2/[UZB1](http://www.z-wave.me/index.php?id=28) - OS: Ras
 **Apps** (active): ZWave, Link other Z-Way controller, IF -> Then(2), Trap events from Remotes and Sensors, Schedule(5), CodeDevice(40), Scene(4), LogicalRule,  Load custom JavaScript file, CRON, PVLogger(2), SolQoS, OpenRemote Helper, Wunderground(weather). 
 As of 2016-06-19 Number of instances in ()   
 
-Z-Way **2.2.3-rc2** on RaspiB/[RaZberry](http://razberry.zwave.me/index.php?id=9) (old gen3 version) - OS: Rasbian-Jessie-Lite February 2016  
+Z-Way **2.2.2** on RaspiB/[RaZberry](http://razberry.zwave.me/index.php?id=9) (old gen3 version) - OS: Rasbian-Jessie-Lite February 2016  
 **Devices**: 1 Fibaro [Universal Binary Sensor FGBS-001](http://www.openremote.org/x/vCBdAQ); 1 Fibaro Double Relay Switch FGS-221    
 **Apps** (active): OpenRemote Helper, Trap Events, Link other ZWay, Schedule, Scene, Zwave. (incomplete list) 
 
-Z-Way **2.2.2** on Raspi2/[UZB1](http://www.z-wave.me/index.php?id=28) - OS: Rasbian-Jessie-Lite March 2016     
+Z-Way **2.2.1** on Raspi2/[UZB1](http://www.z-wave.me/index.php?id=28) - OS: Rasbian-Jessie-Lite March 2016     
 UPS Pico stability tests    
 
 These systems are satellites to my OpenRemote Pro 1.4.0 on **Synology DS212+** DSM 4.3-3827 Diskstation See [OpenRemote UI](http://www.openremote.org/x/nwFWAQ)    
