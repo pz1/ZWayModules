@@ -90,8 +90,8 @@ JSONDevice.prototype.fetchJSONElement = function (instance) {
     var auth = '{}';
     if( self.config.needsAuth ) {
         auth = {
-            "login": self.conf.username,
-            "password": self.conf.password
+            "login": self.config.username,
+            "password": self.config.password
         };
     }
 
