@@ -6,7 +6,7 @@
     "homepage": "TODO (http://forum.z-wave.me/viewtopic.php?f=3424&t=21446)",
     "icon": "icon.png",
     "moduleName": "JSONDevice",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "maturity": "development",
     "repository": {
         "type": "git",
