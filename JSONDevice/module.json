@@ -18,6 +18,9 @@
         "isNumerical": "true",
         "isFloat": "true",
         "url": "https://my.tado.com/mobile/1.4/getCurrentState?username=xxx&password=xxx",
+        "needsAuth": "false",
+        "username": "",
+        "password": "",
         "jsonPath": "insideTemp",
         "polling": "5",
         "probeTitle": "InsideTemp",
@@ -39,6 +42,18 @@
             "url": {
                 "type": "string",
                 "required": true
+            },
+            "needsAuth": {
+                "type": "boolean",
+                "required": true
+            },
+            "username": {
+                "type": "string",
+                "required": false
+            },
+            "password": {
+                "type": "string",
+                "required": false
             },
             "jsonPath": {
                 "type": "string",
@@ -79,6 +94,16 @@
             },
             "url": {
                 "label": "__url__"
+            },
+            "needsAuth": {
+                "rightLabel": "__needsAuth_Select__",
+                "helper": "__needsAuth_helper__"
+            },
+            "username": {
+                "label": "__username__"
+            },
+            "password": {
+                "label": "__password__"
             },
             "jsonPath": {
                 "label": "__jsonPath__"

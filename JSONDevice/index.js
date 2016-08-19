@@ -87,9 +87,15 @@ JSONDevice.prototype.fetchJSONElement = function (instance) {
         console.log("Debug: ", self.config.debug);
     }
 
+    var headers = '{}';
+    if( self.config.needsAuth ) {
+        headers = '{"Authorization": "Basic "' + btoa(self.conf.username + ':' + self.conf.password) + '}';
+    }
+
     http.request({
         url: self.config.url,
         async: true,
+        headers: headers,
         contentType: "text/json",
         success: function (res) {
             try {
