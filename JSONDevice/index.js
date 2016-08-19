@@ -112,7 +112,7 @@ JSONDevice.prototype.fetchJSONElement = function (instance) {
                 // We do the regexp parsing first as we may end up with a numeric.
                 if ( self.config.regexp != "" ) {
                     if( self.config.debug ) console.log("RegExp parser - input: " + val);
-                    val = val.match(new RegExp(self.config.regexp, "i"));
+                    val = val.match(new RegExp(self.config.regexp, "i"))[self.config.regexpix];
                     if( self.config.debug ) {
                         console.log("RegExp parser - regexp: " + self.config.regexp);
                         console.log("RegExp parser - output: " + val);

@@ -11,6 +11,7 @@
     "username": "Username (HTTP BASIC auth)",
     "password": "Password (HTTP BASIC auth)",
     "regexp": "Regular expression used to convert result",
+    "regexpix": "Index of RegExp match required",
     "jsonPath": "JSON path expression",
     "polling": "Device refresh (minutes)",
     "probeTitle": "Metric type",

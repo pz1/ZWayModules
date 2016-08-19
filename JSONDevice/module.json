@@ -22,6 +22,7 @@
         "username": "",
         "password": "",
         "regexp": "",
+        "regexpix": "0",
         "jsonPath": "insideTemp",
         "polling": "5",
         "probeTitle": "InsideTemp",
@@ -57,6 +58,10 @@
                 "required": false
             },
             "regexp": {
+                "type": "string",
+                "required": false
+            },
+            "regexpix": {
                 "type": "string",
                 "required": false
             },
@@ -112,6 +117,9 @@
             },
             "regexp": {
                 "label": "__regexp__"
+            },
+            "regexpix": {
+                "label": "__regexpix__"
             },
             "jsonPath": {
                 "label": "__jsonPath__"
