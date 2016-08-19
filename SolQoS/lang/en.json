@@ -2,7 +2,7 @@
   "m_title" : "SolQoS",
   "m_descr" : "Solar Quality of Service Monitor. Compares two separate Solar Inverter installations that use the PVLogger App. It calculates combined power and energy production. There is a visual warning if one of the inverters has a significant production deviation ",
   "host-label" : "This Z-way server",
-  "host-helper" : "Provide IP and Port numbers separated with a comma",
+  "host-helper" : "Provide IP and Port numbers separated with a colon (:)",
   "polling-label" : "Polling (minutes)",
   "polling-helper" : "Change interval if needed",
   "PV1helper" : "Supply base name (e.g. PVLogger_24) for first logger as can be found under preferences/widgets",

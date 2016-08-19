@@ -121,4 +121,5 @@ Arithmetic.prototype.fetchEquation = function (instance) {
 		return "Error: function " + calculation + " is not defined in module Arithmetic";
 	}
 	self.vDev.set("metrics:level", result);
+	self.vDev.set("metrics:icon", "/ZAutomation/api/v1/load/modulemedia/Arithmetic/icon.png");
 };

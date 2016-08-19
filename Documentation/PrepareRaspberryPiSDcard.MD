@@ -35,7 +35,7 @@ D <a href="#wiringPi">WiringPi</a>.
 E <a href="#OpenRemote">OpenRemote</a>.    
 <a href="#Finalise">Finalise</a>.    
 ***
-#### Reduce unnecesary write actions on SDCard (Optional)
+#### Reduce unnecesary write actions on SDCard (**Optional**)
 ###### <a name="disableSwap"></a>Disable swapping
 
 
@@ -45,7 +45,8 @@ E <a href="#OpenRemote">OpenRemote</a>.
 [See background info](http://www.ideaheap.com/2013/07/stopping-sd-card-corruption-on-a-raspberry-pi/)
 ***
 <a name="logToUsb"></a>    
-###### Write log files to USB-stick (NEVER REMOVE THIS STICK WHILE RASPBERRY PI IS RUNNING)
+###### Write log files to USB-stick 
+NEVER REMOVE THIS STICK WHILE RASPBERRY PI IS RUNNING
 
 Because I want logs after crashes, I decided against writing to 'ramdisk'. There also seems no need to map \var\run to ramdisk in fstab. If you do a **df -h** on a bare rasbian-jessie install there seems to be a symbolic link to ramdisk already for \var\run and some other spaces.    
 This recipe assumes the USB stick will be permanently attached to RaspberryPi as the *only* memory stick.
@@ -101,7 +102,7 @@ tmpfs          tmpfs     463M     0  463M   0% /sys/fs/cgroup
  All tmpfs settings were already done in the rasbian-jessie-lite distro! Note: In the above listing, swap file has not yet been disabled.    
 ***
 <a name="UpsPico"></a>    
-#### Install drivers for UPS Pico HV1.1 on Raspberry Pi 2(Optional)  
+#### Install drivers for UPS Pico HV1.1 on Raspberry Pi 2(**Optional**)  
 *work in progress, to be completed*    
 *Prerequisite* Make sure you have a stable 3A power supply for your Raspberry Pi. At start-up with Pico UPS installed, current may exceed 2A ! Also make sure no other applications (e.g. via wiringPi) use GPIO_22 and GPIO_27.        
 UPS Pico is a power backup system that dependent on the used battery can cope with power outages of a few minutes to a couple of hours.    
@@ -151,7 +152,7 @@ remove the external power source from it. Next
 Carefully pull the device from the Raspberry Pi       
 ***
 <a name="wiringPi"></a>    
-#### Install WiringPi (Optional; Jessie full version has it by default)
+#### Install WiringPi (**Optional**; Jessie full version has it by default)
 For controlling devices via the GPIO, the wiringPi modules has proven to be useful (at least for me).    
 Via a web browser find the link to the [latest build of wiringPi](http://wiringpi.com/download-and-install/) (scroll down to: Plan B). Download it to your PC, and copy from there to the Raspberry Pi. (A direct wget seemed more logical, but I could not get it to work, like many other users)
    
@@ -168,10 +169,27 @@ gpio readall
 ```
 ***
 <a name="OpenRemote"></a>    
-#### Install OpenRemote (Optional)    
+#### Install OpenRemote (**Optional**; requires Jessie full version because Java is pre-installed)    
 I do use [OpenRemote](http://www.openremote.org/x/nwFWAQ) as visualisation and integration platform for two ZWay satellites. At present it runs on a NAS    
-This installation is probably only usefull to do on a RaspberryPi 2    
-ToDo    
+This installation is probably only usefull to do on a RaspberryPi 2 or higher    
+###### Pro 2.6.0-alpha1 installation      
+Not yet tested. **Work in progress Use at your own risk!!!**    
+Based on OR document [install on RaspberryPi](http://www.openremote.org/display/docs/OpenRemote+2.0+How+To+-+Install+Controller+on+Raspberry+Pi)
+```    
+create /opt/orb as the place to store the OR-controller
+sudo chown pi /opt/orb
+sudo chgrp pi /opt/orb
+```    
+With WinSCP copy all Openremote controller files to /opt/orb
+```    
+cd /opt/orb/bin
+sudo chmod +x openremote.sh
+````
+    
+Now see if it works:
+```     	
+./openremote.sh run
+```    
 *** 
 <a name="Finalise"></a>    
 #### Finalise installation   
