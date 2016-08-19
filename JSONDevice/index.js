@@ -87,15 +87,18 @@ JSONDevice.prototype.fetchJSONElement = function (instance) {
         console.log("Debug: ", self.config.debug);
     }
 
-    var headers = '{}';
+    var auth = '{}';
     if( self.config.needsAuth ) {
-        headers = '{"Authorization": "Basic "' + new Buffer(self.conf.username + ':' + self.conf.password).toString('base64') + '}';
+        auth = {
+            "login": self.conf.username,
+            "password": self.conf.password
+        };
     }
 
     http.request({
         url: self.config.url,
         async: true,
-        headers: headers,
+        auth: auth,
         contentType: "text/json",
         success: function (res) {
             try {
