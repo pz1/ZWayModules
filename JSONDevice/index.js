@@ -108,16 +108,20 @@ JSONDevice.prototype.fetchJSONElement = function (instance) {
                         console.log("key: ", i);
                     }
                 }
+                var val = eval("json." + self.config.jsonPath);
+                // We do the regexp parsing first as we may end up with a numeric.
+                if ( self.config.regexp != "" )
+                    val = val.match(new RegExp(self.config.regexp, "i"));
                 if (isNumerical) {
                     deviceType = "sensorMultilevel";
                     if (isFloat) {
-                        level = parseFloat(eval("json." + self.config.jsonPath));
+                        level = parseFloat(val);
                     } else {
-                        level = parseInt(eval("json." + self.config.jsonPath));
+                        level = parseInt(val);
                     }
                 } else {
                     deviceType = "text";
-                    level = eval("json." + self.config.jsonPath);
+                    level = val;
                 }
                 self.vDev.set("metrics:level", level);
             } catch (e) {
