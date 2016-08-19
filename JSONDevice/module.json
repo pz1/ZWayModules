@@ -1,0 +1,145 @@
+{
+    "dependencies": [],
+    "singleton": false,
+    "category": "developers_stuff",
+    "author": "Christian Ashby (click for Recipe)",
+    "homepage": "TODO (http://forum.z-wave.me/viewtopic.php?f=3424&t=21446)",
+    "icon": "icon.png",
+    "moduleName": "JSONDevice",
+    "version": "0.1.0",
+    "maturity": "development",
+    "repository": {
+        "type": "git",
+        "source": "https://github.com/cscashby/ZWayModules"
+    },
+    "defaults": {
+        "title": "__m_title__",
+        "description": "__m_descr__",
+        "isNumerical": "true",
+        "isFloat": "true",
+        "url": "https://my.tado.com/mobile/1.4/getCurrentState?username=xxx&password=xxx",
+        "needsAuth": "false",
+        "username": "",
+        "password": "",
+        "regexp": "",
+        "regexpix": "0",
+        "jsonPath": "insideTemp",
+        "polling": "5",
+        "probeTitle": "InsideTemp",
+        "scaleTitle": "C",
+        "deviceName": "JSONtest",
+        "debug": ""
+    },
+    "schema": {
+        "type": "object",
+        "properties": {
+            "isNumerical": {
+                "type": "boolean",
+                "required": true
+            },
+            "isFloat": {
+                "type": "boolean",
+                "required": true
+            },
+            "url": {
+                "type": "string",
+                "required": true
+            },
+            "needsAuth": {
+                "type": "boolean",
+                "required": true
+            },
+            "username": {
+                "type": "string",
+                "required": false
+            },
+            "password": {
+                "type": "string",
+                "required": false
+            },
+            "regexp": {
+                "type": "string",
+                "required": false
+            },
+            "regexpix": {
+                "type": "string",
+                "required": false
+            },
+            "jsonPath": {
+                "type": "string",
+                "required": true
+            },
+            "polling": {
+                "type": "string",
+                "required": true
+            },
+            "probeTitle": {
+                "type": "string",
+                "required": true
+            },
+            "scaleTitle": {
+                "type": "string",
+                "required": true
+            },
+            "deviceName": {
+                "type": "string",
+                "required": true
+            },
+            "debug": {
+                "type": "boolean",
+                "required": true
+            }
+        },
+        "required": true
+    },
+    "options": {
+        "fields": {
+            "isNumerical": {
+                "rightLabel": "__isNumerical_Select__",
+                "helper": "__isNumerical_helper__"
+            },
+            "isFloat": {
+                "rightLabel": "__isFloat_Select__",
+                "helper": "__isFloat_helper__"
+            },
+            "url": {
+                "label": "__url__"
+            },
+            "needsAuth": {
+                "rightLabel": "__needsAuth_Select__",
+                "helper": "__needsAuth_helper__"
+            },
+            "username": {
+                "label": "__username__"
+            },
+            "password": {
+                "label": "__password__"
+            },
+            "regexp": {
+                "label": "__regexp__"
+            },
+            "regexpix": {
+                "label": "__regexpix__"
+            },
+            "jsonPath": {
+                "label": "__jsonPath__"
+            },
+            "polling": {
+                "label": "__polling__"
+            },
+            "probeTitle": {
+                "label": "__probeTitle__"
+            },
+            "scaleTitle": {
+                "label": "__scaleTitle__"
+            },
+            "deviceName": {
+                "label": "__deviceName__"
+            },
+            "debug": {
+                "rightLabel": "__debug__",
+                "helper": "__debug_helper__"
+            }
+        }
+    }
+}

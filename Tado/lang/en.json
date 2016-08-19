@@ -1,0 +1,18 @@
+{
+    "m_title": "Tado device",
+    "m_descr": "Create virtual device mirroring the Tado heating controller.",
+    "isNumerical_Select": "Check if data is numerical",
+    "isNumerical_helper": "If unchecked, data is interpreted as text",
+    "isFloat_Select": "Check if data is floating point.",
+    "isFloat_helper": "If unchecked, data is interpreted as integer. This setting only affects numerical data",
+    "url": "Full URL to JSON resource",
+    "xpath": "JSON path expression",
+    "polling": "Device refresh (minutes)",
+    "probeTitle": "Metric type",
+    "scaleTitle": "Measurement units",
+    "deviceName": "Device name",
+    "debug": "Enable debug info",
+    "debug_helper": "Caution: Only check this option for sending debug information to logfile",
+    "err_parse": "Can not parse JSON data",
+    "err_fetch": "Can not fetch JSON data"
+}
