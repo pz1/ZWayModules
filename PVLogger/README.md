@@ -1,4 +1,4 @@
-###PVLogger
+##PVLogger    
 This Module requires a [Chint PV-Logger](http://fp4all.com/documents/Chint-PV-logger-leaflet-EN.pdf) 
 At programmable intervals it reads some of the data coming from the logger. 
 The following xml structure is assumed. The code for this module (index.js) is not very complex, and can be easily adapted to accommodate other more or less similar structures
@@ -16,5 +16,9 @@ The following xml structure is assumed. The code for this module (index.js) is n
     </response>
 ```	
 If you happen to have two of these inverters the SolQoS module may be of interest to you
-######Testing the module
+######Testing the module    
 If you don not have a PVlogger, you can test this module by creating a XML file named status.xml with the above contents. Place it somewhere on a website. Use that website address in the PVLogger configuration
+
+##License    
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.    
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.    
