@@ -23,7 +23,7 @@ There:
 - Internationalisation
      - Set your TimeZone   
 
-Optional if you have more than one Raspberrypi do a rename:
+To avoid DNS naming conflicts if you add more Raspberry Pi devices in the future, it is strongly recommended to change the default name of your Pi:
 - Advanced
      - Hostname   
    
