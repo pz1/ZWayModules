@@ -20,6 +20,14 @@ _Note: The hyper links on my devices refer to the description of an application/
 [Preparation of my SD-Card](https://github.com/pz1/ZWayModules/blob/master/Documentation/PrepareRaspberryPiSDcard.MD)    
 [Howto Backup and Restore ZWay installation](https://github.com/pz1/ZWayModules/blob/master/Documentation/BackupRestoreClone.MD)    
 
-Forum Links    
+####Forum Links    
 [Problematic Z-Wave devices](http://forum.z-wave.me/viewtopic.php?f=3423&t=21476)    
 \- to be completed \-
+####Other useful links      
+[Github for beginners](http://readwrite.com/2013/09/30/understanding-github-a-journey-for-beginners-part-1/)      
+[Zwave device manuals](http://manuals.zwaveeurope.com/)
+[RaZberry/ZWay latest releases](http://razberry.z-wave.me/z-way-server/?C=M;O=D)      
+[JS-lint](http://www.javascriptlint.com/online_lint.php)      
+[JSON-lint](http://jsonlint.com/)      
+[JSON Schema](https://spacetelescope.github.io/understanding-json-schema/UnderstandingJSONSchema.pdf)      
+[JSONPath tester](http://ashphy.com/JSONPathOnlineEvaluator/)
