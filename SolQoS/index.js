@@ -1,6 +1,6 @@
 /*** SolQoS Z-Way HA module *******************************************
 
-Version: 1.1.0 beta
+Version: 1.1.1 stable
 (c) 2015-2016
 -----------------------------------------------------------------------------
 Author: Pieter E. Zanstra
@@ -129,7 +129,7 @@ SolQoS.prototype.fetchEquation = function (instance) {
 	self.vDev.set("metrics:level", power);
 	self.vDev.set("metrics:kW", power/1000);
 	self.vDev.set("metrics:outputRatio", outputRatio);
-	self.vDev.set("metrics:kWh", energy);
+	self.vDev.set("metrics:kWh", Math.round(energy*100)/100);
 	self.vDev.set("metrics:QoS", QoS);
 	self.vDev.set("metrics:timeStamp", timestamp);
 };
