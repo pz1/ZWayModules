@@ -3,7 +3,7 @@
 	"singleton" : false,
 	"category" : "devices",
 	"author" : "Pieter E. Zanstra (click for Recipe)",
-	"homepage" : "https://github.com/pz1/ZWayModules/Mathematica",
+	"homepage" : "https://github.com/pz1/ZWayModules/tree/master/Mathematica",
 	"icon" : "icon.png",
 	"moduleName" : "Mathematica",
 	"version" : "0.0.1",

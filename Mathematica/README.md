@@ -11,7 +11,7 @@ result = sensor_a * constant_1 + constant_2
 ```
 must be specified in the interface as:    
 ```     
-a*c1*c2 
+a*c1+c2 
 ```        
 
 For example you can now simply convert a Celsius sensor to Fahrenheit by choosing the values 1.8 and 32 respectively for constant_1 and const_2.
