@@ -1,0 +1,16 @@
+{
+	"m_title" : "Mathematica",
+	"m_descr" : "This module allows the user to create a multilevel sensor, which value is derived from one or two user selectable sensors, and up to two user specified fixed values. The user can supply any valid mathematical expression to combine these inputs. In the formula use <b>a</b> to represent Sensor a, <b>b</b> for Sensor b, and <b>c1</b> and <b>c2</b> for the respective constants.",
+	"formula" : "Arithmetic operation",
+	"helper" : "Specify the operation",
+	"sensor-name" : "Sensor Name",
+	"sensor-units" : "Units",
+	"sensor1" : "Sensor a",
+	"metric1" : "Metric a",
+	"metric1-helper" : "Only change if your metric is other than the default setting: level",
+	"sensor2" : "Sensor b",
+	"metric2" : "Metric b",
+	"metric2-helper" : "Only change if your metric is other than the default setting: level",
+	"constant" : "Constants c1, c2, etc",
+	"constant-helper" : "Enter constants (signed reals separated by a semi-colon (;)"
+}

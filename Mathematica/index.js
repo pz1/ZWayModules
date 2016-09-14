@@ -1,11 +1,13 @@
-/*** Arithmetic Z-Way HA module *******************************************
+/*** Mathematica Z-Way HA module *******************************************
 
-Version: 1.0.5
-(c) 2015-2016
+Version: 0.0.1
+(c) 2016
 -----------------------------------------------------------------------------
 Author: Pieter E. Zanstra
 Description:
-This module combines two or more multiLevel signals into one outcome
+This module allows the user to create a multilevel sensor, which value is derived
+from one or two user selectable sensors, and up to two user specified fixed values
+The user can supply any valid mathematical expression to combine these inputs.
 
  ******************************************************************************/
 
@@ -13,26 +15,26 @@ This module combines two or more multiLevel signals into one outcome
 // --- Class definition, inheritance and setup
 // ----------------------------------------------------------------------------
 
-function Arithmetic(id, controller) {
+function Mathematica(id, controller) {
 	// Call superconstructor first (AutomationModule)
-	Arithmetic.super_.call(this, id, controller);
+	Mathematica.super_.call(this, id, controller);
 }
 
-inherits(Arithmetic, AutomationModule);
+inherits(Mathematica, AutomationModule);
 
-_module = Arithmetic;
+_module = Mathematica;
 
 // ----------------------------------------------------------------------------
 // --- Module instance initialized
 // ----------------------------------------------------------------------------
 
-Arithmetic.prototype.init = function (config) {
-	Arithmetic.super_.prototype.init.call(this, config);
+Mathematica.prototype.init = function (config) {
+	Mathematica.super_.prototype.init.call(this, config);
 
 	var self = this;
 
 	this.vDev = self.controller.devices.create({
-			deviceId : "Arithmetic_" + this.id,
+			deviceId : "Mathematica_" + this.id,
 			defaults : {
 				deviceType : "sensorMultilevel",
 				metrics : {
@@ -64,8 +66,8 @@ Arithmetic.prototype.init = function (config) {
 //	self.fetchEquation(self);
 };
 
-Arithmetic.prototype.stop = function () {
-	Arithmetic.super_.prototype.stop.call(this);
+Mathematica.prototype.stop = function () {
+	Mathematica.super_.prototype.stop.call(this);
 
 	if (this.timer) {
 		clearInterval(this.timer);
@@ -81,7 +83,7 @@ Arithmetic.prototype.stop = function () {
 // --- Module methods
 // ----------------------------------------------------------------------------
 
-Arithmetic.prototype.fetchEquation = function (instance) {
+Mathematica.prototype.fetchEquation = function (instance) {
 	var self = instance,
 	result = 0;
 
@@ -97,31 +99,8 @@ Arithmetic.prototype.fetchEquation = function (instance) {
 	var a = controller.devices.get(self.config.sensor1).get(metric1);
 	var b = controller.devices.get(self.config.sensor2).get(metric2);
 
-	switch (calculation)
-	{
-	case "add":
-		result = a + b;
-		break;
-	case "sub":
-		result = a - b;
-		break;
-	case "mult":
-		result = a * b;
-		break;
-	case "div":
-		if (b !== 0) {
-			result = a / b;
-		} else {
-			result = 0;
-		}
-		break;
-	case "calibrate":
-		result = a * c1 + c2;
-		break;
-	default:
-		return "Error: function " + calculation + " is not defined in module Arithmetic";
-	}
+	result = eval(calculation);
 
 	self.vDev.set("metrics:level", result);
-	self.vDev.set("metrics:icon", "/ZAutomation/api/v1/load/modulemedia/Arithmetic/icon.png");
+	self.vDev.set("metrics:icon", "/ZAutomation/api/v1/load/modulemedia/Mathematica/icon.png");
 };

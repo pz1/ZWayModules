@@ -3,11 +3,11 @@
 	"singleton" : false,
 	"category" : "devices",
 	"author" : "Pieter E. Zanstra (click for Recipe)",
-	"homepage" : "http://forum.z-wave.me/viewtopic.php?f=3424&t=21381",
+	"homepage" : "https://github.com/pz1/ZWayModules/Mathematica",
 	"icon" : "icon.png",
-	"moduleName" : "Arithmetic",
-	"version" : "1.0.5",
-	"maturity" : "stable",
+	"moduleName" : "Mathematica",
+	"version" : "0.0.1",
+	"maturity" : "beta",
 	"repository" : {
 		"type" : "git",
 		"source" : "https://github.com/pz1/ZWayModules"
@@ -15,7 +15,7 @@
 	"defaults" : {
 		"title" : "__m_title__",
 		"description" : "__m_descr__",
-		"formula" : "",
+		"formula" : "a+b",
 		"Title" : "Energy",
 		"scaleTitle" : "kWh",
 		"metric1" : "level",
@@ -26,8 +26,7 @@
 		"type" : "object",
 		"properties" : {
 			"formula" : {
-				"type" : "select",
-				"enum" : ["add", "sub", "mult", "div", "calibrate"],
+				"type" : "string",
 				"required" : true
 			},
 			"Title" : {
@@ -70,7 +69,6 @@
 		"fields" : {
 			"formula" : {
 				"label" : "__formula__",
-				"optionLabels" : ["a+b", "a-b", "a*b", "a/b", "a*c1+c2"],
 				"helper" : "__helper__"
 			},
 			"Title" : {
