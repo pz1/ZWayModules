@@ -16,6 +16,11 @@ a*c1+c2
 
 For example you can now simply convert a Celsius sensor to Fahrenheit by choosing the values 1.8 and 32 respectively for constant_1 and const_2.
 
+##Installation
+
+The prefered way of installing this module is via the "Zwave.me App Store" available in 2.2.0 and higher. For stable module releases no access token is required. If you want to test the latest pre-releases use 'pz1' as app store access token.
+
+
 ##License    
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.    
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.    
