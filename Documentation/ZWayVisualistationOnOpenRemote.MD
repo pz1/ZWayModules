@@ -8,29 +8,29 @@ This App provides a simplified API to ZWay hiding the user from the complex Z-Wa
 ##OpenRemoteHelpers Syntax       
 ####Available Commands:      
 
-*SwitchBinaryOn/N/I* - Enables device      
-*SwitchBinaryOff/N/I* - Off device      
-*SwitchBinaryStatus/N/I* - Show on or off the device (on/off)      
-*SwitchMultilevelSet/N/I/param* - Open the blinds or dimming light level, param - dimming level, for example 50      
-*SwitchMultilevelLevel/N/I* - Show the percentage of open blinds or продиммирован light      
-*SwitchMultilevelStatus/N/I* - Show dimmer on/off, blinds open/closed      
-*StartLevelChange/N/I/dir* - Move dimmer/blinds up/down      
-*StopLevelChange/N/I* - Stop moving dimmer/blinds      
-*AlarmStatus/N* - Show whether the alarm ,"on" alarm means      
-*SensorBinaryStatus/N/I/Type* - Show for determining whether a binary sensor (opening movement, leakage), "on" means work. Type - the Type of sensor is usually equal to 1      
-*ThermostatLevel/N* - Show temperature which must support thermostat      
-*ThermostatSet/N/param* - Set temperature, which must support a thermostat, param - temperature      
-*ThermostatSetMode/N/Mode* - Set the thermostat mode Off, Heat, Cool, Auto, Auxiliary, Resume, Fan Only, Furnace, Dry Air, Moist Air, Auto Change Over, Heat Energy Save, Save Energy Save Cool, Heat Away, Away, Cool, Full Power, Manufacturer Specific, Low Auto, On Low, Auto, High, On High, Auto Medium, On Medium      
+- *SwitchBinaryOn/N/I* - Enables device      
+- *SwitchBinaryOff/N/I* - Off device      
+- *SwitchBinaryStatus/N/I* - Show on or off the device (on/off)      
+- *SwitchMultilevelSet/N/I/param* - Open the blinds or dimming light level, param - dimming level, for example 50      
+- *SwitchMultilevelLevel/N/I* - Show the percentage of open blinds or продиммирован light      
+- *SwitchMultilevelStatus/N/I* - Show dimmer on/off, blinds open/closed      
+- *StartLevelChange/N/I/dir* - Move dimmer/blinds up/down      
+- *StopLevelChange/N/I* - Stop moving dimmer/blinds      
+- *AlarmStatus/N* - Show whether the alarm ,"on" alarm means      
+- *SensorBinaryStatus/N/I/Type* - Show for determining whether a binary sensor (opening movement, leakage), "on" means work. Type - the Type of sensor is usually equal to 1      
+- *ThermostatLevel/N* - Show temperature which must support thermostat      
+- *ThermostatSet/N/param* - Set temperature, which must support a thermostat, param - temperature      
+- *ThermostatSetMode/N/Mode* - Set the thermostat mode Off, Heat, Cool, Auto, Auxiliary, Resume, Fan Only, Furnace, Dry Air, Moist Air, Auto Change Over, Heat Energy Save, Save Energy Save Cool, Heat Away, Away, Cool, Full Power, Manufacturer Specific, Low Auto, On Low, Auto, High, On High, Auto Medium, On Medium      
 ThermostatModeName/N* - Show the name of the regime, which is now set      
-*BatteryLevel/N* - Show charge batteries      
-*MeterLevel/N/I/S* - Show electricity consumption. S=0 for kWh; S=2 Watts      
-*MeterReset/N/I* - read Zero power consumption      
-*TemperatureLevel/N/I* - Show temperature      
-*HumidityLevel/N/I* - Show humidity      
-*SensorMultilevel/N/I/S* - Is indication of the sensor S - conditional number of the sensor in the Z-Way      
-*DoorLock/N* - Close castle      
-*DoorUnlock/N* - Open the lock      
-*DeviceName/N/I* - user specified name of device      
-*DeviceLocation/N/I* - user specified location of device      
-*metrics/ID/metric* - If the metric parameter is omitted, it returns a JSON block of all available metrics from the virtual device. A sensor reading is returned if a valid metric parameter has been given.      
-*Setmetrics/ID/metric/param* - Sets a specific metric of a virtualDevice to a value.(next release)      
+- *BatteryLevel/N* - Show charge batteries      
+- *MeterLevel/N/I/S* - Show electricity consumption. S=0 for kWh; S=2 Watts      
+- *MeterReset/N/I* - read Zero power consumption      
+- *TemperatureLevel/N/I* - Show temperature      
+- *HumidityLevel/N/I* - Show humidity      
+- *SensorMultilevel/N/I/S* - Is indication of the sensor S - conditional number of the sensor in the Z-Way      
+- *DoorLock/N* - Close castle      
+- *DoorUnlock/N* - Open the lock      
+- *DeviceName/N/I* - user specified name of device      
+- *DeviceLocation/N/I* - user specified location of device      
+- *metrics/ID/metric* - If the metric parameter is omitted, it returns a JSON block of all available metrics from the virtual device. A sensor reading is returned if a valid metric parameter has been given.      
+- *Setmetrics/ID/metric/param* - Sets a specific metric of a virtualDevice to a value.(next release)      
