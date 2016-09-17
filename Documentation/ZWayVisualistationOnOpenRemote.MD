@@ -13,7 +13,7 @@ The generalised call is: **http://IP:8083/OpenRemote/Command/N/I/param**, where 
 - *IP* - Address of the controller RaZberry      
 - *Command* - Сontrol command      
 - *N* - Number of Z-Wave device      
-- *I - Inside a device can be physically multiple devices (channels), for example 2 relay or temperature sensor, motion sensor, light sensor. The Instance parameter is a channel number within the device. If a device has only one physical device, this option is 0.      
+- *I* - Inside a device can be physically multiple devices (channels), for example 2 relay or temperature sensor, motion sensor, light sensor. The Instance parameter is a channel number within the device. If a device has only one physical device, this option is 0.      
 - *param* - Parameter, which is used with some commands, for example 50 to set the dimmer 50%. For use in a slider, you fill in the standard OpenRemote variable ${param}      
 - *dir* - Direction up/down??      
 - *ID* - Is the identifier of a virtual device e.g. ZWayVDev_zway_26-0-37      
