@@ -5,7 +5,10 @@
 ###The OpenRemoteHelpers App      
 This App provides a simplified API to ZWay hiding the user from the complex Z-Wave commands interaction. With http calls status values can be retrieved, actuators can be set. Within Zway, as administrator the user just installs the module with one click from the App store, no further settings needed.       
 <to be continued>      
-##OpenRemoteHelpers Syntax   
+      
+      
+      
+##Appendix A: OpenRemoteHelpers Syntax   
 The generalised call is: **http://IP:8083/OpenRemote/Command/N/I/param**, where the parameters are:    
 - *IP* - Address of the controller RaZberry      
 - *Command* - Сontrol command      
@@ -15,6 +18,7 @@ The generalised call is: **http://IP:8083/OpenRemote/Command/N/I/param**, where 
 - *dir* - Direction up/down??      
 - *ID* - Is the identifier of a virtual device e.g. ZWayVDev_zway_26-0-37      
 - *metric* - is the identifier for one specific sensor. e.g. level, kWh.       
+
 As said this interface is primarily focussed on ZWave devices, but with the commands *metric* and *Setmetric* Openremote can also interact with the so-called virtualDevice level of ZWay.       
 
 ####Available Commands:      
