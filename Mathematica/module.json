@@ -6,7 +6,7 @@
 	"homepage" : "https://github.com/pz1/ZWayModules/tree/master/Mathematica",
 	"icon" : "icon.png",
 	"moduleName" : "Mathematica",
-	"version" : "0.0.2",
+	"version" : "0.0.3",
 	"maturity" : "beta",
 	"repository" : {
 		"type" : "git",
@@ -56,10 +56,6 @@
 			"metric2" : {
 				"type" : "string",
 				"required" : true
-			},
-			"cParams" : {
-				"type" : "string",
-				"required" : "false"
 			}
 
 		},
@@ -98,10 +94,6 @@
 			"metric2" : {
 				"label" : "__metric2__",
 				"helper" : "__metric2-helper__"
-			},
-			"cParams" : {
-				"label" : "__constant__",
-				"helper" : "__constant-helper__"
 			}
 		}
 	}

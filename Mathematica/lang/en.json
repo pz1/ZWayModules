@@ -10,7 +10,5 @@
 	"metric1-helper" : "Only change if your metric is other than the default setting: level",
 	"sensor2" : "Sensor b",
 	"metric2" : "Metric b",
-	"metric2-helper" : "Only change if your metric is other than the default setting: level",
-	"constant" : "Constants c1, c2, etc",
-	"constant-helper" : "Enter constants (signed reals separated by a semi-colon (;)"
+	"metric2-helper" : "Only change if your metric is other than the default setting: level"
 }
