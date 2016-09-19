@@ -3,12 +3,12 @@
 [ZWay](http://razberry.zwave.me/) is a home automation platform. It has its roots in supporting Z-Wave devices. Originally built as a webservice, but later totally rewritten mostly in javascript (google V8) to run on the emerging RaspberryPi platform. Over time it has developed into a generic modular system, that allows user to build and share Apps to extend functionality. At the moment of this writing there are many [public Apps](http://developer.z-wave.me/?uri=public#/web/apps) available      
 [OpenRemote](http://www.openremote.com/) is an open source middleware for the Internet of Things. It is an Integration and Visualisation platform that supports many different protocols, and has a graphical editor to freely create [advanced user interfaces](https://www.youtube.com/embed/ymqnKK7QIaQ) that run on Android, iOS, and many WEBbrowsers.      
 ####The OpenRemoteHelpers App      
-This App provides a simplified API to ZWay hiding the user from the complex Z-Wave commands interaction. With http calls status values can be retrieved, actuators can be set. Within Zway, as administrator the user just installs the module with one click from the App store, no further settings needed.       
+This App provides a simplified API to ZWay hiding the user from the complex Z-Wave commands interaction. With http calls status values can be retrieved, actuators can be set. Within Zway, as administrator the user just installs the module with one click from the App store, no further settings required.       
 <to be continued>      
       
       
-<a name="ORHelperAPI"></a>      
-##Appendix A: OpenRemoteHelpers Syntax   
+      
+##<a name="ORHelperAPI"></a>Appendix A: OpenRemoteHelpers Syntax   
 The generalised call is: **http://IP:8083/OpenRemote/Command/N/I/param**, where the parameters are:    
 - *IP* - Address of the controller RaZberry      
 - *Command* - Сontrol command      
@@ -17,7 +17,7 @@ The generalised call is: **http://IP:8083/OpenRemote/Command/N/I/param**, where 
 - *param* - Parameter, which is used with some commands, for example 50 to set the dimmer 50%. For use in a slider, you fill in the standard OpenRemote variable ${param}      
 - *dir* - Direction up/down??      
 - *ID* - Is the identifier of a virtual device e.g. ZWayVDev_zway_26-0-37      
-- *metric* - is the identifier for one specific sensor. e.g. level, kWh.       
+- *metric* - is the identifier for one specific sensor. e.g. level, icon, kWh.       
 
 As said this interface is primarily focussed on ZWave devices, but with the commands *metric* and *Setmetric* Openremote can also interact with the so-called virtualDevice level of ZWay.       
 
@@ -26,7 +26,7 @@ As said this interface is primarily focussed on ZWave devices, but with the comm
 - *SwitchBinaryOff/N/I* - Off device      
 - *SwitchBinaryStatus/N/I* - Show on or off the device (on/off)      
 - *SwitchMultilevelSet/N/I/param* - Open the blinds or dimming light level, param - dimming level, for example 50      
-- *SwitchMultilevelLevel/N/I* - Show the percentage of open blinds or продиммирован light      
+- *SwitchMultilevelLevel/N/I* - Show the percentage of open blinds or dimmed light, etc      
 - *SwitchMultilevelStatus/N/I* - Show dimmer on/off, blinds open/closed      
 - *StartLevelChange/N/I/dir* - Move dimmer/blinds up/down      
 - *StopLevelChange/N/I* - Stop moving dimmer/blinds      
