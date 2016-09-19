@@ -51,6 +51,7 @@ ThermostatModeName/N* - Show the name of the regime, which is now set
 **For virtual devices**:      
 - *metrics/ID/metric* - If the metric parameter is omitted, it returns a JSON block of all available metrics from the virtual device. A sensor reading is returned if a valid metric parameter has been given.      
 - *Setmetrics/ID/metric/param* - Sets a specific metric of a virtualDevice to a value.      
+      
 ----
 ##<a name="UDPOR"></a>Appendix B: Fast status updates with UDP      
 #### Zway: Send      
