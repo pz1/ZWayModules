@@ -96,7 +96,8 @@ ThermostatModeName/N* - Show the name of the regime, which is now set
     global.controller.on("ZWave.register", this.bindFunc1);
 ```     
 #### OpenRemote: Receive      
-\<UDPListener spec to be added\>      
+In OpenRemote designer, first create a New Device with the name *UDP Listener*. Select that new device and create a New Command with the name *RaZStatusListener*. Select protocol UDPListener. Specify UDP port is 9091. In the RegEx field specify: (.*)      
+Finally add a sensor of **type:custom** with the **exact name** *RaZ-UDP-Status*, choose RaZStatusListener in the command specification window. That is all.     
 Unfortunately OpenRemote's UDPListener protocol does not yet have the option to parse the incoming tuplet {SensorId,Value}, directly into the corresponding sensor. The following rule is a workaround to achieve that. In principle you can use the OR rule editor to add the following rule. However it is more robust to save the following rule as plain text file OpenRemote/webapps/controller/rules/UDPListener.drl.
 ```      
 package org.openremote.controller.protocol.preserve;
