@@ -96,6 +96,8 @@ ThermostatModeName/N* - Show the name of the regime, which is now set
     global.controller.on("ZWave.register", this.bindFunc1);
 ```     
 #### OpenRemote: Receive      
+\<UDPListener spec to be added\>      
+Unfortunately OpenRemote's UDPListener protocol does not yet have the option to parse the incoming tuplet {SensorId,Value}, directly into the corresponding sensor. The following rule is a workaround to achieve that. In principle you can use the OR rule editor to add the following rule. However it is more robust to save the following rule as plain text file OpenRemote/webapps/controller/rules/UDPListener.drl.
 ```      
 package org.openremote.controller.protocol.preserve;
 import java.util.*;
@@ -111,28 +113,6 @@ then
   java.util.regex.Matcher matcher = regexPattern.matcher($v.toString());
   if (matcher.find()) {
     execute.command(matcher.group(1), matcher.group(2));
-    execute.command("UDP9091On");
-    execute.command("UDP9091countdown",600);
   }
 end
-
-rule "UDP9091SourceFailed"
-    timer (int: 2s)
-when
-    Event( source == "UDP9091countdownStatus", value == "0")
-then
-    execute.command("UDP9091Off");
-end
-
-rule "UDP9091CountDown"
-    timer (int: 3s)
-when
-    Event( source == "UDP9091countdownStatus", $TimeLeft : value > 0 )
-then
-    Integer iTl = Integer.parseInt($TimeLeft.toString()) ;
-    iTl = iTl - 1 ;
-    execute.command("UDP9091countdown",iTl);
-
-end
-```      
-   
+```         
