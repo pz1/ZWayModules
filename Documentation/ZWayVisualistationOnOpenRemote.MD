@@ -54,6 +54,8 @@ ThermostatModeName/N* - Show the name of the regime, which is now set
       
 ----
 ##<a name="UDPOR"></a>Appendix B: Fast status updates with UDP      
+![alt text](https://github.com/pz1/ZWayModules/blob/master/Documentation/htdocs/ImVC.PNG)
+/<polling issue/>
 #### Zway: Send      
 ```     
     var sock = new sockets.udp();
