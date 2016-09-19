@@ -53,9 +53,10 @@ ThermostatModeName/N* - Show the name of the regime, which is now set
 - *Setmetrics/ID/metric/param* - Sets a specific metric of a virtualDevice to a value.      
 
 ##<a name="UDPOR"></a>Appendix B: Fast status updates with UDP      
+#### Zway: Send      
 ```     
     var sock = new sockets.udp();
-    sock.connect("192.168.4.88", 9091); //Use IP, port number on your OR Controller
+    sock.connect("192.168.4.88", 9091); //Use IP and port number of your OR Controller
 
     this.bindFunc1 = function (zwayName) {
        if (zwayName != "zway")
@@ -94,5 +95,44 @@ ThermostatModeName/N* - Show the name of the regime, which is now set
     // and listen for future ones
     global.controller.on("ZWave.register", this.bindFunc1);
 ```     
+#### OpenRemote: Receive      
+```      
+package org.openremote.controller.protocol.preserve;
+import java.util.*;
+import org.openremote.controller.protocol.Event;
+global org.openremote.controller.statuscache.CommandFacade execute;
+ 
+ 
+rule "UDPListener9091"
+when
+  Event(source=="RaZ-UDP-Status", $v: value!="")
+then
+  java.util.regex.Pattern regexPattern = java.util.regex.Pattern.compile("\\(?(ZWay.*),([\\d\\.+|on|off]+)\\)?");
+  java.util.regex.Matcher matcher = regexPattern.matcher($v.toString());
+  if (matcher.find()) {
+    execute.command(matcher.group(1), matcher.group(2));
+    execute.command("UDP9091On");
+    execute.command("UDP9091countdown",600);
+  }
+end
 
+rule "UDP9091SourceFailed"
+    timer (int: 2s)
+when
+    Event( source == "UDP9091countdownStatus", value == "0")
+then
+    execute.command("UDP9091Off");
+end
+
+rule "UDP9091CountDown"
+    timer (int: 3s)
+when
+    Event( source == "UDP9091countdownStatus", $TimeLeft : value > 0 )
+then
+    Integer iTl = Integer.parseInt($TimeLeft.toString()) ;
+    iTl = iTl - 1 ;
+    execute.command("UDP9091countdown",iTl);
+
+end
+```      
    
