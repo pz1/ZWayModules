@@ -9,7 +9,7 @@ This App provides a simplified API to ZWay hiding the user from the complex Z-Wa
 \<to be completed\>      
       
       
-      
+----      
 ##<a name="ORHelperAPI"></a>Appendix A: OpenRemoteHelpers Syntax   
 The generalised call is: **http://IP:8083/OpenRemote/Command/N/I/param**, where the parameters are:    
 - *IP* - Address of the controller RaZberry      
@@ -51,7 +51,7 @@ ThermostatModeName/N* - Show the name of the regime, which is now set
 **For virtual devices**:      
 - *metrics/ID/metric* - If the metric parameter is omitted, it returns a JSON block of all available metrics from the virtual device. A sensor reading is returned if a valid metric parameter has been given.      
 - *Setmetrics/ID/metric/param* - Sets a specific metric of a virtualDevice to a value.      
-
+----
 ##<a name="UDPOR"></a>Appendix B: Fast status updates with UDP      
 #### Zway: Send      
 ```     
@@ -96,7 +96,7 @@ ThermostatModeName/N* - Show the name of the regime, which is now set
     global.controller.on("ZWave.register", this.bindFunc1);
 ```     
 #### OpenRemote: Receive      
-In OpenRemote designer, first create a New Device with the name *UDP Listener*. Select that new device and create a New Command with the name *RaZStatusListener*. Select protocol UDPListener. Specify UDP port is 9091. In the RegEx field specify: (.*)      
+In OpenRemote designer, first create a New Device with the name *UDP Listener*. Select that new device and create a New Command with the name *RaZStatusListener*. Select protocol **UDPListener**. Specify UDP port is 9091. In the RegEx field specify: (.\*)      
 Finally add a sensor of **type:custom** with the **exact name** *RaZ-UDP-Status*, choose RaZStatusListener in the command specification window. That is all.     
 Unfortunately OpenRemote's UDPListener protocol does not yet have the option to parse the incoming tuplet {SensorId,Value}, directly into the corresponding sensor. The following rule is a workaround to achieve that. In principle you can use the OR rule editor to add the following rule. However it is more robust to save the following rule as plain text file OpenRemote/webapps/controller/rules/UDPListener.drl.
 ```      
