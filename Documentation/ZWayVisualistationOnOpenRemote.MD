@@ -118,3 +118,4 @@ then
   }
 end
 ```         
+Do make sure that port 9091 is not used by an other application. If you want to integrate a second Zway server with OpenRemote, you have to duplicate the UDPListener and the rule. You need a different port not to close to the existing number (e.g. 9192), and a different name for the sensor (e.g. RaZ-UDP-Status2). Do use those in the second rule! 
