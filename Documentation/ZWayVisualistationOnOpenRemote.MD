@@ -51,3 +51,48 @@ ThermostatModeName/N* - Show the name of the regime, which is now set
 **For virtual devices**:      
 - *metrics/ID/metric* - If the metric parameter is omitted, it returns a JSON block of all available metrics from the virtual device. A sensor reading is returned if a valid metric parameter has been given.      
 - *Setmetrics/ID/metric/param* - Sets a specific metric of a virtualDevice to a value.      
+
+##<a name="UDPOR"></a>Appendix B: Fast status updates with UDP      
+```     
+    var sock = new sockets.udp();
+    sock.connect("192.168.4.88", 9091); //Use IP, port number on your OR Controller
+
+    this.bindFunc1 = function (zwayName) {
+       if (zwayName != "zway")
+          return; // you want to bind to default zway instance
+
+       var devices = global.ZWave[zwayName].zway.devices;
+
+       //from here insert your own devices
+
+       // Zwave>Me Binary Switch
+       devices[2].SwitchBinary.data.level.bind(function () {
+          var status = (this.value) ? "on" : "off";
+          sock.send("ZWay_2," + status);
+       });
+
+       // Fibaro Universal Sensor-Temperature
+       devices[13].instances[5].SensorMultilevel.data[1].val.bind(function () {
+          var status = this.value;
+          sock.send("ZWay_13_5_1," + status);
+       });
+
+       // Vision Door/window sensor
+       devices[30].SensorBinary.data[1].level.bind(function () {
+          var status = (this.value) ? "on" : "off";
+          sock.send("ZWay_30_0_1," + status);
+       });
+
+       // End of your own devices
+    };
+
+    // process all active bindings
+    if (global.ZWave) {
+       global.ZWave().forEach(this.bindFunc1);
+    }
+
+    // and listen for future ones
+    global.controller.on("ZWave.register", this.bindFunc1);
+```     
+
+   
