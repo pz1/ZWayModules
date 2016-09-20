@@ -13,6 +13,9 @@ For example converting a Celsius sensor to Fahrenheit can be specified in the in
 ```     
 a*1.8+32 
 ```     
+But Math library function can be used to:      
+a-b+Math.sqrt(16)      
+
 ##Possible limitations      
 The module has not yet been tested for scientific calculations. I guess you have at least to adhere to the [ECMA 5 syntax](http://www.ecma-international.org/ecma-262/5.1/#sec-15.8)    
 **Nota bene** Because the output of this device only changes if any of the sensors changes, it may take quite a while before you will see a new result. That can be confusing while you are changing the formula, and want to check the result.      
