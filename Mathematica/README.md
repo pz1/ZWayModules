@@ -13,7 +13,7 @@ For example converting a Celsius sensor to Fahrenheit can be specified in the in
 ```     
 a*1.8+32 
 ```     
-But Math library function can be used to:      
+But Math library function can be used as well:      
 a-b+Math.sqrt(16)      
 
 ##Possible limitations      
