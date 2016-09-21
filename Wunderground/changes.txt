@@ -1,0 +1,1 @@
+20160921 Added code to derive wind_dir from wind_degrees. Mapping in 16 direction, that are represented as up to 3 character capital shortnames.

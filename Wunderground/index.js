@@ -49,9 +49,9 @@ Wunderground.prototype.init = function (config) {
 			moduleId : this.id
 		});
 
-	this.timer = setInterval(function() {
-		self.fetchWeather(self);
-	}, 900*1000);
+	this.timer = setInterval(function () {
+			self.fetchWeather(self);
+		}, 900 * 1000);
 	self.fetchWeather(self);
 };
 
@@ -89,10 +89,45 @@ Wunderground.prototype.fetchWeather = function (instance) {
 				max_temp = parseInt(res.data.forecast.simpleforecast.forecastday[0].high.celsius),
 				icon = res.data.current_observation.icon_url;
 
+				if ((wind_degrees <= 11) || (wind_degrees >= 349)) {
+					wind_dir = "N";
+				} else if (wind_degrees <= 34) {
+					wind_dir = "NNE";
+				} else if (wind_degrees <= 56) {
+					wind_dir = "NE";
+				} else if (wind_degrees <= 79) {
+					wind_dir = "ENE";
+				} else if (wind_degrees <= 101) {
+					wind_dir = "E";
+				} else if (wind_degrees <= 124) {
+					wind_dir = "ESE";
+				} else if (wind_degrees <= 146) {
+					wind_dir = "SE";
+				} else if (wind_degrees <= 169) {
+					wind_dir = "SSE";
+				} else if (wind_degrees <= 191) {
+					wind_dir = "S";
+				} else if (wind_degrees <= 214) {
+					wind_dir = "SSW";
+				} else if (wind_degrees <= 236) {
+					wind_dir = "SW";
+				} else if (wind_degrees <= 259) {
+					wind_dir = "WSW";
+				} else if (wind_degrees <= 281) {
+					wind_dir = "W";
+				} else if (wind_degrees <= 304) {
+					wind_dir = "WNW";
+				} else if (wind_degrees <= 326) {
+					wind_dir = "NW";
+				} else if (wind_degrees <= 349) {
+					wind_dir = "NNW";
+				}
+
 				self.vDev.set("metrics:level", temp);
 				self.vDev.set("metrics:windgust", windgust);
 				self.vDev.set("metrics:pressure", pressure);
 				self.vDev.set("metrics:wind_degrees", wind_degrees);
+				self.vDev.set("metrics:wind_dir", wind_dir);
 				self.vDev.set("metrics:observe_time", observe_time);
 				self.vDev.set("metrics:max_temp", max_temp);
 				self.vDev.set("metrics:icon", icon);
