@@ -49,6 +49,23 @@ Wunderground.prototype.init = function (config) {
 			moduleId : this.id
 		});
 
+        this.vDev2 = self.controller.devices.create({
+                        deviceId : "Wunderground_" + this.id + "-1",
+                        defaults : {
+                                deviceType : "text",
+                                metrics : {
+                                        probeTitle : 'Wind Direction'
+                                }
+                        },
+                        overlay : {
+                                metrics : {
+                                        scaleTitle : '',
+                                        title : this.config.city
+                                }
+                        },
+                        moduleId : this.id
+                });
+
 	this.timer = setInterval(function () {
 			self.fetchWeather(self);
 		}, 900 * 1000);
@@ -65,6 +82,12 @@ Wunderground.prototype.stop = function () {
 		this.controller.devices.remove(this.vDev.id);
 		this.vDev = null;
 	}
+
+
+        if (this.vDev2) {
+                this.controller.devices.remove(this.vDev2.id);
+                this.vDev2 = null;
+        }
 };
 
 // ----------------------------------------------------------------------------
@@ -122,13 +145,14 @@ Wunderground.prototype.fetchWeather = function (instance) {
 				} else if (wind_degrees <= 349) {
 					wind_dir = "NNW";
 				}
-
+				self.vDev2.set("metrics:icon","/ZAutomation/api/v1/load/modulemedia/Wunderground/" + wind_dir + ".png" );
 				self.vDev.set("metrics:level", temp);
 				self.vDev.set("metrics:windgust", windgust);
 				self.vDev.set("metrics:pressure", pressure);
 				self.vDev.set("metrics:wind_degrees", wind_degrees);
-				self.vDev.set("metrics:wind_dir", wind_dir);
-				self.vDev.set("metrics:observe_time", observe_time);
+				self.vDev2.set("metrics:level", wind_dir);
+				self.vDev.set("metrics:timeStamp", observe_time);
+				self.vDev2.set("metrics:timeStamp", observe_time);
 				self.vDev.set("metrics:max_temp", max_temp);
 				self.vDev.set("metrics:icon", icon);
 			} catch (e) {

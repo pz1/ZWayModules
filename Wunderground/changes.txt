@@ -1,1 +1,3 @@
+20160922 Added second vDev for Wind direction to this module. It is named Wunderground_X-1
+20160922 Added winddirection icons based on shortnames to htdocs folder. You may change icons but not the names!
 20160921 Added code to derive wind_dir from wind_degrees. Mapping in 16 direction, that are represented as up to 3 character capital shortnames.
