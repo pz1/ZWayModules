@@ -24,6 +24,7 @@ _Note: The hyper links on my devices refer to the description of an application/
 [Problematic Z-Wave devices](http://forum.z-wave.me/viewtopic.php?f=3423&t=21476)    
 \- to be completed \-      
 #### Other useful links to tools and docs     
+[Notepad++(https://notepad-plus-plus.org/), most complete text editor!
 [Github for beginners](http://readwrite.com/2013/09/30/understanding-github-a-journey-for-beginners-part-1/)      
 [Zwave device manuals](http://manuals.zwaveeurope.com/)      
 [RaZberry/ZWay latest releases](http://razberry.z-wave.me/z-way-server/?C=M;O=D)      
