@@ -1,11 +1,11 @@
-## Several issue submitted to Github (quite) a while ago      
+## Several issues submitted to Github (quite) a while ago      
 - https://github.com/Z-Wave-Me/ExpertUI/issues/210  potentially serious       
 - https://github.com/Z-Wave-Me/ExpertUI/issues/209  *minor*          
 - https://github.com/Z-Wave-Me/ExpertUI/issues/206  *assigned*     
 - https://github.com/Z-Wave-Me/zwave-smarthome/issues/177  waiting for response    
 - https://github.com/Z-Wave-Me/zwave-smarthome/issues/176  Abiguity imported device; *assigned*       
 - https://github.com/Z-Wave-Me/ExpertUI/issues/187 temperature setting StellaZ very serious for me      
-- https://github.com/Z-Wave-Me/home-automation/issues/299 HTTP authentication; Still serious problem for me, but I assume nothing will be done about it. Couple of days ago I saw a cryptic note re http authentication on OR forum, but unsure if it affects this one. I'll give it a try once it is a formal OR release)      
+- https://github.com/Z-Wave-Me/home-automation/issues/299 HTTP authentication; Still serious problem for me, but I assume nothing will be done about it. (Couple of days ago I saw a cryptic note re http authentication on OR forum, but unsure if it affects this one. I'll give it a try once it is a formal OR release)      
 
 ## Issues spotted in v2.2.4-rc16     
 - *Expert UI* - *Network/Timing Info* still not presenting any data
