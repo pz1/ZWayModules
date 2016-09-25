@@ -1,3 +1,4 @@
+#Unfinished draft. Do not use!      
 ##ZWay visualisation on OpenRemote       
 ###Background      
 [ZWay](http://razberry.zwave.me/) is a home automation platform. It has its roots in supporting Z-Wave devices. Originally built as a webservice, but later totally rewritten mostly in javascript (google V8) to run on the emerging RaspberryPi platform. Over time it has developed into a generic modular system, that allows user to build and share Apps to extend functionality. At the moment of this writing there are many [public Apps](http://developer.z-wave.me/?uri=public#/web/apps) available      
