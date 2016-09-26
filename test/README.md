@@ -1,8 +1,8 @@
 Space for my wiring diagrams that did not make it to the application pages (yet)
 
 h2.Fibaro Universal sensor
-[alt text](htdocs/T-568B.png)thumbnail,align=right,vspace=20,hspace=20!
-[alt text](htdocs/WiringFUS.png)thumbnail,align=right,vspace=20,hspace=20!
+![alt text](htdocs/T-568B.png)thumbnail,align=right,vspace=20,hspace=20!
+![alt text](htdocs/WiringFUS.png)thumbnail,align=right,vspace=20,hspace=20!
 
 For the wiring I did use CAT 5 cable. As I happened to have some spare ethernet patch boxes and some Keystone jacks (rj45), I used these for mounting the Fibaro Universal sensor. This box is designed for the control of my [Somfy sunscreens|http://www.openremote.org/display/~pz1/OpenRemote+2.0+How+To+-+Interface+Hydreon+RG-11+Rain+Sensor+-+Fibaro+Universal+Sensor].
 
