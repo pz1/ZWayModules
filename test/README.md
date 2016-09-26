@@ -21,4 +21,4 @@ The Fibaro device is very sensitive to the correct connection of CAT5 strands. T
 The connections to pins 1-3 of this device are respectively *GND* green/white, *DATA _(TD)_* green, and *3V_(TP)_* orange of the cable.
 
 h3.Materials
-For your convenience links to the products I used: [Patch Box](http://www.conrad.nl/ce/nl/product/992982/BTR-Keystone-opbouwdoos-6-poorts-RAL-9010), [Printed circuit board|http://www.conrad.nl/ce/nl/product/531198/Hardpapier-printpl-IC-3-16pol-110x50x16?queryFromSuggest=true], [Wire terminal](http://www.conrad.nl/ce/nl/product/731961/Schroefklem-serie-AKZ500-V-Rastermaat-508-mm-Aantal-pinnen-7-Grijs-50500070134G-PTR-Inhoud-1-stuks)
+For your convenience links to the products I used: [Patch Box](http://www.conrad.nl/ce/nl/product/992982/BTR-Keystone-opbouwdoos-6-poorts-RAL-9010), [Printed circuit board](http://www.conrad.nl/ce/nl/product/531198/Hardpapier-printpl-IC-3-16pol-110x50x16?queryFromSuggest=true), [Wire terminal](http://www.conrad.nl/ce/nl/product/731961/Schroefklem-serie-AKZ500-V-Rastermaat-508-mm-Aantal-pinnen-7-Grijs-50500070134G-PTR-Inhoud-1-stuks)
