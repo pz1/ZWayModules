@@ -8,7 +8,5 @@
 "city": "City",
 "city_placeholder": "Schiphol",
 "err_parse":"Can not parse weather information",
-"err_fetch":"Can not fetch weather information",
-"host-label" : "This Z-way server",
-"host-helper" : "Provide IP and Port numbers separated with a colon (:)"
+"err_fetch":"Can not fetch weather information"
 }

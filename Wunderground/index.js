@@ -1,12 +1,12 @@
 /*** Wunderground Z-Way HA module *******************************************
 
-Version: 1.0.1
+Version: See the accompanying file module.json
 (c) Z-Wave.Me, 2014
 -----------------------------------------------------------------------------
 Author: Pieter E. Zanstra adaptation for Wunderground Weather Services API
 Derived from OpenWeather module by Serguei Poltorak <ps@z-wave.me>
 Description:
-This module creates temperature widget
+This module creates a temperature VitualDevice and a wind direction vDev
 
  ******************************************************************************/
 
@@ -151,7 +151,7 @@ Wunderground.prototype.fetchWeather = function (instance) {
 				self.vDev.set("metrics:pressure", pressure);
 				self.vDev.set("metrics:wind_degrees", wind_degrees);
 				self.vDev2.set("metrics:level", wind_dir);
-				self.vDev.set("metrics:timeStamp", observe_time);
+				self.vDev.set("metrics:observe_time", observe_time);
 				self.vDev2.set("metrics:timeStamp", observe_time);
 				self.vDev.set("metrics:max_temp", max_temp);
 				self.vDev.set("metrics:icon", icon);

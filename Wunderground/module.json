@@ -6,7 +6,7 @@
 	"homepage": "http://forum.z-wave.me/viewtopic.php?f=3424&t=21246",
 	"icon": "icon.png",
     "moduleName": "Wunderground",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"maturity": "stable",
 	"repository": {
 		"type": "git",
@@ -17,8 +17,7 @@
 		"description": "__m_descr__",
 		"key": "",
 		"city": "",
-		"country": "",
-		"host": "192.168.1.28:8083"
+		"country": ""
 	},
 	"schema": {
 		"type": "object",
@@ -34,10 +33,6 @@
 			"country": {
 				"type": "string",
 				"required": true
-			},
-			"host": {
-				"type" : "string",
-				"required" : true
 			}
 		},
 		"required": true
@@ -55,10 +50,6 @@
 			"country": {
 				"label": "__country__",
 				"placeholder": "__country_placeholder__"
-			},
-			"host": {
-				"label": "__host-label__",
-				"helper": "__host-helper__"
 			}
 		}
 	}
