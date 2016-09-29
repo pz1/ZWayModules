@@ -6,8 +6,8 @@
 	"homepage" : "http://forum.z-wave.me/viewtopic.php?f=3424&t=21398",
 	"icon" : "icon.png",
     "moduleName": "SolQoS",
-	"version" : "1.1.0",
-	"maturity" : "beta",
+	"version" : "1.1.2",
+	"maturity" : "stable",
 	"repository" : {
 		"type" : "git",
 		"source" : "https://github.com/pz1/ZWayModules"
@@ -16,7 +16,6 @@
 		"title" : "__m_title__",
 		"description" : "__m_descr__",
 		"polling" : "5",
-		"host" : "192.168.1.34:8083",
 		"pvlogger1" : "PVLogger_1",
 		"pvlogger2" : "PVLogger_2",
 		"capacity" : "6200"
@@ -24,10 +23,6 @@
 	"schema" : {
 		"type" : "object",
 		"properties" : {
-			"host" : {
-				"type" : "string",
-				"required" : "true"
-			},
 			"polling" : {
 				"type" : "string",
 				"required" : true
@@ -51,11 +46,7 @@
 	},
 	"options" : {
 		"fields" : {
-                        "host" : {
-                                "label" : "__host-label__",
-                                "helper" : "__host-helper__"
-                        },
-			"polling" : {
+                        "polling" : {
 				"label" : "__polling-label__",
 				"helper" : "__polling-helper__"
 			},
