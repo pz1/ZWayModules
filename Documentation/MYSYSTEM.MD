@@ -12,12 +12,12 @@ As of 2016-06-19 Number of instances in ()
 **3**) Z-Way **2.2.1** on Raspi2/[UZB1](http://www.z-wave.me/index.php?id=28) - OS: Rasbian-Jessie-Lite March 2016     
 UPS Pico stability tests    
 
-These systems are satellites to my OpenRemote Pro 1.4.0 on **Synology DS212+** DSM 4.3-3827 Diskstation See [OpenRemote UI](http://www.openremote.org/x/nwFWAQ)    
+**4**) OpenRemote Pro **1.4.0** on **Synology DS212+** DSM 4.3-3827 Diskstation servers. OpenRemote serves as an integration and visualisation platform for the three ZWay sattelites. See [OpenRemote UI](http://www.openremote.org/x/nwFWAQ)    
 
 _Note: The hyper links on my devices refer to the description of an application/recipe involving that device._
 
 #### Other related docs in this github space      
-[Preparation of my SD-Card](https://github.com/pz1/ZWayModules/blob/master/Documentation/PrepareRaspberryPiSDcard.MD)    
+[Preparation of SD-Card for ZWay](https://github.com/pz1/ZWayModules/blob/master/Documentation/PrepareRaspberryPiSDcard.MD)    
 [Howto Backup and Restore ZWay installation](https://github.com/pz1/ZWayModules/blob/master/Documentation/BackupRestoreClone.MD)    
 
 #### Forum Links    
