@@ -122,4 +122,13 @@ then
   }
 end
 ```         
-Do make sure that port 9091 is not used by an other application. If you want to integrate a second Zway server with OpenRemote, you have to duplicate the UDPListener and the rule. You need a different port not to close to the existing number (e.g. 9192), and a different name for the sensor (e.g. RaZ-UDP-Status2). Do use those in the second rule! 
+Do make sure that port 9091 is not used by an other application. If you want to integrate a second Zway server with OpenRemote, you have to duplicate the UDPListener and the rule. You need a different port not to close to the existing number (e.g. 9192), and a different name for the sensor (e.g. RaZ-UDP-Status2). Do use those in the second rule!       
+
+----
+## Installation of OpenRemote controller 2.6.0 (Beta1) on RaspberryPi      
+- Download the controller.zip from page https://github.com/openremote/Controller/releases
+- Extracted to /opt/openremote folder on a RasPi2
+- From the *Designer* console export the zipped "model". Extract the files to folder **/opt/openremote/webapps/controller**
+- For a first trial on the RaspberryPi console cd /opt/openremote/bin. Next give command:  
+      **bash openremote.sh run**
+

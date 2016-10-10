@@ -5,7 +5,7 @@
 As of 2016-06-19 Number of instances in ()      
 **Extra** [Write logs to separate USB-stick](https://github.com/pz1/ZWayModules/blob/master/Documentation/PrepareRaspberryPiSDcard.MD#logToUsb)  
 
-**2**) ZWay **2.2.4-rc19** on RaspiB/[RaZberry](http://razberry.zwave.me/index.php?id=9) (old gen3 version) - OS: Rasbian-Jessie-Lite February 2016  
+**2**) ZWay **2.2.4-rc20** on RaspiB/[RaZberry](http://razberry.zwave.me/index.php?id=9) (old gen3 version) - OS: Rasbian-Jessie-Lite February 2016  
 **Devices**: 1 Fibaro [Universal Binary Sensor FGBS-001](http://www.openremote.org/x/vCBdAQ); 1 Fibaro Double Relay Switch FGS-221    
 **Apps** (active): OpenRemote Helper, Trap Events, Link other ZWay, Schedule, Scene, Zwave. (incomplete list) 
 
