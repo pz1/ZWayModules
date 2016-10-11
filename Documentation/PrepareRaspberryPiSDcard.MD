@@ -168,31 +168,11 @@ gpio -v
 gpio readall
 ```
 ***
-<a name="OpenRemote"></a>    
-#### Install OpenRemote (**Optional**; requires Jessie full version because Java is pre-installed)    
+#### Install OpenRemote<a name="OpenRemote"></a> (**Optional**, requires Jessie full version because Java is pre-installed)       
 I do use [OpenRemote](http://www.openremote.org/x/nwFWAQ) as visualisation and integration platform for two ZWay satellites. At present it runs on a NAS    
-This installation is probably only usefull to do on a RaspberryPi 2 or higher    
-###### Pro 2.6.0-alpha1 installation      
-Not yet tested. **Work in progress Use at your own risk!!!**    
-Based on OR document [install on RaspberryPi](http://www.openremote.org/display/docs/OpenRemote+2.0+How+To+-+Install+Controller+on+Raspberry+Pi)
-```    
-create /opt/orb as the place to store the OR-controller
-sudo chown pi /opt/orb
-sudo chgrp pi /opt/orb
-```    
-With WinSCP copy all Openremote controller files to /opt/orb
-```    
-cd /opt/orb/bin
-sudo chmod +x openremote.sh
-````
-    
-Now see if it works:
-```     	
-./openremote.sh run
-```    
-*** 
-<a name="Finalise"></a>    
-#### Finalise installation   
+For installation on a raspberryPi (version 2 recommendend) see installation instructions in document [Zway Visualisation on OpenRemote](https://github.com/pz1/ZWayModules/blob/master/Documentation/ZWayVisualistationOnOpenRemote.MD#ORinstall)
+***
+####<a name="Finalise"></a> Finalise installation   
 Install a stable Zway version, followed by a restart of the raspberrypi.  
 **wget -q -O - razberry.z-wave.me/install/v2.2.1 | sudo bash**   
 **sudo reboot**
