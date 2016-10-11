@@ -1,17 +1,17 @@
-#Unfinished draft. Do not use!      
-##ZWay visualisation on OpenRemote       
-###Background      
+# Unfinished draft. Do not use!      
+## ZWay visualisation on OpenRemote       
+### Background      
 [ZWay](http://razberry.zwave.me/) is a home automation platform. It has its roots in supporting Z-Wave devices. Originally built as a webservice, but later totally rewritten mostly in javascript (google V8) to run on the emerging RaspberryPi platform. Over time it has developed into a generic modular system, that allows user to build and share Apps to extend functionality. At the moment of this writing there are many [public Apps](http://developer.z-wave.me/?uri=public#/web/apps) available      
 [OpenRemote](http://www.openremote.com/) is an open source middleware for the Internet of Things. It is an Integration and Visualisation platform that supports many different protocols, and has a graphical editor to freely create [advanced user interfaces](https://www.youtube.com/embed/ymqnKK7QIaQ) that run on Android, iOS, and many WEBbrowsers.      
-###Installation      
-####ZWay: The OpenRemoteHelpers App      
+### Installation      
+#### ZWay: The OpenRemoteHelpers App      
 This App provides a simplified API to ZWay hiding the user from the complex Z-Wave commands interaction. With http calls status values can be retrieved, actuators can be set. Within Zway, as administrator the user just installs the module with one click from the App store, no further settings required.       
 ####OpenRemote: The Controller
 \<to be completed\>      
       
       
 ----      
-##<a name="ORHelperAPI"></a>Appendix A: OpenRemoteHelpers Syntax   
+## <a name="ORHelperAPI"></a> Appendix A: OpenRemoteHelpers Syntax   
 The generalised call is: **http://IP:8083/OpenRemote/Command/N/I/param**, where the parameters are:    
 - *IP* - Address of the controller RaZberry      
 - *Command* - Сontrol command      
@@ -24,7 +24,7 @@ The generalised call is: **http://IP:8083/OpenRemote/Command/N/I/param**, where 
 
 As said this interface is primarily focussed on ZWave devices, but with the commands *metric* and *Setmetric* Openremote can also interact with the so-called virtualDevice level of ZWay.       
 
-####Available Commands:      
+#### Available Commands:      
 - *SwitchBinaryOn/N/I* - Enables device      
 - *SwitchBinaryOff/N/I* - Off device      
 - *SwitchBinaryStatus/N/I* - Show on or off the device (on/off)      
@@ -54,7 +54,7 @@ ThermostatModeName/N* - Show the name of the regime, which is now set
 - *Setmetrics/ID/metric/param* - Sets a specific metric of a virtualDevice to a value.      
       
 ----
-##<a name="UDPOR"></a>Appendix B: Fast status updates with UDP      
+## <a name="UDPOR"></a> Appendix B: Fast status updates with UDP      
 First create with OpenRemote Designer
 ![alt text](https://github.com/pz1/ZWayModules/blob/master/Documentation/htdocs/ImVC.PNG)
 /<polling issue/>
@@ -124,12 +124,25 @@ end
 ```         
 Do make sure that port 9091 is not used by an other application. If you want to integrate a second Zway server with OpenRemote, you have to duplicate the UDPListener and the rule. You need a different port not to close to the existing number (e.g. 9192), and a different name for the sensor (e.g. RaZ-UDP-Status2). Do use those in the second rule!       
 
-----
-## Appendix XX: Installation of OpenRemote controller 2.6.0 (Beta1) on RaspberryPi      
+------
+## <a name="ORinstall"></a> Appendix C: Installation of OpenRemote controller 2.6.0 (Beta1) on RaspberryPi*      
 This installation guide assumes that the RaspberryPi is running the full version of Rasbian Jessie. That version comes with Java 1.8 pre-installed, which makes the installation of OpenRemote rather simple:
 - Download the controller.zip from page https://github.com/openremote/Controller/releases
 - Extracted to /opt/openremote folder on a RasPi2
 - From the *Designer* console export the zipped "model". Extract the files to folder **/opt/openremote/webapps/controller**
-- For a first trial on the RaspberryPi console cd /opt/openremote/bin. Next give command:  
-      **bash openremote.sh run**
+- Serial port access from OpenRemote Controller is done with RXTX library. To download and install ARM based binary of RXTX, execute the following commands:
+```      
+sudo apt-get install librxtx-java
+cp /usr/lib/jni/librxtxSerial.so /opt/openremote/webapps/controller/WEB-INF/lib/native/librxtxSerial.so
+```      
+- For a first trial on the RaspberryPi console do the following:
+```     
+cd /opt/openremote/bin
+sudo chmod +x openremote.sh
+./openremote.sh run
+```     
+- To test your set up, open the Webconsole of the new installation:
+      **http://YourRaspberryPi_IP:8688/webconsole**
+- If the above steps were successful, go ahead to let OpenRemote start automatically.     
 
+*This installation instruction is derived from the [official 2015 OR description](http://www.openremote.org/display/docs/OpenRemote+2.0+How+To+-+Install+Controller+on+Raspberry+Pi)       
