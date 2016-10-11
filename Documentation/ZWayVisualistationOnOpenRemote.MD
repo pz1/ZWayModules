@@ -130,7 +130,7 @@ This installation guide assumes that the RaspberryPi is running the full version
 - Download the controller.zip from page https://github.com/openremote/Controller/releases
 - Extracted to /opt/openremote folder on a RasPi2
 - From the *Designer* console export the zipped "model". Extract the files to folder **/opt/openremote/webapps/controller**
-- Serial port access from OpenRemote Controller is done with RXTX library. To download and install ARM based binary of RXTX, execute the following commands:
+- [this point may no longer be needed](https://github.com/openremote/Controller/issues/23) Serial port access from OpenRemote Controller is done with RXTX library. To download and install ARM based binary of RXTX, execute the following commands:
 ```      
 sudo apt-get install librxtx-java
 cp /usr/lib/jni/librxtxSerial.so /opt/openremote/webapps/controller/WEB-INF/lib/native/librxtxSerial.so
