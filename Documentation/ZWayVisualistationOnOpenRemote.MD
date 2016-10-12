@@ -130,11 +130,6 @@ This installation guide assumes that the RaspberryPi is running the full version
 - Download the controller.zip from page https://github.com/openremote/Controller/releases
 - Extracted to /opt/openremote folder on a RasPi2
 - From the *Designer* console export the zipped "model". Extract the files to folder **/opt/openremote/webapps/controller**
-- [this point may no longer be needed](https://github.com/openremote/Controller/issues/23) Serial port access from OpenRemote Controller is done with RXTX library. To download and install ARM based binary of RXTX, execute the following commands:
-```      
-sudo apt-get install librxtx-java
-cp /usr/lib/jni/librxtxSerial.so /opt/openremote/webapps/controller/WEB-INF/lib/native/librxtxSerial.so
-```      
 - For a first trial on the RaspberryPi console do the following:
 ```     
 cd /opt/openremote/bin
@@ -143,6 +138,58 @@ sudo chmod +x openremote.sh
 ```     
 - To test your set up, open the Webconsole of the new installation:
       **http://YourRaspberryPi_IP:8688/webconsole**
-- If the above steps were successful, go ahead to let OpenRemote start automatically.     
+- If the above steps were successful, go ahead to let OpenRemote start automatically. At the RPi console do:
+```      
+cd /etc/init.d\
+sudo nano openremote-server.sh
+```      
+Copy the following text into that script file:
+```      
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          openremote
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start daemon at boot time
+# Description:       Enable service provided by daemon.
+### END INIT INFO
+
+cd /opt/openremote/bin        # Modify this line to your OpenRemote Controller installation path
+
+case "$1" in
+
+stop)
+        echo "Stopping OpenRemote Controller..."
+        /opt/openremote/bin/openremote.sh stop > /dev/null 2>&1 &
+        ;;
+
+start)
+        # start OpenRemote in background mode
+        /opt/openremote/bin/openremote.sh start > /dev/null 2>&1 &
+        echo "OpenRemote Controller started..."
+        ;;
+
+restart)
+        $0 stop
+        sleep 5
+        $0 start
+        ;;
+*)
+        echo "usage: $0 { start | stop | restart}" >&2
+        exit 1
+        ;;
+
+esac
+```      
+Within the nano editor save the contents with CTRL-O, and exit with CTRL-X     
+Make the script executable, and make it start at setup with:
+```      
+sudo chmod +x /etc/init.d/openremote-server.sh
+sudo update-rc.d openremote-server.sh defaults
+```       
+
+    
 
 *This installation instruction is derived from the [official 2015 OR description](http://www.openremote.org/display/docs/OpenRemote+2.0+How+To+-+Install+Controller+on+Raspberry+Pi)       
