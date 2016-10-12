@@ -156,7 +156,7 @@ Copy the following text into that script file:
 # Description:       Enable service provided by daemon.
 ### END INIT INFO
 
-cd /opt/openremote/bin        # Modify this line to your OpenRemote Controller installation path
+cd /opt/openremote/bin
 
 case "$1" in
 
@@ -189,7 +189,7 @@ Make the script executable, and make it start at setup with:
 sudo chmod +x /etc/init.d/openremote-server.sh
 sudo update-rc.d openremote-server.sh defaults
 ```       
-
+Do allow the system some time to start
     
 
 *This installation instruction is derived from the [official 2015 OR description](http://www.openremote.org/display/docs/OpenRemote+2.0+How+To+-+Install+Controller+on+Raspberry+Pi)       
