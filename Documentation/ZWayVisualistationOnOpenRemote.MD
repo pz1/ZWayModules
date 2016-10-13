@@ -147,6 +147,9 @@ where you add the following two lines just before the line with *exit 0*
 cd /opt/openremote/bin
 ./openremote.sh start
 ```      
-    
-
+ 
+The OpenRemote server can now be started/stopped from your RaspberryPi as:
+```
+/opt/openremote/bin/openremote.sh stop (does not work yet)
+```    
 *This installation instruction is derived from the [official 2015 OR description](http://www.openremote.org/display/docs/OpenRemote+2.0+How+To+-+Install+Controller+on+Raspberry+Pi)       
