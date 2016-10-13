@@ -148,8 +148,12 @@ cd /opt/openremote/bin
 ./openremote.sh start
 ```      
  
-The OpenRemote server can now be started/stopped from your RaspberryPi as:
+The OpenRemote server can now be started/stopped from your RaspberryPi console as:
 ```
 /opt/openremote/bin/openremote.sh stop (does not work yet)
 ```    
+###### Tune OR-server for use on Pi
+A major source of problems with RaspberryPi is massive writing of logfiles to the SDCard. If your installation runs well, you best disable all logging in file: 
+**/opt/openremote/webapps/controller/WEB-INF/classes/log4j.properties**. In the first line of that file, do change the default level INFO into OFF. Reboot RaspberriPi.           
+
 *This installation instruction is derived from the [official 2015 OR description](http://www.openremote.org/display/docs/OpenRemote+2.0+How+To+-+Install+Controller+on+Raspberry+Pi)       
