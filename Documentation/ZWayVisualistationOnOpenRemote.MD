@@ -138,58 +138,15 @@ sudo chmod +x openremote.sh
 ```     
 - To test your set up, open the Webconsole of the new installation:
       **http://YourRaspberryPi_IP:8688/webconsole**
-- If the above steps were successful, go ahead to let OpenRemote start automatically. At the RPi console do:
+- If the above steps were successful, go ahead to let OpenRemote start automatically. At the RPi console do change **/etc/rc.local**:
 ```      
-cd /etc/init.d\
-sudo nano openremote-server.sh
+sudo nano /etc/rc.local
 ```      
-Copy the following text into that script file:
+where you add the following two lines just before the line with *exit 0*
 ```      
-#!/bin/sh
-### BEGIN INIT INFO
-# Provides:          openremote
-# Required-Start:    $remote_fs $syslog
-# Required-Stop:     $remote_fs $syslog
-# Default-Start:     2 3 4 5
-# Default-Stop:      0 1 6
-# Short-Description: Start daemon at boot time
-# Description:       Enable service provided by daemon.
-### END INIT INFO
-
 cd /opt/openremote/bin
-
-case "$1" in
-
-stop)
-        echo "Stopping OpenRemote Controller..."
-        /opt/openremote/bin/openremote.sh stop > /dev/null 2>&1 &
-        ;;
-
-start)
-        # start OpenRemote in background mode
-        /opt/openremote/bin/openremote.sh start > /dev/null 2>&1 &
-        echo "OpenRemote Controller started..."
-        ;;
-
-restart)
-        $0 stop
-        sleep 5
-        $0 start
-        ;;
-*)
-        echo "usage: $0 { start | stop | restart}" >&2
-        exit 1
-        ;;
-
-esac
+./openremote.sh start
 ```      
-Within the nano editor save the contents with CTRL-O, and exit with CTRL-X     
-Make the script executable, and make it start at setup with:
-```      
-sudo chmod +x /etc/init.d/openremote-server.sh
-sudo update-rc.d openremote-server.sh defaults
-```       
-Do allow the system some time to start
     
 
 *This installation instruction is derived from the [official 2015 OR description](http://www.openremote.org/display/docs/OpenRemote+2.0+How+To+-+Install+Controller+on+Raspberry+Pi)       
