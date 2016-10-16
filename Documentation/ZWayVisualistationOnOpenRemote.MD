@@ -150,8 +150,10 @@ cd /opt/openremote/bin
  
 The OpenRemote server can now be started/stopped from your RaspberryPi console as:
 ```
-/opt/openremote/bin/openremote.sh stop (does not work yet)
-```    
+/opt/openremote/bin/openremote.sh {stop | start}
+```      
+!*Does not work yet*! Problem may be related to this [unhelpful post](http://www.openremote.org/display/forums/KNX-DEBUG.LOG+spitting+out+a+lot+of+data?focusedCommentId=22878213#comment-22878213) relating to the CATALINA_PID variable.
+    
 ###### Tune OR-server for use on Pi
 A major source of problems with RaspberryPi is massive writing of log files to the SDCard. If your installation runs well, to prevent SDCard corruption, you best disable all logging in configuration file: 
 **/opt/openremote/webapps/controller/WEB-INF/classes/log4j.properties**. This file holds sections for several protocols. Search the file for lines with:
