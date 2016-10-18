@@ -14,6 +14,8 @@ UPS Pico stability tests
 
 **4**) OpenRemote Pro **1.4.0** on **Synology DS212+** DSM 4.3-3827 Diskstation servers. OpenRemote serves as an integration and visualisation platform for the three ZWay sattelites. See [OpenRemote UI](http://www.openremote.org/x/nwFWAQ)    
 
+**5** Openremote Pro **2.6.0-beta** on Raspi2 for testing. Notable for this version is that it uses Java 1.8, and the much newer Drools 6.4. rule engine  - OS: Rasbian-Jessie-full May 2016. ([Prelimenary notes](https://github.com/pz1/ZWayModules/blob/master/Documentation/ZWayVisualistationOnOpenRemote.MD))    
+
 _Note: The hyper links on my devices refer to the description of an application/recipe involving that device._
 
 #### Other related docs in this github space      
