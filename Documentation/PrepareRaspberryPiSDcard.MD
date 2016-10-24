@@ -173,8 +173,8 @@ I do use [OpenRemote](http://www.openremote.org/x/nwFWAQ) as visualisation and i
 For installation on a raspberryPi (version 2 recommendend) see installation instructions in document [Zway Visualisation on OpenRemote](https://github.com/pz1/ZWayModules/blob/master/Documentation/ZWayVisualistationOnOpenRemote.MD#ORinstall)
 ***
 ####<a name="Finalise"></a> Finalise installation   
-Install a stable Zway version, followed by a restart of the raspberrypi.  
-**wget -q -O - razberry.z-wave.me/install/v2.2.1 | sudo bash**   
+Install the latest stable Zway version, followed by a restart of the raspberrypi.  
+**wget -q -O - razberry.z-wave.me/install/ | sudo bash**   
 **sudo reboot**
 
 Recommendation: Now make a copy of your SDcard to serve as a base image for future rebuilds. Issue commands:    
