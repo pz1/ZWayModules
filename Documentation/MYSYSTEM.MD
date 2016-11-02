@@ -1,4 +1,4 @@
-## Summary of my systems (20161008)
+## Summary of my systems (20161031)
 **1**) ZWay **2.3.0-rc1** on Raspi2/[UZB1](http://www.z-wave.me/index.php?id=28) - OS: Rasbian-Jessie-Lite February 2016     
 **Devices**: 1 [ZME WALLC S controller](http://forum.z-wave.me/viewtopic.php?f=3424&t=21965); 9 [StellaZ](http://forum.z-wave.me/viewtopic.php?f=3424&t=20963&p=53657) and 1 Danfoss 2.50 Thermostatic Radiator Valves; 5 ZME Binary Power Switches; 2 Aeon Labs Repeaters; 1 Fibaro Wall Plug FGWPE-101; 1 Fibaro [Universal Binary Sensor FGBS-001](http://www.openremote.org/x/vCBdAQ); 1 vision ZD2102EU 2013 Window sensor; 2 Sensative Strip model 11-01-011 Window sensor; 1 Duwi Schuko plug switch; 3 Popp 004001 Smoke detectors;    
 **Apps** (active): ZWave, Link other ZWay controller, IF -> Then(2), Trap events from Remotes and Sensors, Schedule(5), CodeDevice(40), Scene(4), LogicalRule,  Load custom JavaScript file, CRON, PVLogger(2), SolQoS, OpenRemote Helper, Wunderground(weather), Vision ZD2102 extended window sensor.       
