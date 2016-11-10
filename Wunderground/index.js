@@ -134,10 +134,10 @@ Wunderground.prototype.fetchWeather = function (instance) {
 				wind_degrees = parseInt(res.data.current_observation.wind_degrees),
 				observe_time = res.data.current_observation.local_time_rfc822,
 				max_temp = parseInt(res.data.forecast.simpleforecast.forecastday[0].high.celsius),
-				sunsethour = res.data.sun_phase.sunset.hour,
-				sunsetminute = res.data.sun_phase.sunset.minute,
-				sunrisehour = res.data.sun_phase.sunrise.hour,
-				sunriseminute = res.data.sun_phase.sunrise.minute,
+				sunsethour = parseInt(res.data.sun_phase.sunset.hour),
+				sunsetminute = parseInt(res.data.sun_phase.sunset.minute),
+				sunrisehour = parseInt(res.data.sun_phase.sunrise.hour),
+				sunriseminute = parseInt(res.data.sun_phase.sunrise.minute),
 				icon = res.data.current_observation.icon_url;
 
 				if ((wind_degrees <= 11) || (wind_degrees >= 349)) {
@@ -174,16 +174,16 @@ Wunderground.prototype.fetchWeather = function (instance) {
 					wind_dir = "NNW";
 				}
 
-				sunset = parseInt(sunsethour)*90 + parseInt(sunsetminute);
-				sunrise = parseInt(sunrisehour)*90 + parseInt(sunriseminute);
-				if (now > sunrise && now < sunset) {
+				sunset = sunsethour*60 + sunsetminute;
+				sunrise = sunrisehour*60 + sunriseminute;
+				if (now >= sunrise && now <= sunset) {
 					self.vDev3.set("metrics:icon","/ZAutomation/api/v1/load/modulemedia/Wunderground/day.png" );
 					self.vDev3.set("metrics:level", "off");
 				} else {
 					self.vDev3.set("metrics:icon","/ZAutomation/api/v1/load/modulemedia/Wunderground/night.png" );
 					self.vDev3.set("metrics:level", "on");
 				}
-
+ 
 				self.vDev.set("metrics:level", temp);
 				self.vDev.set("metrics:windgust", windgust);
 				self.vDev.set("metrics:pressure", pressure);
