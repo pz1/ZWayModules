@@ -6,8 +6,8 @@
 	"homepage": "http://forum.z-wave.me/viewtopic.php?f=3424&t=21246",
 	"icon": "icon.png",
     "moduleName": "Wunderground",
-	"version": "1.1.1",
-	"maturity": "stable",
+	"version": "1.1.2-rc1",
+	"maturity": "beta",
 	"repository": {
 		"type": "git",
 		"source": "https://github.com/pz1/ZWayModules"

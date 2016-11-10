@@ -1,3 +1,4 @@
+20161108 Added Day/Night sensor based on the weatherdata. Sensor is only updated when weatherdata is updated.
 20160929 Removed no longer used host specification from configuration screen
 20160922 Added second vDev for Wind direction to this module. It is named Wunderground_X-1
 20160922 Added winddirection icons based on shortnames to htdocs folder. You may change icons but not the names!

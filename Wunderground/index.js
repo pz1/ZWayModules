@@ -6,7 +6,7 @@ Version: See the accompanying file module.json
 Author: Pieter E. Zanstra adaptation for Wunderground Weather Services API
 Derived from OpenWeather module by Serguei Poltorak <ps@z-wave.me>
 Description:
-This module creates a temperature VitualDevice and a wind direction vDev
+This module creates a temperature VirtualDevice and a wind direction vDev
 
  ******************************************************************************/
 
@@ -59,12 +59,30 @@ Wunderground.prototype.init = function (config) {
                         },
                         overlay : {
                                 metrics : {
-                                        scaleTitle : '',
+                                        scaleTitle : '°',
                                         title : this.config.city
                                 }
                         },
                         moduleId : this.id
                 });
+
+        this.vDev3 = self.controller.devices.create({
+                        deviceId : "Wunderground_" + this.id + "-2",
+                        defaults : {
+                                deviceType : "text",
+                                metrics : {
+                                        probeTitle : 'isNight'
+                                }
+                        },
+                        overlay : {
+                                metrics : {
+                                        scaleTitle : '',
+                                        title : this.config.city + " isNight"
+                                }
+                        },
+                        moduleId : this.id
+                });
+
 
 	this.timer = setInterval(function () {
 			self.fetchWeather(self);
@@ -83,10 +101,14 @@ Wunderground.prototype.stop = function () {
 		this.vDev = null;
 	}
 
+	if (this.vDev2) {
+		this.controller.devices.remove(this.vDev2.id);
+		this.vDev2 = null;
+	}
 
-        if (this.vDev2) {
-                this.controller.devices.remove(this.vDev2.id);
-                this.vDev2 = null;
+        if (this.vDev3) {
+                this.controller.devices.remove(this.vDev3.id);
+                this.vDev3 = null;
         }
 };
 
@@ -97,10 +119,12 @@ Wunderground.prototype.stop = function () {
 Wunderground.prototype.fetchWeather = function (instance) {
 	var self = instance,
 	moduleName = "Wunderground",
+	d = new Date(),
+	now = d.getHours()*60 + d.getMinutes(),
 	langFile = self.controller.loadModuleLang(moduleName);
 
 	http.request({
-		url : "http://api.wunderground.com/api/" + self.config.key + "/conditions/forecast/q/" + self.config.country + "/" + self.config.city + ".json",
+		url : "http://api.wunderground.com/api/" + self.config.key + "/conditions/forecast/astronomy/q/" + self.config.country + "/" + self.config.city + ".json",
 		async : true,
 		success : function (res) {
 			try {
@@ -110,6 +134,10 @@ Wunderground.prototype.fetchWeather = function (instance) {
 				wind_degrees = parseInt(res.data.current_observation.wind_degrees),
 				observe_time = res.data.current_observation.local_time_rfc822,
 				max_temp = parseInt(res.data.forecast.simpleforecast.forecastday[0].high.celsius),
+				sunsethour = res.data.sun_phase.sunset.hour,
+				sunsetminute = res.data.sun_phase.sunset.minute,
+				sunrisehour = res.data.sun_phase.sunrise.hour,
+				sunriseminute = res.data.sun_phase.sunrise.minute,
 				icon = res.data.current_observation.icon_url;
 
 				if ((wind_degrees <= 11) || (wind_degrees >= 349)) {
@@ -145,16 +173,31 @@ Wunderground.prototype.fetchWeather = function (instance) {
 				} else if (wind_degrees <= 349) {
 					wind_dir = "NNW";
 				}
-				self.vDev2.set("metrics:icon","/ZAutomation/api/v1/load/modulemedia/Wunderground/" + wind_dir + ".png" );
+
+				sunset = parseInt(sunsethour)*90 + parseInt(sunsetminute);
+				sunrise = parseInt(sunrisehour)*90 + parseInt(sunriseminute);
+				if (now > sunrise && now < sunset) {
+					self.vDev3.set("metrics:icon","/ZAutomation/api/v1/load/modulemedia/Wunderground/day.png" );
+					self.vDev3.set("metrics:level", "off");
+				} else {
+					self.vDev3.set("metrics:icon","/ZAutomation/api/v1/load/modulemedia/Wunderground/night.png" );
+					self.vDev3.set("metrics:level", "on");
+				}
+
 				self.vDev.set("metrics:level", temp);
 				self.vDev.set("metrics:windgust", windgust);
 				self.vDev.set("metrics:pressure", pressure);
 				self.vDev.set("metrics:wind_degrees", wind_degrees);
-				self.vDev2.set("metrics:level", wind_dir);
 				self.vDev.set("metrics:observe_time", observe_time);
-				self.vDev2.set("metrics:timeStamp", observe_time);
 				self.vDev.set("metrics:max_temp", max_temp);
 				self.vDev.set("metrics:icon", icon);
+                                self.vDev2.set("metrics:level", wind_dir);
+                                self.vDev2.set("metrics:timeStamp", observe_time);
+                                self.vDev2.set("metrics:icon","/ZAutomation/api/v1/load/modulemedia/Wunderground/" + wind_dir + ".png" );
+				self.vDev3.set("metrics:sunrise", (sunrisehour + ":" + sunriseminute));
+                                self.vDev3.set("metrics:sunset", (sunsethour + ":" + sunsetminute));
+				self.vDev3.set("metrics:observe_time", observe_time);
+
 			} catch (e) {
 				self.controller.addNotification("error", langFile.err_parse, "module", moduleName);
 			}
