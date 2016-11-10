@@ -1,7 +1,11 @@
 ###Wunderground    
-Simple weathermodule based on the [Wunderground Weather service](https://www.wunderground.com/?apiref=06d5c981eb770fb1). Holds minimum local weather data in one virtualDevice, and wind direction in a second virtualDevice. 
+Simple weathermodule based on the [Wunderground Weather service](https://www.wunderground.com/?apiref=06d5c981eb770fb1). It holds minimum local weather data in the base virtualDevice Wunderground_X. There are two additional virtual devices, one for wind direction (Wunderground_X-1) in a second (Wunderground_X-2) for sunset/sunrise time strings and a on/off variable for night/day. The night/day switch is not very precise because it is only updtaed every 15 minutes, which suffices in many applications.      
 ```     
 {"scaleTitle":"Â°C","title":"Schiphol","probeTitle":"Temperature","level":15.3,"windgust":16,"pressure":1036,"wind_degrees":98,"observe_time":"Tue, 04 Oct 2016 16:26:43 +0200","max_temp":16,"icon":"http://icons.wxug.com/i/c/k/clear.gif","modificationTime":1468154510} 
+
+{"scaleTitle":"Â°","title":"Schiphol","level":"SSE","icon":"/ZAutomation/api/v1/load/modulemedia/Wunderground/SSE.png","timeStamp":"Thu, 10 Nov 2016 13:32:27 +0100","probeTitle":"Wind Direction"}
+
+{"scaleTitle":"","title":"Schiphol Day/Night","probeTitle":"isNight","level":"off","sunrise":"7:50","sunset":"16:45","icon":"/ZAutomation/api/v1/load/modulemedia/Wunderground/day.png","observe_time":"Thu, 10 Nov 2016 13:32:27 +0100"}
 ```
 See [instructions](http://forum.z-wave.me/viewtopic.php?f=3424&t=21246) on forum
 
