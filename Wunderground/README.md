@@ -1,5 +1,6 @@
 ###Wunderground    
-Simple weathermodule based on the [Wunderground Weather service](https://www.wunderground.com/?apiref=06d5c981eb770fb1). It holds minimum local weather data in the base virtualDevice Wunderground_X. There are two additional virtual devices, one for wind direction (Wunderground_X-1) in a second (Wunderground_X-2) for sunset/sunrise time strings and a on/off variable for night/day. The night/day switch is not very precise because it is only updtaed every 15 minutes, which suffices in many applications.      
+Simple weathermodule based on the [Wunderground Weather service](https://www.wunderground.com/?apiref=06d5c981eb770fb1). It holds minimum local weather data in the base virtualDevice Wunderground_X. There are two additional virtual devices, one for wind direction (Wunderground_X-1) in a second (Wunderground_X-2) for sunset/sunrise time strings and a on/off variable for night/day. The night/day switch is not very precise because it is only updated every 15 minutes, which suffices in many applications.      
+The three virtual devices:      
 ```     
 {"scaleTitle":"Â°C","title":"Schiphol","probeTitle":"Temperature","level":15.3,"windgust":16,"pressure":1036,"wind_degrees":98,"observe_time":"Tue, 04 Oct 2016 16:26:43 +0200","max_temp":16,"icon":"http://icons.wxug.com/i/c/k/clear.gif","modificationTime":1468154510} 
 
