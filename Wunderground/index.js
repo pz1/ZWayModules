@@ -52,7 +52,7 @@ Wunderground.prototype.init = function (config) {
         this.vDev2 = self.controller.devices.create({
                         deviceId : "Wunderground_" + this.id + "-1",
                         defaults : {
-                                deviceType : "text",
+                                deviceType : "sensorMultilevel",
                                 metrics : {
                                         probeTitle : 'Wind Direction'
                                 }
@@ -69,7 +69,7 @@ Wunderground.prototype.init = function (config) {
         this.vDev3 = self.controller.devices.create({
                         deviceId : "Wunderground_" + this.id + "-2",
                         defaults : {
-                                deviceType : "text",
+                                deviceType : "sensorBinary",
                                 metrics : {
                                         probeTitle : 'isNight'
                                 }
@@ -196,7 +196,7 @@ Wunderground.prototype.fetchWeather = function (instance) {
                                 self.vDev2.set("metrics:icon","/ZAutomation/api/v1/load/modulemedia/Wunderground/" + wind_dir + ".png" );
 				self.vDev3.set("metrics:sunrise", (sunrisehour + ":" + sunriseminute));
                                 self.vDev3.set("metrics:sunset", (sunsethour + ":" + sunsetminute));
-				self.vDev3.set("metrics:observe_time", observe_time);
+				self.vDev3.set("metrics:time_stamp", observe_time);
 
 			} catch (e) {
 				self.controller.addNotification("error", langFile.err_parse, "module", moduleName);
