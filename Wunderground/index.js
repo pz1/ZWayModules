@@ -178,10 +178,12 @@ Wunderground.prototype.fetchWeather = function (instance) {
 				sunrise = sunrisehour*60 + sunriseminute;
 				if (now >= sunrise && now <= sunset) {
 					self.vDev3.set("metrics:icon","/ZAutomation/api/v1/load/modulemedia/Wunderground/day.png" );
+                                        self.vDev.set("metrics:day_light", "off");
 					self.vDev3.set("metrics:level", "off");
 				} else {
 					self.vDev3.set("metrics:icon","/ZAutomation/api/v1/load/modulemedia/Wunderground/night.png" );
-					self.vDev3.set("metrics:level", "on");
+					self.vDev.set("metrics:day_light", "on");
+                                        self.vDev3.set("metrics:level", "on");
 				}
  
 				self.vDev.set("metrics:level", temp);
@@ -190,9 +192,12 @@ Wunderground.prototype.fetchWeather = function (instance) {
 				self.vDev.set("metrics:wind_degrees", wind_degrees);
 				self.vDev.set("metrics:observe_time", observe_time);
 				self.vDev.set("metrics:max_temp", max_temp);
+				self.vDev.set("metrics:wind_dir",wind_dir);
+				self.vDev.set("metrics:sunrise",(sunrisehour + ":" + sunriseminute));
+				self.vDev.set("metrics:sunset",(sunsethour + ":" + sunsetminute));
 				self.vDev.set("metrics:icon", icon);
                                 self.vDev2.set("metrics:level", wind_dir);
-                                self.vDev2.set("metrics:timeStamp", observe_time);
+                                self.vDev2.set("metrics:observe_time", observe_time);
                                 self.vDev2.set("metrics:icon","/ZAutomation/api/v1/load/modulemedia/Wunderground/" + wind_dir + ".png" );
 				self.vDev3.set("metrics:sunrise", (sunrisehour + ":" + sunriseminute));
                                 self.vDev3.set("metrics:sunset", (sunsethour + ":" + sunsetminute));
