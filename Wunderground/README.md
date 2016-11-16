@@ -42,7 +42,8 @@ The three virtual devices:
 }
 
 ```
-See [instructions](http://forum.z-wave.me/viewtopic.php?f=3424&t=21246) on forum
+See [instructions](http://forum.z-wave.me/viewtopic.php?f=3424&t=21246) on forum.      
+For most actual information see the [Wunderground API documents](https://www.wunderground.com/weather/api/d/docs)      
 
 ##License    
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.    
