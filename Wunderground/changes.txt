@@ -1,3 +1,4 @@
+20161121 Fixed leading zero error in sunrise/set time (Issue https://github.com/pz1/ZWayModules/issues/9)
 20161108 Added Day/Night sensor based on the weatherdata. Sensor is only updated when weatherdata is updated.
 20160929 Removed no longer used host specification from configuration screen
 20160922 Added second vDev for Wind direction to this module. It is named Wunderground_X-1

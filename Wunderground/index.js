@@ -193,14 +193,14 @@ Wunderground.prototype.fetchWeather = function (instance) {
 				self.vDev.set("metrics:observe_time", observe_time);
 				self.vDev.set("metrics:max_temp", max_temp);
 				self.vDev.set("metrics:wind_dir",wind_dir);
-				self.vDev.set("metrics:sunrise",(sunrisehour + ":" + sunriseminute));
-				self.vDev.set("metrics:sunset",(sunsethour + ":" + sunsetminute));
+				self.vDev.set("metrics:sunrise",(res.data.sun_phase.sunrise.hour + ":" + res.data.sun_phase.sunrise.minute));
+				self.vDev.set("metrics:sunset",(res.data.sun_phase.sunset.hour + ":" + res.data.sun_phase.sunset.minute));
 				self.vDev.set("metrics:icon", icon);
                                 self.vDev2.set("metrics:level", wind_dir);
                                 self.vDev2.set("metrics:observe_time", observe_time);
                                 self.vDev2.set("metrics:icon","/ZAutomation/api/v1/load/modulemedia/Wunderground/" + wind_dir + ".png" );
-				self.vDev3.set("metrics:sunrise", (sunrisehour + ":" + sunriseminute));
-                                self.vDev3.set("metrics:sunset", (sunsethour + ":" + sunsetminute));
+				self.vDev3.set("metrics:sunrise", (res.data.sun_phase.sunrise.hour + ":" + res.data.sun_phase.sunrise.minute));
+                                self.vDev3.set("metrics:sunset", (res.data.sun_phase.sunset.hour + ":" + res.data.sun_phase.sunset.minute));
 				self.vDev3.set("metrics:time_stamp", observe_time);
 
 			} catch (e) {
