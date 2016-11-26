@@ -1,10 +1,9 @@
-/* RaZOR Version 1.01.03 2015-01-29
- *
+ * RaZ-OR
  * OpenRemote, the Home of the Digital Home.
  * Adopted for Z-Wave.Me Z-Way
  * Copyright 2008-2013, OpenRemote Inc.
  *
- * See README.MD for instructions and license terms
+ * See README.MD for instructions
  */
 
 // ----------------------------------------------------------------------------

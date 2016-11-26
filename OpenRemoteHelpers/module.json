@@ -6,7 +6,7 @@
     "homepage": "http://forum.z-wave.me/viewtopic.php?f=3424&t=20819",
     "icon": "icon.png",
     "moduleName":"OpenRemoteHelpers",
-    "version": "1.01.03",
+    "version": "1.01.04",
     "maturity": "stable",
     "repository": {
             "type": "git",

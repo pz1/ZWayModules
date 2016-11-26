@@ -1,0 +1,1 @@
+20161126: Moved some text lines of index.js to README.md
