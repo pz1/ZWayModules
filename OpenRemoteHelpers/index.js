@@ -1,10 +1,10 @@
- * RaZ-OR
+/*** RaZ-OR ************************************************
  * OpenRemote, the Home of the Digital Home.
  * Adopted for Z-Wave.Me Z-Way
  * Copyright 2008-2013, OpenRemote Inc.
  *
  * See README.MD for instructions
- */
+ **********************************************************/
 
 // ----------------------------------------------------------------------------
 // --- Class definition, inheritance and setup

@@ -7,6 +7,9 @@ Author: Pieter E. Zanstra
 Converted into Z-Way HA module: Poltorak Serguei
 ###History
 ```
+version 1.01.04 2016-11-26 (Pieter E. Zanstra)
+Updated and moved some texts in the package
+
 Version 1.01.03	2016-01-29 (Pieter E. Zanstra)  
 Added SetMetrics command which allows to set the value of a virtualDevce metric in the form of
 http://raspberryIP:8083/OpenRemote/SetMetrics/vDevName/metric/value
