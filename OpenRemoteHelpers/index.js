@@ -1,10 +1,11 @@
-/*** RaZ-OR ************************************************
+/* RaZOR Version 1.01.03 2015-01-29
+ *
  * OpenRemote, the Home of the Digital Home.
  * Adopted for Z-Wave.Me Z-Way
  * Copyright 2008-2013, OpenRemote Inc.
  *
- * See README.MD for instructions
- **********************************************************/
+ * See README.MD for instructions and license terms
+ */
 
 // ----------------------------------------------------------------------------
 // --- Class definition, inheritance and setup
@@ -128,7 +129,7 @@ OpenRemoteHelpers.prototype.init = function (config) {
                     var mode = zway.devices[N].ThermostatMode.data.mode.value;
                     return zway.devices[N].ThermostatMode.data[mode].modeName.value;
                 } else {
-                    // no ThemorstatMode CC - pick up first mode
+                    // no ThermostatMode CC - pick up first mode
                     for (var key in zway.devices[N].ThermostatSetPoint.data) {
                         var _modeId = parseInt(key, 10);
                         if (!isNaN(_modeId)) {
