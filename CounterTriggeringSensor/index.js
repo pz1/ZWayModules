@@ -56,9 +56,8 @@ CounterTriggeringSensor.prototype.init = function (config) {
             if (isNaN(currentValue)) {
                     currentValue = 0;
             }
-            currentValue = currentValue + self.config.valueToAdd;
+            currentValue = currentValue + self.config.valueToAdd
             self.vDev.set("metrics:level", currentValue);
-            self.vDev.set("metrics:timeStamp", Math.round(new Date().getTime()/1000.0))
         }
     }
     // Setup metric update event listener
