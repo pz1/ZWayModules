@@ -53,11 +53,13 @@ CounterTriggeringSensor.prototype.init = function (config) {
     this.handler = function (sensor) {
         if (sensor.get("metrics:level") === self.config.eventSensor) {
             var currentValue = parseFloat(self.vDev.get("metrics:level"));
+            var ts = Math.round((new Date()).getTime()/1000.0);
             if (isNaN(currentValue)) {
                     currentValue = 0;
             }
-            currentValue = currentValue + self.config.valueToAdd
+            currentValue = currentValue + self.config.valueToAdd;
             self.vDev.set("metrics:level", currentValue);
+            self.vDev.set("metrics:timeStamp", ts);
         }
     }
     // Setup metric update event listener
